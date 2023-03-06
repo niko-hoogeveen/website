@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Calorie Predictor</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Prediction Network</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="generic.html" class="active">Calorie Prediction Generator</a></li>
+						<li><a href="elements.html">Elements</a></li>
+						<li><a href="profile.html">Elements</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Input your image below</h1>
+							<p>Add a video of you or working out to perform a calorie prediction!</p>
+							<form action="upload.php" method="post" enctype="multipart/form-data">
+								<input type="file" name="video" accept="video/*">
+								<input type="submit" value="submit" class="primary">
+							</form>
+							<a method="POST" id="end" href="endstream.html">End stream</a>
+						</div>
+						<img src="{{ url_for('video_feed') }}">
+					</section>
+				
+					<select name="Users" id="Users">
+					  <option value="Justin">Justin</option>
+					  <option value="Doug">Doug</option>
+					  <option value="Ryan">Ryan</option>
+					  <option value="Niko">Niko</option>
+					</select>
+
+			</div>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Queen's University. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
