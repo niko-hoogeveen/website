@@ -1,4 +1,50 @@
 <!DOCTYPE HTML>
+
+<style>
+	.slidecontainer {
+  width: 25%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #d4c9c9; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #df08c2; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #ce07ce; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+p:first-of-type {
+    margin-top: 0;
+}
+</style>
+
 <!--
 	Hyperspace by HTML5 UP
 	html5up.net | @ajlkn
@@ -21,36 +67,35 @@
 					<ul>
 						<li><a href="index.html">Home</a></li>
 						<li><a href="generic.html" class="active">Calorie Prediction Generator</a></li>
-						<li><a href="elements.html">Elements</a></li>
-						<li><a href="profile.html">Elements</a></li>
+						<li><a href="profile.html">Profile Creator</a></li>
+						<li><a href="logout.html">Logout</a></li>
 					</ul>
 				</nav>
 			</header>
 
 		<!-- Wrapper -->
-			<div id="wrapper">
-					<section id="main" class="wrapper">
-						<div class="inner">
-							<h1 class="major">Input your image below</h1>
-							<p>Add a video of you or working out to perform a calorie prediction!</p>
-							<form action="upload.php" method="post" enctype="multipart/form-data">
-								<input type="file" name="video" accept="video/*">
-								<input type="submit" value="submit" class="primary">
-							</form>
-							<a href="stream.html">Stream</a>
+		<div id="wrapper">
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<h1 class="major">Input your image below</h1>
+					<p style="margin-top: 0;">Add a video of you or working out to perform a calorie prediction!</p>
+					<form action="upload.php" method="post" enctype="multipart/form-data">
+						<input style="margin-bottom: 5px;" type="file" name="video" accept="video/*">
+						<br><br>
+						<p style="margin-bottom: 10px;">Please select the intensity</p>
+						<div class="slidecontainer">
+							<input type="range" min="1" max="10" value="5" class="slider" id="myRange">
+							<label for="myRange" id="sliderValue">5</label>
 						</div>
-					</section>
-				
-					<select name="Users" id="Users">
-					  <option value="Justin">Justin</option>
-					  <option value="Doug">Doug</option>
-					  <option value="Ryan">Ryan</option>
-					  <option value="Niko">Niko</option>
-					</select>
+						<input type="submit" value="submit" class="primary">
+					</form>
+					<br>
+					<a href="stream.html">Stream</a>
+				</div>
+			</section>
+		</div>
 
-			</div>
-
-			</div>
+		</div>
 
 		<!-- Footer -->
 			<footer id="footer" class="wrapper alt">
@@ -62,6 +107,16 @@
 			</footer>
 
 		<!-- Scripts -->
+		<!-- JavaScript code here -->
+		<script>
+			var slider = document.getElementById("myRange");
+			var output = document.getElementById("sliderValue");
+			output.innerHTML = slider.value;
+
+			slider.oninput = function() {
+			  output.innerHTML = this.value;
+			}
+		</script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
