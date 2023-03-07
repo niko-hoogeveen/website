@@ -1,6 +1,8 @@
+import sqlite3
+
 from flask import Response
 from flask import Flask
-from flask import render_template
+from flask import render_template, redirect, url_for, request, session
 import threading
 
 # import the necessary packages
@@ -15,23 +17,87 @@ outputFrame = None
 lock = threading.Lock()
 # initialize a flask object
 app = Flask(__name__, template_folder="", static_folder="")
+app.config['SECRET_KEY'] = '12345'
 
 global t, loop
 
+def get_db_connection():
+    conn = sqlite3.connect('database.db')
+    conn.row_factory = sqlite3.Row
+    return conn
+
+
+def loggedin():
+    if 'username' in session:
+        return True
+    else:
+        return False
+
+
+def logout():
+    session.pop('username', None)
+
+
+@app.route("/login", methods=('GET', 'POST'))
+def login():
+    conn = get_db_connection()
+    cur = conn.cursor()
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        usernamecheck = cur.execute('SELECT * FROM login WHERE username = ?',
+            (username,)
+            )
+        rows = cur.fetchall()
+
+        if not rows:
+            print("username not found")
+            return render_template("login.html")
+
+        passwordcheck = cur.execute('SELECT * FROM login WHERE username = ? AND password = ?',
+            (username, password,)
+            )
+
+        rows = cur.fetchall()
+
+        if not rows:
+            print("incorrect password")
+            return render_template("login.html")
+
+        session['username'] = request.form['username']
+        return render_template("index.html")
+
+    cur.close()
+    conn.close()
+    return render_template("login.html")
+
+
+@app.route("/logout")
+def logout():
+    session.pop('username', None)
+    return render_template("login.html")
+
+
 @app.route("/")
 def index():
+    if not loggedin():
+        return render_template("login.html")
     # return the rendered template
     return render_template("index.html")
 
 
 @app.route("/generic.html")
 def generic():
+    if not loggedin():
+        return render_template("login.html")
     # return the rendered template
     return render_template("generic.html")
 
 
 @app.route("/stream.html")
 def stream():
+    if not loggedin():
+        return render_template("login.html")
     # return the rendered template
     global t, loop
     loop = True
@@ -43,6 +109,8 @@ def stream():
 
 @app.route("/endstream.html")
 def endstream():
+    if not loggedin():
+        return render_template("login.html")
     global t, loop
     loop = False
     t.join()
@@ -52,12 +120,16 @@ def endstream():
 
 @app.route("/profile.html")
 def profile():
+    if not loggedin():
+        return render_template("login.html")
     # return the rendered template
     return render_template("profile.html")
 
 
 @app.route("/elements.html")
 def elements():
+    if not loggedin():
+        return render_template("login.html")
     # return the rendered template
     return render_template("elements.html")
 

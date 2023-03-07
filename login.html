@@ -17,18 +17,18 @@
     <div class="newCenter">
     <h2>Login Page</h2><br>
     <div class="login">
-    <form id="login" method="get" action="login.php">
+    <form id="login" method="post" action="login">
         <label><b>User Name
         </b>
         </label>
-        <input style = "padding: 10px" type="text" name="Uname" id="Uname" placeholder="Username">
+        <input style = "padding: 10px" type="text" name="username" id="Uname" placeholder="Username" value="{{ request.form['username'] }}">
         <br>
         <label><b>Password
         </b>
         </label>
-        <input type="Password" name="Pass" id="Pass" placeholder="Password">
+        <input type="Password" name="password" id="Pass" placeholder="Password" value="{{ request.form['password'] }}">
         <br>
-        <input type="button" name="log" id="log" value="Log In Here">
+        <input type="submit" name="log" id="log" value="Log In Here">
         <input type="button" name="log" id="log" value="Create new Account">
         <br><br>
         <input type="checkbox" id="check">
