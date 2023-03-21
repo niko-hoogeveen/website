@@ -45,6 +45,13 @@ p:first-of-type {
 }
 </style>
 
+<style>
+	/* adjust margin of second br element */
+	.slider-break {
+	  margin: 1px 0;
+	}
+  </style>
+
 <!--
 	Hyperspace by HTML5 UP
 	html5up.net | @ajlkn
@@ -82,12 +89,11 @@ p:first-of-type {
 					<form method="post" enctype="multipart/form-data">
 						<input style="margin-bottom: 5px;" type="file" name="file">
 						<br><br>
-						<p style="margin-bottom: 10px;">Please select the intensity</p>
-						<div class="slidecontainer">
-							<input type="range" min="1" max="3" name="intensity" value="{{ request.form['intensity'] }}" class="slider" id="myRange">
-							<label for="myRange" id="sliderValue">2</label>
-						</div>
-						<input type="submit" value="Upload" class="primary">
+						<p for="difficulty-slider">Please Select the Difficulty:</p>
+						<p style="margin-bottom: 0p; margin-top: 0px; padding-top: 0px; padding-bottom: 0px">Easy <span>&emsp;</span> Medium <span>&emsp;</span> Hard</p>
+						<input style="margin-bottom: 0p; margin-top: 0px; padding-top: 0px; padding-bottom: 0px" type="range" min="1" max="3" step="1" id="difficulty-slider">
+						<br><br>
+						<input type="submit" value="submit" class="primary">
 					</form>
 					<br>
 					<a href="stream.html">Stream</a>
@@ -109,14 +115,19 @@ p:first-of-type {
 		<!-- Scripts -->
 		<!-- JavaScript code here -->
 		<script>
-			var slider = document.getElementById("myRange");
-			var output = document.getElementById("sliderValue");
-			output.innerHTML = slider.value;
-
-			slider.oninput = function() {
-			  output.innerHTML = this.value;
-			}
-		</script>
+			const slider = document.getElementById("difficulty-slider");
+			slider.addEventListener("input", function() {
+			  let difficulty = "";
+			  if (this.value == 1) {
+				difficulty = "Light";
+			  } else if (this.value == 2) {
+				difficulty = "Medium";
+			  } else if (this.value == 3) {
+				difficulty = "Hard";
+			  }
+			  console.log(difficulty);
+			});
+		  </script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
