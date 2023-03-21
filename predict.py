@@ -1,9 +1,11 @@
 import sqlite3
 
 from flask import Response
-from flask import Flask
+from flask import Flask, flash
 from flask import render_template, redirect, url_for, request, session
 import threading
+
+from werkzeug.utils import secure_filename
 
 # import the necessary packages
 from keras.models import load_model
@@ -12,6 +14,11 @@ import numpy as np
 import argparse
 import pickle
 import cv2
+import os
+
+from collections import Counter
+
+ALLOWED_EXTENSIONS = {'mp4'}
 
 outputFrame = None
 lock = threading.Lock()
@@ -86,10 +93,60 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/generic.html")
+@app.route("/generic.html", methods=['GET', 'POST'])
 def generic():
     if not loggedin():
         return render_template("login.html")
+
+    upload_path = "Uploads/" + session['username'] + "/"
+    print(upload_path)
+    app.config['UPLOAD_FOLDER'] = upload_path
+
+    if request.method == 'POST':
+        intensity = request.form['intensity']
+        print(intensity)
+        # check if the post request has the file part
+        if 'file' not in request.files:
+            flash('No file part')
+            return redirect(request.url)
+        file = request.files['file']
+        # If the user does not select a file, the browser submits an
+        # empty file without a filename.
+        if file.filename == '':
+            flash('No selected file')
+            return redirect(request.url)
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            print(filename)
+            #return redirect(url_for('download_file', name=filename))
+
+            conn = get_db_connection()
+            cur = conn.cursor()
+
+            cur.execute('SELECT * FROM profiles WHERE username = ?',
+                        (session['username'],)
+                        )
+            rows = cur.fetchall()
+
+            cur.close()
+            conn.close()
+
+            for row in rows:
+                p_height = row[1]
+                p_weight = row[2]
+                p_sex = row[3]
+                p_age = row[4]
+
+            global t, loop
+            loop = True
+            full_path = upload_path + filename
+            t = threading.Thread(target=predict, kwargs={'input_path': full_path, 'height': p_height, 'weight': p_weight, 'sex': p_sex, 'intensity': intensity, 'age': p_age, 'username': session['username']})
+            t.start()
+
+
+
+
     # return the rendered template
     return render_template("generic.html")
 
@@ -101,7 +158,7 @@ def stream():
     # return the rendered template
     global t, loop
     loop = True
-    t = threading.Thread(target=predict)
+    t = threading.Thread(target=predict, kwargs={'input_path': 'none', 'height': 'none', 'weight': 'none', 'sex': 'none', 'intensity': 'none', 'age': 'none', 'username': 'none'})
     #t.daemon = True
     t.start()
     return render_template("stream.html")
@@ -132,6 +189,11 @@ def elements():
         return render_template("login.html")
     # return the rendered template
     return render_template("elements.html")
+
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 def generate():
@@ -192,19 +254,50 @@ mean = np.array([123.68, 116.779, 103.939][::1], dtype="float32")
 Q = deque(maxlen=args["size"])
 
 
-# vs = cv2.VideoCapture(args["input"])
-vs = cv2.VideoCapture(0)
+#vs = cv2.VideoCapture(args["input"])
+#vs = cv2.VideoCapture(0)
 
 
-def predict():
+def predict(**filenames):
     # initialize the video stream, pointer to output video file, and
     # frame dimensions
 
-    global vs, outputFrame, lock, loop
+    #global vs, outputFrame, lock, loop
+    global outputFrame, lock, loop
+
+    for key, value in filenames.items():
+        if value == "none":
+            vs = cv2.VideoCapture(0)
+            fps = 30
+            ret = False
+        else:
+            if key == "input_path":
+                cur_filename = value
+                vs = cv2.VideoCapture(cur_filename)
+            elif key == "height":
+                cur_height = value
+            elif key == "weight":
+                cur_weight = value
+            elif key == "sex":
+                cur_sex = value
+            elif key == "intensity":
+                cur_intensity = value
+            elif key == "age":
+                cur_age = value
+            elif key == "username":
+                cur_username = value
+            fps = vs.get(cv2.CAP_PROP_FPS)
+            ret = True
+
+
 
     writer = None
     (W, H) = (None, None)
     # loop over frames from the video file stream
+
+    print(fps)
+    result_labels = []
+
     while True:
 
         if not loop:
@@ -237,6 +330,8 @@ def predict():
         i = np.argmax(results)
         label = lb.classes_[i]
 
+        result_labels.append(label)
+
 
         # draw the activity on the output frame
         text = "{}".format(label)
@@ -253,7 +348,82 @@ def predict():
         with lock:
             outputFrame = output.copy()
 
+    processed_labels = Counter(result_labels)
+    print(processed_labels.most_common())
 
+    exercise = processed_labels.most_common(1)[0][0]
+
+    if exercise == "none":
+        exercise = processed_labels.most_common(2)[1][0]
+        frames = processed_labels.most_common(2)[1][1]
+    else:
+        frames = processed_labels.most_common(1)[0][1]
+
+    print(exercise)
+    print(frames)
+
+    seconds = frames / fps
+    print(seconds)
+
+    print(exercise + " for " + str(seconds) + " seconds")
+
+    cur_intensity = int(cur_intensity)
+
+    if ret:
+        if exercise == "deadlift":
+            if cur_intensity == 1:
+                met = 4
+            elif cur_intensity == 2:
+                met = 7
+            elif cur_intensity == 3:
+                met = 9
+        elif exercise == "squat":
+            if cur_intensity == 1:
+                met = 3.5
+            elif cur_intensity == 2:
+                met = 6
+            elif cur_intensity == 3:
+                met = 8
+        elif exercise == "benchpress":
+            if cur_intensity == 1:
+                met = 3
+            elif cur_intensity == 2:
+                met = 5
+            elif cur_intensity == 3:
+                met = 7
+
+        print("\nmet: " + str(met))
+        print("cur_weight: " + str(cur_weight))
+        print("cur_height: " + str(cur_height))
+        print("cur_age: " + str(cur_age))
+        print("cur_sex: " + str(cur_sex))
+
+        if cur_sex == "male":
+            bmr = 66 + (6.23 * cur_weight) + (12.7 * cur_height) - (6.8 * cur_age)
+        elif cur_sex == "female":
+            bmr = 655 + (4.35 * cur_weight) + (4.7 * cur_height) - (4.7 * cur_age)
+
+        print("bmr: " + str(bmr))
+
+        calories = bmr * met / 24 * ((seconds/60)/60)
+
+        print("\nDB Values:")
+        print("cur_filename: " + str(cur_filename))
+        print("exercise: " + str(exercise))
+        print("seconds: " + str(seconds))
+        print("cur_intensity: " + str(cur_intensity))
+        print("calories: " + str(calories))
+
+        conn = get_db_connection()
+        cur = conn.cursor()
+
+        cur.execute("INSERT INTO workouts (filename, username, workout, elapsedtime, intensity, calories) VALUES (?, ?, ?, ?, ?, ?)",
+                    (cur_filename, cur_username, exercise, seconds, cur_intensity, calories,)
+                    )
+
+        conn.commit()
+        cur.close()
+        conn.close()
 
 # start the flask app
 app.run(host=args["ip"], port=args["port"], debug=True, threaded=True, use_reloader=False)

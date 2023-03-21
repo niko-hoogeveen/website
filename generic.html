@@ -79,15 +79,15 @@ p:first-of-type {
 				<div class="inner">
 					<h1 class="major">Input your image below</h1>
 					<p style="margin-top: 0;">Add a video of you or working out to perform a calorie prediction!</p>
-					<form action="upload.php" method="post" enctype="multipart/form-data">
-						<input style="margin-bottom: 5px;" type="file" name="video" accept="video/*">
+					<form method="post" enctype="multipart/form-data">
+						<input style="margin-bottom: 5px;" type="file" name="file">
 						<br><br>
 						<p style="margin-bottom: 10px;">Please select the intensity</p>
 						<div class="slidecontainer">
-							<input type="range" min="1" max="10" value="5" class="slider" id="myRange">
-							<label for="myRange" id="sliderValue">5</label>
+							<input type="range" min="1" max="3" name="intensity" value="{{ request.form['intensity'] }}" class="slider" id="myRange">
+							<label for="myRange" id="sliderValue">2</label>
 						</div>
-						<input type="submit" value="submit" class="primary">
+						<input type="submit" value="Upload" class="primary">
 					</form>
 					<br>
 					<a href="stream.html">Stream</a>
