@@ -185,9 +185,6 @@ def generic():
             t = threading.Thread(target=predict, kwargs={'input_path': full_path, 'height': p_height, 'weight': p_weight, 'sex': p_sex, 'intensity': intensity, 'age': p_age, 'username': session['username']})
             t.start()
 
-
-
-
     # return the rendered template
     return render_template("generic.html")
 
@@ -240,6 +237,8 @@ def profile():
                     (username, height, weight, sex, age)
                     )
 
+        cur.execute("UPDATE login SET isprofilecreated = 1 WHERE username = ?", (username,))
+
         newpath = "Uploads/" + username + "/"
         if not os.path.exists(newpath):
             os.makedirs(newpath)
@@ -251,6 +250,23 @@ def profile():
         return render_template("index.html")
 
     return render_template("profile.html")
+
+@app.route("/MyProfile.html", methods=['GET', 'POST'])
+def myprofile():
+    if not loggedin():
+        return render_template("login.html")
+
+    conn = get_db_connection()
+    cur = conn.cursor()
+
+    cur.execute("SELECT * FROM workouts WHERE username = ?", (session['username'], ))
+
+    rows = cur.fetchall()
+
+    cur.close()
+    conn.close()
+
+    return render_template("MyProfile.html", username=session['username'], rows=rows)
 
 
 @app.route("/elements.html")
