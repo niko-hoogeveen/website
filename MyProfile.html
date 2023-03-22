@@ -9,34 +9,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Individual Cards</title>
-    <style>
-        .card {
-            border: 1px solid #000000;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 400px;
-            background-color: rgb(180, 121, 121);
-            margin: 20px auto;
-        }
-
-        .card h1 {
-            margin: 0 0 15px;
-            font-size: 24px;
-            text-align: center;
-        }
-
-        .card p {
-            margin: 0;
-            font-size: 18px;
-            text-align: center;
-        }
-
-        .card .separator {
-            margin: 15px 0;
-            border-top: 1px solid #ccc;
-        }
-    </style>
+	<style>
+		.card-container {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+			gap: 20px;
+			padding: 20px;
+			justify-content: center;
+		}
+	
+		.card {
+			border: 1px solid #000000;
+			border-radius: 5px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+			padding: 20px;
+			background-color: rgb(180, 121, 121);
+			text-align: center;
+		}
+	
+		.card h1 {
+			margin: 0 0 15px;
+			font-size: 24px;
+			text-align: center;
+		}
+	
+		.card p {
+			margin: 0;
+			font-size: 18px;
+			text-align: center;
+		}
+	
+		.card .separator {
+			margin: 15px 0;
+			border-top: 1px solid #ccc;
+		}
+	
+		.card video {
+			display: inline-block;
+		}
+	</style>
 </head>
 
 <html>
@@ -63,22 +74,23 @@
 
 			<section id="main" class="wrapper">
 				<div class="inner">
-					<h1 class="major">Total Calories burnt: <!--<?php echo $total; --></h1>
+					<h1 class="major">Total Calories burnt: {{totalcals}}</h1>
 
-
-					{% for row in rows %} <!-- loop start -->
-
-					<div class="card">
-						<div class="separator"></div>
-						<video width="320" height="240" controls>
-							<source src="{{row[1]}}" type="video/mp4">
-						  Your browser does not support the video tag.
-					    </video>
-						<div class="separator"></div>
-						<p>Workout Classification: {{row[3]}} Elapsed Time: {{row[4]}} Intensity: {{row[5]}}/3 Calories burnt: {{row[6]}} </p>
+					<div class="card-container">
+						{% for row in rows %}
+						<div class="card">
+							<video width="320" height="240" controls>
+								<source src="{{row[1]}}" type="video/mp4">
+								Your browser does not support the video tag.
+							</video>
+							<div class="separator"></div>
+							<p>Workout Classification: {{row[3]}}</p>
+							<p>Elapsed Time: {{row[4]}}</p>
+							<p>Intensity: {{row[5]}}/3</p>
+							<p>Calories burnt: {{row[6]}}</p>
+						</div>
+						{% endfor %}
 					</div>
-
-					{% endfor %}
 				</div>
 			</section>
 			<br>
