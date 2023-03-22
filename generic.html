@@ -130,10 +130,24 @@ p:first-of-type {
 
 		<!-- JavaScript for showing loading element -->
 		<script>
-			document.getElementById("upload-form").addEventListener("submit", function() {
-			document.getElementById("loading").style.display = "block";
+			document.getElementById("upload-form").addEventListener("submit", async function(event) {
+				event.preventDefault(); // Prevent the default form submission behavior
+				document.getElementById("loading").style.display = "block"; // Show the loading spinner
+			
+				const formData = new FormData(event.target);
+				const response = await fetch(event.target.action, {
+					method: event.target.method,
+					body: formData
+				});
+			
+				if (response.ok) {
+					document.getElementById("loading").style.display = "none"; // Hide the loading spinner after the process is finished
+					// You can also handle the response from the server here if needed, e.g., redirect to another page
+				} else {
+					// Handle error case, e.g., display an error message
+				}
 			});
-		</script>
+			</script>
 
 		</div>
 
