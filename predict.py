@@ -221,13 +221,13 @@ def profile():
 
     if request.method == 'POST':
         username = session['username']
-        name = request.form['name']
         weight = request.form['weight']
         sex = request.form['sex']
         height = request.form['height']
+        age = request.form['age']
 
-        cur.execute("INSERT INTO profiles (username, height, weight, sex, age) VALUES (?, ?, ?)",
-                    (username, password, 0,)
+        cur.execute("INSERT INTO profiles (username, height, weight, sex, age) VALUES (?, ?, ?, ?, ?)",
+                    (username, height, weight, sex, age)
                     )
 
         cur.close()
