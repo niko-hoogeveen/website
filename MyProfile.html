@@ -4,7 +4,6 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,7 +61,7 @@
 
 		<!-- Header -->
 			<header id="header">
-				<a href="index.html" class="title">{{username}}'s Workouts {{rows[0][0]}}</a>
+				<a href="index.html" class="title">{{username}}'s Workouts</a>
 				<nav>
 					<ul>
 						<li><a href="index.html">Home</a></li>
@@ -74,7 +73,7 @@
 
 			<section id="main" class="wrapper">
 				<div class="inner">
-					<h1 class="major">Total Calories burnt: {{totalcals}}</h1>
+					<h1 class="major">Total Calories Burnt: {{totalcals}}</h1>
 
 					<div class="card-container">
 						{% for row in rows %}
@@ -85,9 +84,9 @@
 							</video>
 							<div class="separator"></div>
 							<p>Workout Classification: {{row[3]}}</p>
-							<p>Elapsed Time: {{row[4]}}</p>
+							<p>Elapsed Time: {{'%0.2f'|format(row[4]|float)}}</p>
 							<p>Intensity: {{row[5]}}/3</p>
-							<p>Calories burnt: {{row[6]}}</p>
+							<p>Calories burnt: {{'%0.2f'|format(row[6]|float)}}</p>
 						</div>
 						{% endfor %}
 					</div>
