@@ -31,7 +31,7 @@
 						<div class="inner">
 							<h1 class="major">Create your profile</h1>
 							<p></p>
-							<form>
+							<form id="createprofile" method="post" action="profile.html">
                                 <label for="age">Age:</label> <input type="text" name="age" value="{{ request.form['age'] }}">
 								<br>
 								<label for="weight">Weight (lbs):</label> <input type="text" name="weight" value="{{ request.form['weight'] }}">
@@ -46,7 +46,7 @@
 								<br>
 								<label for="height">Height (inches):</label> <input type="text" name="height" value="{{ request.form['height'] }}">
 								<br>
-								<input type="submit" name="log" id="log" value="Create Profile">
+								<input type="submit" name="cp" id="cp" value="Create Profile">
 							</form>
 							 
 							 <!-- Add database code here -->

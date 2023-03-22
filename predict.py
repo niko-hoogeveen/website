@@ -47,16 +47,19 @@ def logout():
 
 @app.route("/Register.html", methods=('GET', 'POST'))
 def register():
-    conn = get_db_connection()
-    cur = conn.cursor()
     if request.method == 'POST':
+        conn = get_db_connection()
+        cur = conn.cursor()
         username = request.form['username']
+        print(username)
         password = request.form['password']
+        print(password)
 
         cur.execute("INSERT INTO login (username, password, isprofilecreated) VALUES (?, ?, ?)",
-                    (username, password, 0,)
+                    (username, password, 0)
                     )
 
+        conn.commit()
         cur.close()
         conn.close()
 
@@ -68,9 +71,9 @@ def register():
 
 @app.route("/login", methods=('GET', 'POST'))
 def login():
-    conn = get_db_connection()
-    cur = conn.cursor()
     if request.method == 'POST':
+        conn = get_db_connection()
+        cur = conn.cursor()
         username = request.form['username']
         password = request.form['password']
         usernamecheck = cur.execute('SELECT * FROM login WHERE username = ?',
@@ -211,29 +214,35 @@ def endstream():
     return render_template("generic.html")
 
 
-@app.route("/profile.html")
+@app.route("/profile.html", methods=['GET', 'POST'])
 def profile():
     if not loggedin():
         return render_template("login.html")
 
-    conn = get_db_connection()
-    cur = conn.cursor()
-
     if request.method == 'POST':
+        conn = get_db_connection()
+        cur = conn.cursor()
+
         username = session['username']
+        print(username)
         weight = request.form['weight']
+        print(weight)
         sex = request.form['sex']
+        print(sex)
         height = request.form['height']
+        print(height)
         age = request.form['age']
+        print(age)
 
         cur.execute("INSERT INTO profiles (username, height, weight, sex, age) VALUES (?, ?, ?, ?, ?)",
                     (username, height, weight, sex, age)
                     )
 
+        conn.commit()
         cur.close()
         conn.close()
 
-        return render_template("login.html")
+        return render_template("index.html")
 
     return render_template("profile.html")
 
@@ -453,7 +462,7 @@ def predict(**filenames):
         print("cur_age: " + str(cur_age))
         print("cur_sex: " + str(cur_sex))
 
-        if cur_sex == "male":
+        if cur_sex == "male" or cur_sex == "other":
             bmr = 66 + (6.23 * cur_weight) + (12.7 * cur_height) - (6.8 * cur_age)
         elif cur_sex == "female":
             bmr = 655 + (4.35 * cur_weight) + (4.7 * cur_height) - (4.7 * cur_age)
