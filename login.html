@@ -8,28 +8,36 @@
 }
 </style>
 
+
 <html>
 <head>
-    <title>Login Form</title>
+    <title>Register Form</title>
     <link rel="stylesheet" href="assets/css/main.css">
+    <script>
+        function changeFormAction() {
+            var form = document.getElementById('login');
+            form.action = 'register.html';
+            form.submit();
+        }
+    </script>
 </head>
 <body>
     <div class="newCenter">
     <h2>Login Page</h2><br>
     <div class="login">
     <form id="login" method="post" action="">
-        <label><b>User Name
+        <label><b>Create Username
         </b>
         </label>
-        <input style = "padding: 10px" type="text" name="username" id="Uname" placeholder="Username" value="{{ request.form['username'] }}">
+        <input style="padding: 10px" type="text" name="username" id="Uname" placeholder="Username" value="Username">
         <br>
-        <label><b>Password
+        <label><b>Create Password
         </b>
         </label>
-        <input type="Password" name="password" id="Pass" placeholder="Password" value="{{ request.form['password'] }}">
+        <input type="Password" name="password" id="Pass" placeholder="Password" value="Password">
         <br>
-        <input type="submit" name="log" id="log" value="Log In Here">
-        <input type="button" name="log" id="log" value="Create new Account">
+        <input type="submit" name="log" id="log" value="Create Account">
+        <input type="button" id="anotherButton" value="Go to Another Page" onclick="changeFormAction()">
         <br><br>
         <input type="checkbox" id="check">
     </form>
