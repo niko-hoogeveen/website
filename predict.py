@@ -45,6 +45,27 @@ def logout():
     session.pop('username', None)
 
 
+@app.route("/Register.html", methods=('GET', 'POST'))
+def register():
+    conn = get_db_connection()
+    cur = conn.cursor()
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        cur.execute("INSERT INTO login (username, password, isprofilecreated) VALUES (?, ?, ?)",
+                    (username, password, 0,)
+                    )
+
+        cur.close()
+        conn.close()
+
+        return render_template("login.html")
+
+
+    return render_template("Register.html")
+
+
 @app.route("/login", methods=('GET', 'POST'))
 def login():
     conn = get_db_connection()
@@ -72,10 +93,25 @@ def login():
             return render_template("login.html")
 
         session['username'] = request.form['username']
-        return render_template("index.html")
+        #return render_template("index.html")
 
-    cur.close()
-    conn.close()
+        profilecreatedcheck = cur.execute('SELECT * FROM login WHERE username = ? AND password = ?',
+            (username, password,)
+            )
+
+        rows = cur.fetchall()
+
+        cur.close()
+        conn.close()
+
+        for row in rows:
+            print(row[2])
+            if row[2] == 0:
+                return render_template("profile.html")
+            elif row[2] == 1:
+                return render_template("index.html")
+
+
     return render_template("login.html")
 
 

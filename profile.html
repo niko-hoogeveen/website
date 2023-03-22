@@ -19,7 +19,6 @@
 				<a href="index.html" class="title">Profile Creator</a>
 				<nav>
 					<ul>
-						<li><a href="index.html">Home</a></li>
 						<li><a href="profile.html" class="active">Profile Creator</a></li>
 						<li><a href="logout">Logout</a></li>
 					</ul>
@@ -34,15 +33,24 @@
 							<h1 class="major">Create your profile</h1>
 							<p></p>
 							<form>
-                                Name:<br> <input type="text" name="name">
-                                <br>
-                                Weight:<br> <input type="text" name="weight">
-                                <br>
-                                Sex:<br> <input type="text" name="sex">
 								<br>
-								Height:<br> <input type="text" name="height">
-                             </form>
-							 <input type="button" name="log" id="log" value="Create Profile">
+                                <label for="name">Name:</label> <input type="text" name="name">
+                                <br>
+								<label for="weight">Weight (lbs):</label> <input type="text" name="weight">
+                                <br>
+								<label for="sex">Sex:</label>
+								<select name="sex" id="sex">
+									<option value="noselect">Select an option</option>
+									<option value="male">Male</option>
+									<option value="female">Female</option>
+									<option value="other">Other</option>
+								</select>
+								<br>
+								<label for="height">Height (inches):</label> <input type="text" name="height">
+								<br>
+								<input type="submit" name="log" id="log" value="Create Profile">
+							</form>
+							 
 							 <!-- Add database code here -->
 						</div>
 					</section>
