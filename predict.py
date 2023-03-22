@@ -72,10 +72,25 @@ def login():
             return render_template("login.html")
 
         session['username'] = request.form['username']
-        return render_template("index.html")
+        #return render_template("index.html")
 
-    cur.close()
-    conn.close()
+        profilecreatedcheck = cur.execute('SELECT * FROM login WHERE username = ? AND password = ?',
+            (username, password,)
+            )
+
+        rows = cur.fetchall()
+
+        cur.close()
+        conn.close()
+
+        for row in rows:
+            print(row[2])
+            if row[2] == 0:
+                return render_template("profile.html")
+            elif row[2] == 1:
+                return render_template("index.html")
+
+
     return render_template("login.html")
 
 
