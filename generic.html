@@ -45,6 +45,28 @@ p:first-of-type {
 }
 </style>
 
+<div id="loading" style="display: none;">
+    <div class="spinner"></div>
+</div>
+
+<style>
+.spinner {
+  margin: 100px auto;
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #000;
+  border-radius: 50%;
+  animation: spinner 0.6s linear infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+</style>
+
 <style>
 	/* adjust margin of second br element */
 	.slider-break {
@@ -86,7 +108,7 @@ p:first-of-type {
 				<div class="inner">
 					<h1 class="major">Upload your video!</h1>
 					<p style="margin-top: 0;">Add a video of you or working out to perform a calorie prediction!</p>
-					<form method="post" enctype="multipart/form-data">
+					<form id="upload-form" method="post" enctype="multipart/form-data">
 						<input style="margin-bottom: 5px;" type="file" name="file">
 						<br><br>
 						<p for="difficulty-slider">Please Select the Difficulty:</p>
@@ -97,9 +119,21 @@ p:first-of-type {
 					</form>
 					<br>
 					<a href="stream.html">Stream</a>
+		
+					<!-- Loading element -->
+					<div id="loading" style="display: none;">
+						<div class="spinner"></div>
+					</div>
 				</div>
 			</section>
 		</div>
+
+		<!-- JavaScript for showing loading element -->
+		<script>
+			document.getElementById("upload-form").addEventListener("submit", function() {
+			document.getElementById("loading").style.display = "block";
+			});
+		</script>
 
 		</div>
 
