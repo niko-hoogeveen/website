@@ -17,18 +17,18 @@
     <div class="newCenter">
     <h2>Register Page</h2><br>
     <div class="login">
-    <form id="login" method="post" action="Register.html">
+    <form id="register" method="post" action="Register.html">
         <label><b>Create Username
         </b>
         </label>
-        <input style = "padding: 10px" type="text" name="username" id="Uname" placeholder="Username" value="{{ request.form['username'] }}">
+        <input style = "padding: 10px" type="text" name="username" id="Uname2" placeholder="Username" value="{{ request.form['username'] }}">
         <br>
         <label><b>Create Password
         </b>
         </label>
-        <input type="Password" name="password" id="Pass" placeholder="Password" value="{{ request.form['password'] }}">
+        <input type="Password" name="password" id="Pass2" placeholder="Password" value="{{ request.form['password'] }}">
         <br>
-        <input type="submit" name="log" id="log" value="Go to Log In">
+        <input type="submit" name="reg" id="reg" value="Go to Log In">
         <br><br>
         <input type="checkbox" id="check">
     </form>

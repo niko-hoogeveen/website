@@ -48,12 +48,16 @@ def logout():
 @app.route("/Register.html", methods=('GET', 'POST'))
 def register():
     if request.method == 'POST':
-        conn = get_db_connection()
-        cur = conn.cursor()
+
         username = request.form['username']
+        if username == "":
+            return render_template("Register.html")
         print(username)
         password = request.form['password']
         print(password)
+
+        conn = get_db_connection()
+        cur = conn.cursor()
 
         cur.execute("INSERT INTO login (username, password, isprofilecreated) VALUES (?, ?, ?)",
                     (username, password, 0)
@@ -64,8 +68,6 @@ def register():
         conn.close()
 
         return render_template("login.html")
-
-
     return render_template("Register.html")
 
 
@@ -237,6 +239,10 @@ def profile():
         cur.execute("INSERT INTO profiles (username, height, weight, sex, age) VALUES (?, ?, ?, ?, ?)",
                     (username, height, weight, sex, age)
                     )
+
+        newpath = "Uploads/" + username + "/"
+        if not os.path.exists(newpath):
+            os.makedirs(newpath)
 
         conn.commit()
         cur.close()
