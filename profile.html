@@ -33,9 +33,8 @@
 							<h1 class="major">Create your profile</h1>
 							<p></p>
 							<form>
+                                <label for="age">Age:</label> <input type="text" name="name" value="{{ request.form['age'] }}">
 								<br>
-                                <label for="name">Name:</label> <input type="text" name="name" value="{{ request.form['name'] }}">
-                                <br>
 								<label for="weight">Weight (lbs):</label> <input type="text" name="weight" value="{{ request.form['weight'] }}">
                                 <br>
 								<label for="sex">Sex:</label>
