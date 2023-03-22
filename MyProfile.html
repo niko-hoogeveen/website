@@ -74,9 +74,7 @@
 			<section id="main" class="wrapper">
 				<div class="inner">
 					<h1 class="major">Total Calories Burnt: {{totalcals}}</h1>
-
 					<div class="card-container">
-						<p>Disclaimer: If you just uploaded a video and it is not showing, it may still be processing!</p>
 						{% for row in rows %}
 						<div class="card">
 							<video width="320" height="240" controls>
@@ -91,6 +89,7 @@
 						</div>
 						{% endfor %}
 					</div>
+					<p>Disclaimer: If you just uploaded a video and it is not showing, it may still be processing!</p>
 				</div>
 			</section>
 			<br>
