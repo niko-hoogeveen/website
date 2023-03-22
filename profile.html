@@ -34,19 +34,19 @@
 							<p></p>
 							<form>
 								<br>
-                                <label for="name">Name:</label> <input type="text" name="name">
+                                <label for="name">Name:</label> <input type="text" name="name" value="{{ request.form['name'] }}">
                                 <br>
-								<label for="weight">Weight (lbs):</label> <input type="text" name="weight">
+								<label for="weight">Weight (lbs):</label> <input type="text" name="weight" value="{{ request.form['weight'] }}">
                                 <br>
 								<label for="sex">Sex:</label>
-								<select name="sex" id="sex">
+								<select name="sex" id="sex" value="{{ request.form['sex'] }}">
 									<option value="noselect">Select an option</option>
 									<option value="male">Male</option>
 									<option value="female">Female</option>
 									<option value="other">Other</option>
 								</select>
 								<br>
-								<label for="height">Height (inches):</label> <input type="text" name="height">
+								<label for="height">Height (inches):</label> <input type="text" name="height" value="{{ request.form['height'] }}">
 								<br>
 								<input type="submit" name="log" id="log" value="Create Profile">
 							</form>

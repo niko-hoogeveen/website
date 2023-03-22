@@ -215,7 +215,26 @@ def endstream():
 def profile():
     if not loggedin():
         return render_template("login.html")
-    # return the rendered template
+
+    conn = get_db_connection()
+    cur = conn.cursor()
+
+    if request.method == 'POST':
+        username = session['username']
+        name = request.form['name']
+        weight = request.form['weight']
+        sex = request.form['sex']
+        height = request.form['height']
+
+        cur.execute("INSERT INTO profiles (username, height, weight, sex, age) VALUES (?, ?, ?)",
+                    (username, password, 0,)
+                    )
+
+        cur.close()
+        conn.close()
+
+        return render_template("login.html")
+
     return render_template("profile.html")
 
 
