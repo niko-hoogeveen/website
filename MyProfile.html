@@ -35,12 +35,12 @@
 
 		<!-- Header -->
 			<header id="header">
-				<a href="index.html" class="title">@Names Workouts</a>
+				<a href="index.html" class="title">{{username}}'s Workouts {{rows[0][0]}}</a>
 				<nav>
 					<ul>
 						<li><a href="index.html">Home</a></li>
 						<li><a href="generic.html">Calorie Prediction</a></li>
-						<li><a href="logout.html">Logout</a></li>
+						<li><a href="logout">Logout</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -51,10 +51,15 @@
                 <section id="main" class="wrapper">
                     <div class="inner">
                         <h1 class="major">Total Calories burnt: <!--<?php echo $total; --></h1>
+						{% for row in rows %}
                         <div class = "lol">
-                            <p>Video file here?</p>
-                            <p>Workout Classification: <!--<?php echo $var1; -->. Calories burnt: <!--<?php echo $var2; -->. Date of workout: <!--<?php echo $var2; -->.</p>
+                            <video width="320" height="240" controls>
+  								<source src="{{row[1]}}" type="video/mp4">
+								Your browser does not support the video tag.
+							</video>
+                            <p>Workout Classification: {{row[3]}} Elapsed Time: {{row[4]}} Intensity: {{row[5]}}/3 Calories burnt: {{row[6]}} </p>
                         </div>
+						{% endfor %}
                     </div>
                 </div>
                 <br>
