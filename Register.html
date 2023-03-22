@@ -21,12 +21,12 @@
         <label><b>Create Username
         </b>
         </label>
-        <input style = "padding: 10px" type="text" name="username" id="Uname" placeholder="Username" value="Username">
+        <input style = "padding: 10px" type="text" name="username" id="Uname" placeholder="Username" value="{{ request.form['username'] }}">
         <br>
         <label><b>Create Password
         </b>
         </label>
-        <input type="Password" name="password" id="Pass" placeholder="Password" value="Password">
+        <input type="Password" name="password" id="Pass" placeholder="Password" value="{{ request.form['password'] }}">
         <br>
         <input type="submit" name="log" id="log" value="Go to Log In">
         <br><br>
