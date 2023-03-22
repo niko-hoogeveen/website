@@ -263,10 +263,17 @@ def myprofile():
 
     rows = cur.fetchall()
 
+    totalcals = 0
+
+    for row in rows:
+        totalcals = totalcals + row[6]
+
+    totalcals = round(totalcals, 2)
+
     cur.close()
     conn.close()
 
-    return render_template("MyProfile.html", username=session['username'], rows=rows)
+    return render_template("MyProfile.html", username=session['username'], rows=rows, totalcals=totalcals)
 
 
 @app.route("/elements.html")
