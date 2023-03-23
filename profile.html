@@ -19,7 +19,6 @@
 				<a href="index.html" class="title">Profile Creator</a>
 				<nav>
 					<ul>
-						<li><a href="profile.html" class="active">Profile Creator</a></li>
 						<li><a href="logout">Logout</a></li>
 					</ul>
 				</nav>
@@ -32,28 +31,31 @@
 						<div class="inner">
 							<h1 class="major">Create your profile</h1>
 							<p></p>
-							<form>
+							<form id="createprofile" method="post" action="profile.html">
+                                <label for="age">Age:</label> <input type="text" name="age" value="{{ request.form['age'] }}">
 								<br>
-                                <label for="name">Name:</label> <input type="text" name="name">
-                                <br>
-								<label for="weight">Weight (lbs):</label> <input type="text" name="weight">
+								<label for="weight">Weight (lbs):</label> <input type="text" name="weight" value="{{ request.form['weight'] }}">
                                 <br>
 								<label for="sex">Sex:</label>
-								<select name="sex" id="sex">
+								<select name="sex" id="sex" value="{{ request.form['sex'] }}">
 									<option value="noselect">Select an option</option>
 									<option value="male">Male</option>
 									<option value="female">Female</option>
 									<option value="other">Other</option>
 								</select>
 								<br>
+<<<<<<< HEAD
 								<label for="height">Height (inches):</label> 
 								<div style="display:flex; justify-content:space-between;">
 									<input type="text" placeholder="Feet">
 									<input type="text" placeholder="Inches">
 								</div>
 								
+=======
+								<label for="height">Height (inches):</label> <input type="text" name="height" value="{{ request.form['height'] }}">
+>>>>>>> bcc8828b5e05a2d73b17b6c8c0f0cb8f0ec5b5fb
 								<br>
-								<input type="submit" name="log" id="log" value="Create Profile">
+								<input type="submit" name="cp" id="cp" value="Create Profile">
 							</form>
 						</div>
 					</section>

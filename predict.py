@@ -45,11 +45,37 @@ def logout():
     session.pop('username', None)
 
 
+@app.route("/Register.html", methods=('GET', 'POST'))
+def register():
+    if request.method == 'POST':
+
+        username = request.form['username']
+        if username == "":
+            return render_template("Register.html")
+        print(username)
+        password = request.form['password']
+        print(password)
+
+        conn = get_db_connection()
+        cur = conn.cursor()
+
+        cur.execute("INSERT INTO login (username, password, isprofilecreated) VALUES (?, ?, ?)",
+                    (username, password, 0)
+                    )
+
+        conn.commit()
+        cur.close()
+        conn.close()
+
+        return render_template("login.html")
+    return render_template("Register.html")
+
+
 @app.route("/login", methods=('GET', 'POST'))
 def login():
-    conn = get_db_connection()
-    cur = conn.cursor()
     if request.method == 'POST':
+        conn = get_db_connection()
+        cur = conn.cursor()
         username = request.form['username']
         password = request.form['password']
         usernamecheck = cur.execute('SELECT * FROM login WHERE username = ?',
@@ -159,9 +185,6 @@ def generic():
             t = threading.Thread(target=predict, kwargs={'input_path': full_path, 'height': p_height, 'weight': p_weight, 'sex': p_sex, 'intensity': intensity, 'age': p_age, 'username': session['username']})
             t.start()
 
-
-
-
     # return the rendered template
     return render_template("generic.html")
 
@@ -179,7 +202,7 @@ def stream():
     return render_template("stream.html")
 
 
-@app.route("/endstream.html")
+@app.route("/endstream.html", methods=['GET', 'POST'])
 def endstream():
     if not loggedin():
         return render_template("login.html")
@@ -187,15 +210,94 @@ def endstream():
     loop = False
     t.join()
     # return the rendered template
-    return render_template("generic.html")
+    return redirect(url_for('generic'))
+    #return render_template("generic.html")
 
 
-@app.route("/profile.html")
+@app.route("/profile.html", methods=['GET', 'POST'])
 def profile():
     if not loggedin():
         return render_template("login.html")
-    # return the rendered template
+
+    if request.method == 'POST':
+        conn = get_db_connection()
+        cur = conn.cursor()
+
+        username = session['username']
+        print(username)
+        weight = request.form['weight']
+        print(weight)
+        sex = request.form['sex']
+        print(sex)
+        height = request.form['height']
+        print(height)
+        age = request.form['age']
+        print(age)
+
+        cur.execute("INSERT INTO profiles (username, height, weight, sex, age) VALUES (?, ?, ?, ?, ?)",
+                    (username, height, weight, sex, age)
+                    )
+
+        cur.execute("UPDATE login SET isprofilecreated = 1 WHERE username = ?", (username,))
+
+        newpath = "Uploads/" + username + "/"
+        if not os.path.exists(newpath):
+            os.makedirs(newpath)
+
+        conn.commit()
+        cur.close()
+        conn.close()
+
+        return render_template("index.html")
+
     return render_template("profile.html")
+
+@app.route("/MyProfile.html", methods=['GET', 'POST'])
+def myprofile():
+    if not loggedin():
+        return render_template("login.html")
+
+    conn = get_db_connection()
+    cur = conn.cursor()
+
+    cur.execute("SELECT * FROM workouts WHERE username = ?", (session['username'], ))
+
+    rows = cur.fetchall()
+
+    if len(list(rows)) > 0:
+
+        print("greater")
+
+        totalcals = 0
+        stringarr = []
+        timearr = []
+        #i = 0
+
+        for row in rows:
+            totalcals = totalcals + row[6]
+            if row[4] > 60:
+                timearr.append(row[4]/60)
+                stringarr.append("minutes")
+            else:
+                timearr.append(row[4])
+                stringarr.append("seconds")
+            #i = i + 1
+
+        totalcals = round(totalcals, 2)
+
+        cur.close()
+        conn.close()
+
+        ultralist = zip(rows, stringarr, timearr)
+
+        return render_template("MyProfile.html", username=session['username'], rows=rows, totalcals=totalcals, notempty=True, stringarr=stringarr, timearr=timearr, ultralist=ultralist)
+
+    else:
+        print("less")
+        cur.close()
+        conn.close()
+
+        return render_template("MyProfile.html", username=session['username'], totalcals=0, notempty=False)
 
 
 @app.route("/elements.html")
@@ -347,44 +449,45 @@ def predict(**filenames):
 
         result_labels.append(label)
 
+        if not ret:
+            # draw the activity on the output frame
+            text = "{}".format(label)
+            cv2.putText(output, text, (50, 75), cv2.FONT_HERSHEY_SIMPLEX, 1.25, (255, 0, 0), 3)
 
-        # draw the activity on the output frame
-        text = "{}".format(label)
-        cv2.putText(output, text, (50, 75), cv2.FONT_HERSHEY_SIMPLEX, 1.25, (255, 0, 0), 3)
+            key = cv2.waitKey(1) & 0xFF
+            # if the `q` key was pressed, break from the loop
+            if key == ord("q"):
+                # release the file pointers
+                print("[INFO] cleaning up...")
+                vs.release()
+                break
 
-        key = cv2.waitKey(1) & 0xFF
-        # if the `q` key was pressed, break from the loop
-        if key == ord("q"):
-            # release the file pointers
-            print("[INFO] cleaning up...")
-            vs.release()
-            break
-
-        with lock:
-            outputFrame = output.copy()
-
-    processed_labels = Counter(result_labels)
-    print(processed_labels.most_common())
-
-    exercise = processed_labels.most_common(1)[0][0]
-
-    if exercise == "none":
-        exercise = processed_labels.most_common(2)[1][0]
-        frames = processed_labels.most_common(2)[1][1]
-    else:
-        frames = processed_labels.most_common(1)[0][1]
-
-    print(exercise)
-    print(frames)
-
-    seconds = frames / fps
-    print(seconds)
-
-    print(exercise + " for " + str(seconds) + " seconds")
-
-    cur_intensity = int(cur_intensity)
+            with lock:
+                outputFrame = output.copy()
 
     if ret:
+
+        processed_labels = Counter(result_labels)
+        print(processed_labels.most_common())
+
+        exercise = processed_labels.most_common(1)[0][0]
+
+        if exercise == "none":
+            exercise = processed_labels.most_common(2)[1][0]
+            frames = processed_labels.most_common(2)[1][1] * 1.2
+        else:
+            frames = processed_labels.most_common(1)[0][1]
+
+        print(exercise)
+        print(frames)
+
+        seconds = frames / fps
+        print(seconds)
+
+        print(exercise + " for " + str(seconds) + " seconds")
+
+        cur_intensity = int(cur_intensity)
+
         if exercise == "deadlift":
             if cur_intensity == 1:
                 met = 4
@@ -413,7 +516,7 @@ def predict(**filenames):
         print("cur_age: " + str(cur_age))
         print("cur_sex: " + str(cur_sex))
 
-        if cur_sex == "male":
+        if cur_sex == "male" or cur_sex == "other":
             bmr = 66 + (6.23 * cur_weight) + (12.7 * cur_height) - (6.8 * cur_age)
         elif cur_sex == "female":
             bmr = 655 + (4.35 * cur_weight) + (4.7 * cur_height) - (4.7 * cur_age)

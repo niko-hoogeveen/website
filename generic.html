@@ -45,6 +45,28 @@ p:first-of-type {
 }
 </style>
 
+<div id="loading" style="display: none;">
+    <div class="spinner"></div>
+</div>
+
+<style>
+.spinner {
+  margin: 100px auto;
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #000;
+  border-radius: 50%;
+  animation: spinner 0.6s linear infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+</style>
+
 <style>
 	/* adjust margin of second br element */
 	.slider-break {
@@ -74,7 +96,7 @@ p:first-of-type {
 					<ul>
 						<li><a href="index.html">Home</a></li>
 						<li><a href="generic.html" class="active">Calorie Prediction Generator</a></li>
-						<li><a href="profile.html">Profile Creator</a></li>
+						<li><a href="MyProfile.html">My Profile</a></li>
 						<li><a href="logout">Logout</a></li>
 					</ul>
 				</nav>
@@ -84,9 +106,9 @@ p:first-of-type {
 		<div id="wrapper">
 			<section id="main" class="wrapper">
 				<div class="inner">
-					<h1 class="major">Input your image below</h1>
+					<h1 class="major">Upload your video!</h1>
 					<p style="margin-top: 0;">Add a video of you or working out to perform a calorie prediction!</p>
-					<form method="post" enctype="multipart/form-data">
+					<form id="upload-form" method="post" enctype="multipart/form-data">
 						<input style="margin-bottom: 5px;" type="file" name="file">
 						<br><br>
 						<p for="difficulty-slider">Please Select the Difficulty:</p>
@@ -96,7 +118,7 @@ p:first-of-type {
 						<input type="submit" value="Upload" class="primary">
 					</form>
 					<br>
-					<a href="stream.html">Stream</a>
+					<a href="stream.html">Stream (experimental)</a>
 				</div>
 			</section>
 		</div>

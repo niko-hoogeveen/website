@@ -22,6 +22,7 @@
 						<li><a href="index.html">Home</a></li>
 						<li><a href="generic.html" class="active">Calorie Prediction Generator</a></li>
 						<li><a href="profile.html">Elements</a></li>
+						<li><a href="MyProfile.html">My Profile</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -30,23 +31,11 @@
 			<div id="wrapper">
 					<section id="main" class="wrapper">
 						<div class="inner">
-							<h1 class="major">Input your image below</h1>
-							<p>Add a video of you or working out to perform a calorie prediction!</p>
-							<form action="upload.php" method="post" enctype="multipart/form-data">
-								<input type="file" name="video" accept="video/*">
-								<input type="submit" value="submit" class="primary">
-							</form>
 							<a method="POST" id="end" href="endstream.html">End stream</a>
+							<br>
+							<img src="{{ url_for('video_feed') }}">
 						</div>
-						<img src="{{ url_for('video_feed') }}">
 					</section>
-				
-					<select name="Users" id="Users">
-					  <option value="Justin">Justin</option>
-					  <option value="Doug">Doug</option>
-					  <option value="Ryan">Ryan</option>
-					  <option value="Niko">Niko</option>
-					</select>
 
 			</div>
 
