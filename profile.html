@@ -44,16 +44,11 @@
 									<option value="other">Other</option>
 								</select>
 								<br>
-<<<<<<< HEAD
 								<label for="height">Height:</label> 
 								<div style="display:flex; justify-content:space-between;">
-									<input type="text" placeholder="Feet">
-									<input type="text" placeholder="Inches">
+									<input type="text" placeholder="Feet" name="feet" value="{{ request.form['feet'] }}">
+									<input type="text" placeholder="Inches" name="inches" value="{{ request.form['inches'] }}">
 								</div>
-								
-=======
-								<label for="height">Height:</label> <input type="text" name="height" value="{{ request.form['height'] }}">
->>>>>>> bcc8828b5e05a2d73b17b6c8c0f0cb8f0ec5b5fb
 								<br>
 								<input type="submit" name="cp" id="cp" value="Create Profile">
 							</form>

@@ -229,7 +229,11 @@ def profile():
         print(weight)
         sex = request.form['sex']
         print(sex)
-        height = request.form['height']
+        feet = int(request.form['feet'])
+        print(feet)
+        inches = int(request.form['inches'])
+        print(inches)
+        height = (feet*12)+inches
         print(height)
         age = request.form['age']
         print(age)
@@ -474,7 +478,7 @@ def predict(**filenames):
 
         if exercise == "none":
             exercise = processed_labels.most_common(2)[1][0]
-            frames = processed_labels.most_common(2)[1][1] * 1.2
+            frames = processed_labels.most_common(2)[1][1] * 1.35
         else:
             frames = processed_labels.most_common(1)[0][1]
 
