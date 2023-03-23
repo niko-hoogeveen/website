@@ -79,19 +79,21 @@
 				<div class="inner">
 					<h1 class="major">Total Calories Burnt: {{totalcals}}</h1>
 					<div class="card-container">
-						{% for row in rows %}
-						<div class="card">
-							<video width="320" height="240" controls>
-								<source src="{{row[1]}}" type="video/mp4">
-								Your browser does not support the video tag.
-							</video>
-							<div class="separator"></div>
-							<p>Workout Classification: {{row[3]}}</p>
-							<p>Elapsed Time: {{'%0.2f'|format(row[4]|float)}}</p>
-							<p>Intensity: {{row[5]}}/3</p>
-							<p>Calories burnt: {{'%0.2f'|format(row[6]|float)}}</p>
-						</div>
-						{% endfor %}
+						{% if notempty: %}
+							{% for row, string, time in ultralist: %}
+								<div class="card">
+									<video width="320" height="240" controls>
+										<source src="{{row[1]}}" type="video/mp4">
+										Your browser does not support the video tag.
+									</video>
+									<div class="separator"></div>
+									<p>Workout Classification: {{row[3]}}</p>
+									<p>Elapsed Time: {{'%0.2f'|format(time|float)}} {{string}}</p>
+									<p>Intensity: {{row[5]}}/3</p>
+									<p>Calories burnt: {{'%0.2f'|format(row[6]|float)}}</p>
+								</div>
+							{% endfor %}
+						{% endif %}
 					</div>
 					<p>Disclaimer: If you just uploaded a video and it is not showing, it may still be processing!</p>
 				</div>

@@ -202,7 +202,7 @@ def stream():
     return render_template("stream.html")
 
 
-@app.route("/endstream.html")
+@app.route("/endstream.html", methods=['GET', 'POST'])
 def endstream():
     if not loggedin():
         return render_template("login.html")
@@ -210,7 +210,8 @@ def endstream():
     loop = False
     t.join()
     # return the rendered template
-    return render_template("generic.html")
+    return redirect(url_for('generic'))
+    #return render_template("generic.html")
 
 
 @app.route("/profile.html", methods=['GET', 'POST'])
@@ -263,17 +264,40 @@ def myprofile():
 
     rows = cur.fetchall()
 
-    totalcals = 0
+    if len(list(rows)) > 0:
 
-    for row in rows:
-        totalcals = totalcals + row[6]
+        print("greater")
 
-    totalcals = round(totalcals, 2)
+        totalcals = 0
+        stringarr = []
+        timearr = []
+        #i = 0
 
-    cur.close()
-    conn.close()
+        for row in rows:
+            totalcals = totalcals + row[6]
+            if row[4] > 60:
+                timearr.append(row[4]/60)
+                stringarr.append("minutes")
+            else:
+                timearr.append(row[4])
+                stringarr.append("seconds")
+            #i = i + 1
 
-    return render_template("MyProfile.html", username=session['username'], rows=rows, totalcals=totalcals)
+        totalcals = round(totalcals, 2)
+
+        cur.close()
+        conn.close()
+
+        ultralist = zip(rows, stringarr, timearr)
+
+        return render_template("MyProfile.html", username=session['username'], rows=rows, totalcals=totalcals, notempty=True, stringarr=stringarr, timearr=timearr, ultralist=ultralist)
+
+    else:
+        print("less")
+        cur.close()
+        conn.close()
+
+        return render_template("MyProfile.html", username=session['username'], totalcals=0, notempty=False)
 
 
 @app.route("/elements.html")
@@ -425,44 +449,45 @@ def predict(**filenames):
 
         result_labels.append(label)
 
+        if not ret:
+            # draw the activity on the output frame
+            text = "{}".format(label)
+            cv2.putText(output, text, (50, 75), cv2.FONT_HERSHEY_SIMPLEX, 1.25, (255, 0, 0), 3)
 
-        # draw the activity on the output frame
-        text = "{}".format(label)
-        cv2.putText(output, text, (50, 75), cv2.FONT_HERSHEY_SIMPLEX, 1.25, (255, 0, 0), 3)
+            key = cv2.waitKey(1) & 0xFF
+            # if the `q` key was pressed, break from the loop
+            if key == ord("q"):
+                # release the file pointers
+                print("[INFO] cleaning up...")
+                vs.release()
+                break
 
-        key = cv2.waitKey(1) & 0xFF
-        # if the `q` key was pressed, break from the loop
-        if key == ord("q"):
-            # release the file pointers
-            print("[INFO] cleaning up...")
-            vs.release()
-            break
-
-        with lock:
-            outputFrame = output.copy()
-
-    processed_labels = Counter(result_labels)
-    print(processed_labels.most_common())
-
-    exercise = processed_labels.most_common(1)[0][0]
-
-    if exercise == "none":
-        exercise = processed_labels.most_common(2)[1][0]
-        frames = processed_labels.most_common(2)[1][1]
-    else:
-        frames = processed_labels.most_common(1)[0][1]
-
-    print(exercise)
-    print(frames)
-
-    seconds = frames / fps
-    print(seconds)
-
-    print(exercise + " for " + str(seconds) + " seconds")
-
-    cur_intensity = int(cur_intensity)
+            with lock:
+                outputFrame = output.copy()
 
     if ret:
+
+        processed_labels = Counter(result_labels)
+        print(processed_labels.most_common())
+
+        exercise = processed_labels.most_common(1)[0][0]
+
+        if exercise == "none":
+            exercise = processed_labels.most_common(2)[1][0]
+            frames = processed_labels.most_common(2)[1][1] * 1.2
+        else:
+            frames = processed_labels.most_common(1)[0][1]
+
+        print(exercise)
+        print(frames)
+
+        seconds = frames / fps
+        print(seconds)
+
+        print(exercise + " for " + str(seconds) + " seconds")
+
+        cur_intensity = int(cur_intensity)
+
         if exercise == "deadlift":
             if cur_intensity == 1:
                 met = 4
