@@ -2570,7 +2570,8 @@ input, select, textarea {
 	}
 
 		.image img {
-			border-radius: 0.25em;
+			max-width: 100%;
+			height: auto;
 			display: block;
 			
 		}
@@ -3133,6 +3134,63 @@ input, select, textarea {
 
 		}
 
+/* Accordion */
+
+.accordion-item {
+
+}
+
+.accordion-header {
+	background-color: dodgerblue;
+	border: black;
+	outline-width: 10px;
+	cursor: pointer;
+	padding: 10px 20px;
+	width: 33%;
+	text-align: center;
+}
+
+.accordion-content {
+	display: none;
+	padding: 10px 20px;
+}
+
+.active .accordion-content {
+	display: block;
+}
+
+/* tab */
+.tab-container {
+	overflow:hidden;
+}
+
+.tab-btn {
+	background-color: #3e4094;
+	border-color: white;
+	border-width: thin;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.tab-btn.active {
+	background-color: #5e42a6;
+	border-color: white;
+	border-width: thin;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.tab-btn-hover {
+	background-color: #5052b5;
+}
+
+.tab-content {
+	display: none;
+}
+
+.tab-content.active {
+	display: block;
+}
 /* Table */
 
 	.table-wrapper {
@@ -3205,6 +3263,13 @@ input, select, textarea {
 
 	.wrapper {
 		position: relative;
+	}
+
+	.centered-section {
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 		.wrapper > .inner {
@@ -3871,6 +3936,40 @@ input, select, textarea {
 			}
 
 		}
+
+/* nav bar */
+
+#navbar {
+	background: #312450;
+}
+
+#navbar ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+#navbar li {
+	float: left;
+}
+
+#navbar li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px; /* Adjust padding as needed */
+	text-decoration: none;
+}
+
+#navbar li a:hover {
+	background-color: #ddd; /* Background color on hover */
+	color: black;
+}
+
+#navbar li a.active {
+	background-color: #4CAF50; /* Active link background color */
+	color: white;
+}
 
 /* Intro */
 

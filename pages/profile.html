@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Profile Creator</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Profile Creator</a>
+				<nav>
+					<ul>
+						<li><a href="logout">Logout</a></li>
+					</ul>
+				</nav>
+			</header>
+		
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Create your profile</h1>
+							<p></p>
+							<form id="createprofile" method="post" action="profile.html">
+                                <label for="age">Age:</label> <input type="text" name="age" value="{{ request.form['age'] }}">
+								<br>
+								<label for="weight">Weight (lbs):</label> <input type="text" name="weight" value="{{ request.form['weight'] }}">
+                                <br>
+								<label for="sex">Sex:</label>
+								<select name="sex" id="sex" value="{{ request.form['sex'] }}">
+									<option value="noselect">Select an option</option>
+									<option value="male">Male</option>
+									<option value="female">Female</option>
+									<option value="other">Other</option>
+								</select>
+								<br>
+								<label for="height">Height:</label> 
+								<div style="display:flex; justify-content:space-between;">
+									<input type="text" placeholder="Feet">
+									<input type="text" placeholder="Inches">
+								</div>
+								
+								<br>
+								<input type="submit" name="cp" id="cp" value="Create Profile">
+							</form>
+						</div>
+					</section>
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Queen's University. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

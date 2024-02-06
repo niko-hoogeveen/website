@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+
+<style>
+	.slidecontainer {
+  width: 25%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #d4c9c9; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #df08c2; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #ce07ce; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+p:first-of-type {
+    margin-top: 0;
+}
+</style>
+
+<div id="loading" style="display: none;">
+    <div class="spinner"></div>
+</div>
+
+<style>
+.spinner {
+  margin: 100px auto;
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #000;
+  border-radius: 50%;
+  animation: spinner 0.6s linear infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+</style>
+
+<style>
+	/* adjust margin of second br element */
+	.slider-break {
+	  margin: 1px 0;
+	}
+  </style>
+
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Calorie Predictor</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Prediction Network</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="generic.html" class="active">Calorie Prediction Generator</a></li>
+						<li><a href="MyProfile.html">My Profile</a></li>
+						<li><a href="logout">Logout</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<h1 class="major">Upload your video!</h1>
+					<p style="margin-top: 0;">Add a video of you or working out to perform a calorie prediction!</p>
+					<form id="upload-form" method="post" enctype="multipart/form-data">
+						<input style="margin-bottom: 5px;" type="file" name="file">
+						<br><br>
+						<p for="difficulty-slider">Please Select the Difficulty:</p>
+						<input style="margin-bottom: 0p; margin-top: 0px; padding-top: 0px; padding-bottom: 0px" name="intensity" value="{{request.form[intensity] }}" type="range" min="1" max="3" step="1" id="difficulty-slider">
+						<span id="difficulty-text"></span>
+						<br><br>
+						<input type="submit" value="Upload" class="primary">
+					</form>
+					<br>
+					<a href="stream.html">Stream (experimental)</a>
+				</div>
+			</section>
+		</div>
+
+		</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Queen's University. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+		<!-- JavaScript code here -->
+		<script>
+			const slider = document.getElementById("difficulty-slider");
+			const difficultyText = document.getElementById("difficulty-text");
+
+			slider.addEventListener("input", function() {
+			  let difficulty = "";
+			  if (this.value == 1) {
+				difficulty = "Light";
+			  } else if (this.value == 2) {
+				difficulty = "Medium";
+			  } else if (this.value == 3) {
+				difficulty = "Hard";
+			  }
+			  difficultyText.textContent = difficulty;
+			  console.log(difficulty);
+			});
+			slider.dispatchEvent(new Event("input"));
+		  </script>
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

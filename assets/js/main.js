@@ -4,6 +4,25 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+function toggleAccordion(evt) {
+	let panel = evt.currentTarget.nextElementSibling;
+	panel.classList.toggle("active");
+}
+
+function openTab(evt, tabName) {
+	let i, tabContent, tabLinks;
+	tabContent = document.getElementsByClassName("tab-content");
+	for (i = 0; i < tabContent.length; i++) {
+		tabContent[i].style.display = "none";
+	}
+	tabLinks = document.getElementsByClassName("tab-btn");
+	for (i = 0; i < tabLinks.length; i++) {
+		tabLinks[i].classList.remove("active");
+	}
+	document.getElementById(tabName).style.display = "block";
+	evt.currentTarget.classList.add("active");
+}
+
 (function($) {
 
 	var	$window = $(window),
