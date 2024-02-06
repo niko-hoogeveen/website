@@ -1,3 +1,3 @@
 # website
-Repo for my personal website yur
+Repo for my personal website
 www.nikohoogeveen.com
