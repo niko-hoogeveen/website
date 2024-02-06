@@ -1,0 +1,10 @@
+              precision    recall  f1-score   support
+
+  benchpress       0.89      0.99      0.94        69
+    deadlift       0.90      0.93      0.92        76
+        none       0.89      0.61      0.72        56
+       squat       0.81      0.90      0.86        73
+
+    accuracy                           0.87       274
+   macro avg       0.88      0.86      0.86       274
+weighted avg       0.87      0.87      0.87       274

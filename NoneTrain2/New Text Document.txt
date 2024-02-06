@@ -1,0 +1,9 @@
+				precision   recall   f1-score   support
+benchpress       		0.94        0.97       0.95            63
+deadlift              	0.95        0.90       0.93            63
+none                    0.93        0.71       0.81            56
+squat                  	0.80        0.97       0.88            65
+
+accuracy                                       0.89       247
+macro avg         	0.90        0.89       0.89       247
+weighted avg    		0.90        0.89       0.89       247
