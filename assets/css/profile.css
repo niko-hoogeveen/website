@@ -72,6 +72,7 @@ input, select, textarea {
     appearance: none;
 }
 
+
 /* Basic */
 
 html {
@@ -132,10 +133,11 @@ em, i {
 
 p {
     margin: 0 0 2em 0;
+    color: #36454F;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #787878;
+    color: black;
     font-weight: 400;
     line-height: 1em;
     margin: 0 0 1em 0;
@@ -2473,8 +2475,8 @@ input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover,
 .button:hover {
-    border-color: #49bf9d;
-    color: #49bf9d !important;
+    border-color: #8A9A5B;
+    color: #8A9A5B !important;
 }
 
 input[type="submit"]:active,
@@ -2482,8 +2484,8 @@ input[type="reset"]:active,
 input[type="button"]:active,
 .button:active {
     background-color: rgba(73, 191, 157, 0.1);
-    border-color: #49bf9d;
-    color: #49bf9d !important;
+    border-color: #8A9A5B;
+    color: #8A9A5B !important;
 }
 
 input[type="submit"].icon,
@@ -2526,8 +2528,8 @@ input[type="submit"].primary,
 input[type="reset"].primary,
 input[type="button"].primary,
 .button.primary {
-    background-color: #49bf9d;
-    border-color: #49bf9d;
+    background-color: #8A9A5B;
+    border-color: #8A9A5B;
     color: #ffffff !important;
 }
 
