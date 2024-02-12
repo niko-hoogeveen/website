@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
 <!--
-	Hyperspace by HTML5 UP
+	Aerial by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html lang="en">
+<html>
 	<head>
 		<title>Niko Hoogeveen's Website</title>
 		<meta charset="utf-8" />
@@ -13,143 +13,36 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
+	<div id="wrapper">
+		<div id="bg"></div>
+		<div id="overlay"></div>
+		<div id="main">
 
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#intro">Home</a></li>
-							<li><a href="#one">About Me</a></li>
-							<li><a href="#two">Projects</a></li>
-							<li><a href="#three">Hobbies</a></li>
-							<li><a href="#four">Resume</a></li>
-							<li><a href="#five">Contact Me</a></li>
-						</ul>
-					</nav>
-				</div>
-			</section>
-
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Intro -->
-					<section id="intro" class="centered-section">
-						<div class="inner">
-							<h1>Niko Hoogeveen</h1>
-							<img src="images/profilepic.jpg" alt="Profile Picture" data-position="right center" width="500"/>
-							<br>
-							<sub>Welcome to my personal webpage! This site serves as my CV for my professional endeavours.
-								I hope you can get to know me a little better, enjoy.</sub>
-							<br><br>
-						</div>
-					</section>
-				<!-- One -->
-				<section id="one" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>About Me</h2>
-							<p>Welcome to my corner of the internet! I'm Niko Hoogeveen, a recent graduate from the
-								Stephen Smith School of Engineering at Queen's University, specializing in Computer Engineering.
-								With a passion for coding, problem-solving, and critical thinking, I'm on a mission to kickstart my career in software engineering.
-							<br><br>
-								During my time at Queen's University, I honed my skills in various programming languages
-								such as C, C++, Python, Java, and more. But it wasn't just about learning languages;
-								it was about applying problem-solving knowledge in a diverse . One of my proudest
-								accomplishments was co-creating "PantryPal," a recipe generation app developed during a
-								Hackathon event. This app allows users to effortlessly whip up meals based on ingredients
-								they have at home, showcasing my ability to innovate and collaborate under pressure.
-							<br><br>
-								Beyond the classroom, I've embraced diverse experiences, from serving with the Canadian
-								Coast Guard Inshore Rescue Boat Service to tutoring fellow students in mathematics and computer science.
-								These roles have not only sharpened my technical abilities but also instilled in me the
-								value of effective communication, teamwork, and leadership – qualities I bring to every aspect of my life.
-							<br><br>
-								When I'm not immersed in the world of technology, you can find me indulging my adventurous
-								spirit through kite-surfing, downhill skiing, or hitting the trails on my mountain bike.
-								Whether I'm shredding lines of code or carving through fresh powder, I thrive on challenges
-								and opportunities for growth.
-							<br><br>
-								Join me as I embark on this exciting journey in the realm of software engineering,
-								fueled by curiosity, determination, and a drive to innovate. Let's connect
-								and create something extraordinary together!
-							</p>
-							<ul class="actions">
-								<li><a href="#five" class="button">Contact Me</a></li>
-							</ul>
-						</div>
-				</section>
-				
-				<!--- two --->
-				<section id="two" class="wrapper style2-alt">
-					<div class="inner">
-						<h2>Relevant Projects and Experience</h2>
-						<p>In this section, I've highlighted the most important projects that have contributed to my
-							technical growth since I started developing. </p>
-
-						<div class="tab-container">
-							<button class="tab-btn" onclick="openTab(event, 'tab1')">Pantry Pal</button>
-							<button class="tab-btn" onclick="openTab(event, 'tab2')">Quby Compiler Construction</button>
-							<button class="tab-btn" onclick="openTab(event, 'tab3')">Cactus App</button>
-
-							<div id="tab1" class="tab-content">
-								<p>pantry pal info</p>
-							</div>
-							<div id="tab2" class="tab-content">
-								<p>quby info</p>
-							</div>
-							<div id="tab3" class="tab-content">
-								<p>Rewards program geared towards small to medium-sized businesses. Users can download the app,
-									sign-up and start collecting points at local businesses immediately. The Cactus team has not
-									yet launched the live product, but we are in the midst of development. To learn more visit www.cactusapp.ca</p>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section id="three" class="wrapper style1">
-					<div class="inner">
-						<h2>Meet the Team!</h2>
-						<p>Here is a cute photo of the boys. Enjoy.</p>
-						<img src="images/Monkeys.jpg" alt="" data-position="right center" width = 400 />>
-					</div>
-				</section>
-
-				<section id="four" class="wrapper style2-alt">
-					<div class="inner">
-						<h2>My Resume</h2>
-						<p>Here's a copy of my resume, which you can download from this link: </p>
-						<a href="/documents/Niko%20Hoogeveen%20Resume.pdf" download>Download Resume</a>
-					</div>
-				</section>
-
-				<section id="five" class="wrapper style1">
-					<div class="inner">
-						<h2>Contact Me</h2>
-						<p>Here is a cute photo of the boys. Enjoy.</p>
-						<img src="images/Monkeys.jpg" alt="" data-position="right center" width = 400 />>
-					</div>
-				</section>
-			</div>
-
-
-
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Queen's University. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			<!-- Header -->
+			<header id="header">
+				<h1>Niko Hoogeveen</h1>
+				<p>Computer Engineering Graduate &nbsp;&bull;&nbsp; Cyborg &nbsp;&bull;&nbsp; Aspiring Software Dev</p>
+				<nav>
+					<ul>
+						<li><a href="pages/profile.html" class="icon solid fa-user"><span class="label">About Me</span></a></li>
+						<li><a href="https://www.linkedin.com/in/niko-hoogeveen-52b7a9205/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="mailto:niko.hoogeveen@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						<li><a href="https://github.com/niko-hoogeveen" class="icon brands fa-github"><span class="label">Github</span></a></li>
 					</ul>
-				</div>
+				</nav>
+			</header>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<span class="copyright">&copy; Niko Hoogeveen. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
 			</footer>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
+		</div>
+	</div>
+	<script>
+		window.onload = function() { document.body.classList.remove('is-preload'); }
+		window.ontouchmove = function() { return false; }
+		window.onorientationchange = function() { document.body.scrollTop = 0; }
+	</script>
 	</body>
 </html>

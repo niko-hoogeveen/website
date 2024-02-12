@@ -15,7 +15,7 @@ function openTab(evt, tabName) {
 	for (i = 0; i < tabContent.length; i++) {
 		tabContent[i].style.display = "none";
 	}
-	tabLinks = document.getElementsByClassName("tab-btn");
+	tabLinks = document.getElementsByClassName("button primary small");
 	for (i = 0; i < tabLinks.length; i++) {
 		tabLinks[i].classList.remove("active");
 	}

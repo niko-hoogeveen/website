@@ -4,76 +4,150 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="en">
 	<head>
-		<title>Profile Creator</title>
+		<title>Niko Hoogeveen's Website</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/profile.css" />
 		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 
-		<!-- Header -->
-			<header id="header">
-				<a href="../index.html" class="title">Profile Creator</a>
-				<nav>
-					<ul>
-						<li><a href="logout">Logout</a></li>
-					</ul>
-				</nav>
-			</header>
-		
-		<!-- Wrapper -->
-			<div id="wrapper">
-				<!-- Main -->
-					<section id="main" class="wrapper">
-						<div class="inner">
-							<h1 class="major">Create your profile</h1>
-							<p></p>
-							<form id="createprofile" method="post" action="profile.html">
-                                <label for="age">Age:</label> <input type="text" name="age" value="{{ request.form['age'] }}">
-								<br>
-								<label for="weight">Weight (lbs):</label> <input type="text" name="weight" value="{{ request.form['weight'] }}">
-                                <br>
-								<label for="sex">Sex:</label>
-								<select name="sex" id="sex" value="{{ request.form['sex'] }}">
-									<option value="noselect">Select an option</option>
-									<option value="male">Male</option>
-									<option value="female">Female</option>
-									<option value="other">Other</option>
-								</select>
-								<br>
-								<label for="height">Height:</label> 
-								<div style="display:flex; justify-content:space-between;">
-									<input type="text" placeholder="Feet">
-									<input type="text" placeholder="Inches">
-								</div>
-								
-								<br>
-								<input type="submit" name="cp" id="cp" value="Create Profile">
-							</form>
-						</div>
-					</section>
-			</div>
+	<!-- Header  -->
+	<header id="header">
+			<a href="#" class="image fit"><img src="../images/profilepic.jpg" alt="Profile Pic" /></a>
+			<h1>I'm <strong>Niko Hoogeveen</strong>, nice to meet you!<br>
+				Thank you for visiting my website<br></h1>
+			<br>
+			<ul class="actions fit">
+				<li><a href="../index.html" class="button">Back to Home</a></li>
+			</ul>
+	</header>
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Queen's University. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+	<!-- main -->
+	<div id="main">
+		<section id="one" class="wrapper style1">
+			<div class="inner">
+				<h2>About Me</h2>
+				<p>Welcome to my corner of the internet! I'm Niko Hoogeveen, a recent graduate from the
+					Stephen Smith School of Engineering at Queen's University, specializing in Computer Engineering.
+					With a passion for coding, problem-solving, and critical thinking, I'm on a mission to kickstart my career in software engineering.
+					<br><br>
+					During my time at Queen's University, I honed my skills in various programming languages
+					such as C, C++, Python, Java, and more. But it wasn't just about learning languages;
+					it was about applying problem-solving knowledge in a diverse . One of my proudest
+					accomplishments was co-creating "PantryPal," a recipe generation app developed during a
+					Hackathon event. This app allows users to effortlessly whip up meals based on ingredients
+					they have at home, showcasing my ability to innovate and collaborate under pressure.
+					<br><br>
+					Beyond the classroom, I've embraced diverse experiences, from serving with the Canadian
+					Coast Guard Inshore Rescue Boat Service to tutoring fellow students in mathematics and computer science.
+					These roles have not only sharpened my technical abilities but also instilled in me the
+					value of effective communication, teamwork, and leadership – qualities I bring to every aspect of my life.
+					<br><br>
+					When I'm not immersed in the world of technology, you can find me indulging my adventurous
+					spirit through kite-surfing, downhill skiing, or hitting the trails on my mountain bike.
+					Whether I'm shredding lines of code or carving through fresh powder, I thrive on challenges
+					and opportunities for growth.
+					<br><br>
+					Join me as I embark on this exciting journey in the realm of software engineering,
+					fueled by curiosity, determination, and a drive to innovate. Let's connect
+					and create something extraordinary together!
+				</p>
+				<ul class="actions">
+					<li><a href="#four" class="button">Contact Me</a></li>
+				</ul>
+			</div>
+		</section>
+
+		<section id="two" class="wrapper style1">
+			<div class="inner">
+				<h2>Relevant Projects and Experience</h2>
+				<p>In this section, I've highlighted the most important projects that have contributed to my
+					technical growth since I started developing. </p>
+
+				<div class="tab-container">
+					<button class="button primary small" onclick="openTab(event, 'tab1')">Cactus App</button>
+					<button class="button primary small" onclick="openTab(event, 'tab2')">Quby Compiler Construction</button>
+					<button class="button primary small" onclick="openTab(event, 'tab3')">Pantry Pal App</button>
+
+					<div id="tab1" class="tab-content">
+						<p>Rewards program geared towards small to medium-sized businesses. Users can download the app,
+							sign-up and start collecting points at local businesses immediately. The Cactus team has not
+							yet launched the live product, but we are in the midst of development. To learn more visit www.cactusapp.ca</p>
+					</div>
+					<div id="tab2" class="tab-content">
+						<p>quby info</p>
+					</div>
+					<div id="tab3" class="tab-content">
+						<p>Pantry Pal</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="three" class="wrapper style1">
+			<div class="inner">
+				<h2>Resume</h2>
+				<p>If you're interested in finding out more about me - here's a copy of my resume, which you can download from this link: </p>
+				<a href="/documents/Niko%20Hoogeveen%20Resume.pdf" class="button" download>Download Resume</a>
+			</div>
+		</section>
+
+		<section id="four">
+			<h2>Get In Touch</h2>
+			<p>Let's connect! Feel free to drop your name and email address the boxes below, with a message regarding the purpose of your
+			inquiry. Optionally, you can just email or call me directly, as my contact information is listed below.</p>
+			<div class="row">
+				<div class="col-8 col-12-small">
+					<form id="contactForm" method="post">
+						<div class="row gtr-uniform gtr-50">
+							<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
+							<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
+							<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
+						</div>
+						<br>
+						<div class="submitted-message" id="submittedMessage">Your message has been submitted!</div>
+						<ul class="actions">
+							<li><input type="submit" value="Send Message" /></li>
+						</ul>
+					</form>
+				</div>
+				<div class="col-4 col-12-small">
+					<ul class="labeled-icons">
+						<li>
+							<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
+							Located in Barrie, ON<br />
+						</li>
+						<li>
+							<h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
+							705-220-5623
+						</li>
+						<li>
+							<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
+							<a href="mailto:niko.hoogeveen@gmail.com">niko.hoogeveen@gmail.com</a>
+						</li>
 					</ul>
 				</div>
-			</footer>
+			</div>
+		</section>
 
-		<!-- Scripts -->
-			<script src="../assets/js/jquery.min.js"></script>
-			<script src="../assets/js/jquery.scrollex.min.js"></script>
-			<script src="../assets/js/jquery.scrolly.min.js"></script>
-			<script src="../assets/js/browser.min.js"></script>
-			<script src="../assets/js/breakpoints.min.js"></script>
-			<script src="../assets/js/util.js"></script>
-			<script src="../assets/js/main.js"></script>
+	</div>
+
+	<!-- Scripts -->
+	<script src="../assets/js/main.js"></script>
+	<script>
+		document.getElementById("contactForm").addEventListener("submit", function(event) {
+			event.preventDefault();
+			setTimeout(function() {
+				document.getElementById("submittedMessage").style.display = "block";
+			}, 500)
+
+			document.getElementById("contactForm").
+		});
+	</script>
 
 	</body>
 </html>
+
