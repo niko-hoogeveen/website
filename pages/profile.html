@@ -75,9 +75,10 @@
 					<div id="tab1" class="tab-content">
 						<br>
 						<h3>Cactus App</h3>
-						<p>Rewards program geared towards small to medium-sized businesses. Users can download the app,
-							sign-up and start collecting points at local businesses immediately. The Cactus team has not
-							yet launched the live product, but we are in the midst of development.</p>
+						<p>Cactus is a rewards program geared towards small to medium-sized businesses. Users can download the app,
+							sign-up and start collecting points at local businesses immediately. This app is a project I'm currently working on
+							with some peers from Queen's University. The Cactus team has not yet launched the live product, but we are in the midst of development.</p>
+						<p>Please feel free to check out our concept website, and stay posted on our official launch!</p>
 						<a href="https://cactusapp.ca/" target="_blank" class="button primary small">Learn More About Cactus</a>
 					</div>
 					<div id="tab2" class="tab-content">
@@ -88,15 +89,23 @@
 							language and from the Pascal successor language Turing. In the project, we implemented
 							Quby by modifying and extending each of the four phases of the existing PT Pascal compiler.
 							<br><br>
-							Please feel free to look at the project source code here:
+							This project was one of the hardest undertakings I've completed in my coding career thus far, and I learned a great deal,
+							not only about compilers, but also about the value of persistence, communication, and consistency in a project. The project ran over the course
+							of the entire term, and required many hours of poring over the existing PT Pascal compiler to properly modify and extend its
+							functionality to the Quby language. The project certainly would not have gone successfully without proper commitment from myself or my team members.
+							<br><br>
+							If you want to see more, please feel free to look at the project source code here:
 						</p>
 						<a href="https://github.com/niko-hoogeveen/cmpe458" target="_blank" class="button primary small">Learn More About the Quby Compiler</a>
 					</div>
 					<div id="tab3" class="tab-content">
 						<br>
 						<h3>Pantry Pal App</h3>
-						<p>Pantry Pal was an app created during a hackathon event I participated in with three other students from Queen's. The app can scan
-							or add food items to their virtual "Pantry", and the app generates a list of recipes that incorporate the food items in the users pantry</p>
+						<p>Pantry Pal was an app created during a hackathon event I participated in with three other students from Queen's. Users can scan
+							or add food items to their virtual "Pantry", and the app generates a list of recipes that incorporate the food items in the users pantry.
+							The app was created in Android Studio, using spoonacular API to create a list of recipes based on the available ingredients. </p>
+						<p>During the hackathon event, I learned a lot about coding under pressure, and working together with a small team to work efficiently in creating the app
+							within a short period of time. To learn more about the project, the button below will take to you to the project's source code.</p>
 						<a href="https://github.com/AndyCraig1/PantryPal" target="_blank" class="button primary small">Learn More About Pantry Pal</a>
 					</div>
 				</div>
@@ -106,7 +115,9 @@
 		<section id="three" class="wrapper style1">
 			<div class="inner">
 				<h2>Resume</h2>
-				<p>If you're interested in finding out more about me - here's a copy of my resume, which you can download from this link: </p>
+				<p>If you're interested in finding out more about me - here's a copy of my resume, which you can also download from the link below: </p>
+				<embed src="/documents/Niko%20Hoogeveen%20Resume.pdf" type="application/pdf" width="100%" height="800px"/>
+				<br><br>
 				<a href="/documents/Niko%20Hoogeveen%20Resume.pdf" class="button primary" download>Download Resume</a>
 			</div>
 		</section>
@@ -115,6 +126,7 @@
 			<h2>Get In Touch</h2>
 			<p>Let's connect! Feel free to drop your name and email address the boxes below, with a message regarding the purpose of your
 			inquiry. Optionally, you can just email or call me directly, as my contact information is listed below.</p>
+			<h4>*PLEASE NOTE* This form has been temporarily disabled - please feel free to shoot me an email or text message instead.</h4>
 			<div class="row">
 				<div class="col-8 col-12-small">
 					<form id="contactForm" method="post">
@@ -126,7 +138,7 @@
 						<br>
 						<div class="submitted-message" id="submittedMessage">Your message has been submitted!</div>
 						<ul class="actions">
-							<li><input type="submit" value="Send Message" class="button primary" /></li>
+							<li><input type="submit" value="Send Message" class="button primary" disabled /></li>
 						</ul>
 					</form>
 				</div>
@@ -134,11 +146,11 @@
 					<ul class="labeled-icons">
 						<li>
 							<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
-							Located in Barrie, ON<br />
+							Located in Ontario<br />
 						</li>
 						<li>
 							<h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
-							705-220-5623
+							<a href="tel:+17052205623">+1705-220-5623</a>
 						</li>
 						<li>
 							<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
@@ -159,8 +171,6 @@
 			setTimeout(function() {
 				document.getElementById("submittedMessage").style.display = "block";
 			}, 500)
-
-			document.getElementById("contactForm").
 		});
 	</script>
 
