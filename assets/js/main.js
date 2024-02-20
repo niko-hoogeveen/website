@@ -23,6 +23,17 @@ function openTab(evt, tabName) {
 	evt.currentTarget.classList.add("active");
 }
 
+function showMessage() {
+	document.getElementById("contactForm").addEventListener("submit", function(event) {
+		event.preventDefault();
+		setTimeout(function() {
+			document.getElementById("submittedMessage").style.display = "block";
+		}, 500)
+	});
+}
+
+
+
 (function($) {
 
 	var	$window = $(window),

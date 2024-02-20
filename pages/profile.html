@@ -124,21 +124,19 @@
 
 		<section id="four">
 			<h2>Get In Touch</h2>
-			<p>Let's connect! Feel free to drop your name and email address the boxes below, with a message regarding the purpose of your
-			inquiry. Optionally, you can just email or call me directly, as my contact information is listed below.</p>
-			<h4>*PLEASE NOTE* This form has been temporarily disabled - please feel free to shoot me an email or text message instead.</h4>
-			<div class="row">
+			<p>Let's connect! Feel free to reach out to me at my email address, or phone number listed below - I'm always happy to chat, or answer any questions. </p>
+			<!--<div class="row">
 				<div class="col-8 col-12-small">
-					<form id="contactForm" action= "https://formsubmit.co/niko.hoogeveen@gmail.com" method="POST">
+					<form id="contactForm" target="_blank" action= "https://formsubmit.co/8b805ba9e36cf8b896083f58ccb253c5" method="POST">
 						<div class="row gtr-uniform gtr-50">
-							<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" required/></div>
-							<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" required/></div>
-							<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="10"></textarea></div>
+							<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
+							<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
+							<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="8"></textarea></div>
 						</div>
 						<br>
 						<div class="submitted-message" id="submittedMessage">Your message has been submitted!</div>
 						<ul class="actions">
-							<li><button type="submit" value="Send Message" class="button primary">Send Message</button></li>
+							<li><input type="submit" value="Send Message" class="button primary" /></li>
 						</ul>
 					</form>
 				</div>
@@ -150,13 +148,29 @@
 						</li>
 						<li>
 							<h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
-							<a href="tel:+17052205623">+1705-220-5623</a>
+							<a href="tel:+17052205623">+1 705-220-5623</a>
 						</li>
 						<li>
 							<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
 							<a href="mailto:niko.hoogeveen@gmail.com">niko.hoogeveen@gmail.com</a>
 						</li>
 					</ul>
+				</div>
+			</div>-->
+			<div class="container">
+				<div class="row text-center">
+					<div class="col-3-medium">
+						<i class="icon solid fa-envelope"></i>
+						<a href="mailto:niko.hoogeveen@gmail.com">niko.hoogeveen@gmail.com</a>
+					</div>
+					<div class="col-3-medium">
+						<i class="icon solid fa-mobile-alt"></i>
+						<a href="tel:+17052205623">+1 705-220-5623</a>
+					</div>
+					<div class="col-3-medium">
+						<i class="fas fa-map-marker-alt"></i>
+						Located in Ontario, Canada
+					</div>
 				</div>
 			</div>
 		</section>
@@ -165,14 +179,6 @@
 
 	<!-- Scripts -->
 	<script src="../assets/js/main.js"></script>
-	<script>
-		document.getElementById("contactForm").addEventListener("submit", function(event) {
-			event.preventDefault();
-			setTimeout(function() {
-				document.getElementById("submittedMessage").style.display = "block";
-			}, 500)
-		});
-	</script>
 
 	</body>
 </html>
