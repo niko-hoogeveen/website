@@ -129,16 +129,16 @@
 			<h4>*PLEASE NOTE* This form has been temporarily disabled - please feel free to shoot me an email or text message instead.</h4>
 			<div class="row">
 				<div class="col-8 col-12-small">
-					<form id="contactForm" method="post">
+					<form id="contactForm" action= "https://formsubmit.co/niko.hoogeveen@gmail.com" method="POST">
 						<div class="row gtr-uniform gtr-50">
-							<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-							<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-							<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
+							<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" required/></div>
+							<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" required/></div>
+							<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="10"></textarea></div>
 						</div>
 						<br>
 						<div class="submitted-message" id="submittedMessage">Your message has been submitted!</div>
 						<ul class="actions">
-							<li><input type="submit" value="Send Message" class="button primary" disabled /></li>
+							<li><button type="submit" value="Send Message" class="button primary">Send Message</button></li>
 						</ul>
 					</form>
 				</div>
