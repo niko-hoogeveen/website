@@ -10,6 +10,55 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			@media screen and (max-width: 480px) {		 
+				body {
+						font-size: 16px; /* Adjust font size as needed */
+				}
+				h1, h2, h3, h4, h5, h6 {
+        			font-size: 1.5em; /* Adjust heading sizes */
+    			}
+    			p {
+        			font-size: 14px; /* Adjust paragraph text size */
+    			}
+				.container {
+        			padding: 20px; /* Adjust padding around containers */
+    			}
+    			.image-and-text {
+        			margin-bottom: 20px; /* Add margin between image-and-text sections */
+    			}
+				#nav {
+        			text-align: center; /* Center align the navigation links */
+    			}
+    			#nav ul {
+        			padding: 0;
+        			margin: 0;
+    			}
+    			#nav li {
+        			display: inline-block;
+        			margin-right: 10px; /* Add margin between navigation items */
+    			}
+
+				.button {
+    				padding: 10px 20px; /* Adjust button padding */
+    				font-size: 14px; /* Adjust button text size */
+				}
+				.video {
+    				max-width: 100%;
+    				height: auto;
+				}
+				.image.left,
+    			.image.right {
+        			float: none; /* Remove float for better stacking on small screens */
+        			padding: 0; /* Remove padding to avoid unnecessary spacing */
+        			margin-bottom: 1em; /* Add margin bottom for spacing between images */
+    			}
+				.image.small {
+					max-width: 100%;
+					height: auto;
+				}
+			}
+		</style>
 	</head>
 	<body class="landing is-preload">
 		<div id="page-wrapper">
@@ -40,7 +89,6 @@
 						<span class="image featured"><img src="images/disclaimer.png" alt="" /></span>
                     </div>
 					<div class="container large" style="text-align: center;">
-						<h3>Find out more about $CORN:</h3>
 						<ul class="actions special">
 							<li><a href="https://t.me/jewwestbase" target="_blank" class="button large">Telegram</a></li>
 							<li><a href="https://x.com/basedjewwest" target="_blank" class="button large">Twitter (X)</a></li>
@@ -50,21 +98,18 @@
 					
 
 					<section class="container large" style="text-align: center;">
-						<div class="image-and-text">
-							<div class="text-content-left">
-								<ul>
-									<li><h3>We are more than just a meme,</h3></li>
-									<li><h3>$CORN is a statement about who </h3></li>
-									<li><h3>we are and what we value.</h3></li>
-								</ul>
-							</div>
-							<div class="video-container">
-								<video autoplay loop controls class="video">
-									<source src="images/video_new.mp4" type="video/mp4">
-									Your browser does not support the video tag
-								</video>
-							</div>
-							
+						<div class="text-content">
+							<ul>
+								<li><h3>We are more than just a meme,</h3></li>
+								<li><h3>$CORN is a statement about who </h3></li>
+								<li><h3>we are and what we value.</h3></li>
+							</ul>
+						</div>
+						<div class="container video">
+							<video autoplay loop controls class="video">
+								<source src="images/video_new.mp4" type="video/mp4">
+								Your browser does not support the video tag
+							</video>
 						</div>
 					</section>
 
