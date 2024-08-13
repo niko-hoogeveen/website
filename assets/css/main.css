@@ -7,6 +7,62 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+/* Keeper Draft CSS */
+#players {
+	float: right;
+	width: 50%;
+	/*display: none;*/
+}
+
+#teams {
+	/*display: none;*/
+	float: left;
+	width: 50%;
+}
+
+#team1, #team2, #team3, #team4, #team5, #team6, #team7, #team8, #team9, #team10 {
+	
+}
+
+#players a:hover {
+	color: green;
+}
+
+.teamHeader {
+	display: inline-block;
+	font-size: 1.5em;
+	-webkit-margin-before: 0.83em;
+	-webkit-margin-after: 0.83em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	font-weight: bold;
+}
+
+#results {
+	float: left;
+	clear: left;
+	margin: 100px 0;
+}
+
+#instructions {
+	font-size: 1.25em;
+	color: red;
+}
+
+#startButton {
+	background-color: #090;
+	padding: 10px 30px;
+	border-style: none;
+	border-radius: 5px;
+	color: white;
+	margin: 20px 0;
+}
+
+#startButton:hover {
+	background-color: #0a0;
+}
+
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
