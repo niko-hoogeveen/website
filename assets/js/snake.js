@@ -19,8 +19,6 @@ coinbaseImg.src = "images/coinbase.png";
 const snakepos = 160;
 const applepos = 320
 const sqrtgrid = 25;
-let tileCountX;
-let tileCountY;
 
 const grid = 16;
 let count = 0;
