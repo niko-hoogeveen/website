@@ -198,7 +198,6 @@ function handleTouchEnd(e) {
         return;
     }
 
-
     const changedTouch = e.changedTouches[0];
     let xUp = changedTouch.clientX;
     let yUp = changedTouch.clientY;
