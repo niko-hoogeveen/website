@@ -36,15 +36,21 @@ h1, h2 {
 }
 
 .score {
-    margin-top: 1rem;
+    margin-top: 0;
     font-size: 1.2rem;
     text-align: center;
   }
 .score h2 {
     margin: 0;
 }
-.pause-button {
+.menu-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin-bottom: 1rem;
+    width: 100%;
+}
+.pause-button {
     background-color: #444;
     color: #fff;
     border: 1px solid #777;
@@ -59,8 +65,8 @@ h1, h2 {
 
 iframe {
     border: 2px solid #fff;
-    width: 400px;
-    height: 800px;
+    width: 450px;
+    height: 550px;
     margin-top: 1rem;
     overflow: hidden;
     /* Set scrolling="no" or overflow hidden inside the iframe. */
