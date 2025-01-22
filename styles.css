@@ -10,7 +10,7 @@ html, body {
     font-family: Arial, sans-serif;
 }
 .game {
-    touch-action: none;     /* For browsers that support it */
+    touch-action:auto;     /* For browsers that support it */
 }
 body {
     background: black;
