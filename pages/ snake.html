@@ -1,26 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>SOL'd Out</title>
+        <title>Snake</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" type="text/css" href="styles.css" />
     </head>
     <body>
-        <header>
-            <div class="page-title">
-                <h1>SOL'd Out!</h1>
-            </div>
-        </header>
         <div class="container">
             <button class="pause-button" id="pauseBtn">Pause</button>
             <div class="game">
-                <iframe 
-                    src="snake.html"
-                    frameborder="0"
-                    srolling="no"
-                    allowtransparency="true"
-                ></iframe>
+                <canvas id="game" width="400" height="400"></canvas>
             </div>
             <div class="score">
                 <h2>Score: <span id="score">0</span></h2>

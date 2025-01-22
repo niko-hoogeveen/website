@@ -9,9 +9,6 @@ html, body {
     justify-content: center;
     font-family: Arial, sans-serif;
 }
-.game {
-    touch-action:auto;     /* For browsers that support it */
-}
 body {
     background: black;
     display: flex;
@@ -58,4 +55,13 @@ h1, h2 {
 }
 .pause-button:hover {
     background-color: #555;
+}
+
+iframe {
+    border: 2px solid #fff;
+    width: 400px;
+    height: 400px;
+    margin-top: 1rem;
+    overflow: hidden;
+    /* Set scrolling="no" or overflow hidden inside the iframe. */
 }
