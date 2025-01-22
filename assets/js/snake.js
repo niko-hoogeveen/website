@@ -1,6 +1,14 @@
 const canvas = document.getElementById('game');
 const context = canvas.getContext('2d');
 
+canvas.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+}, { passive: false });
+  
+canvas.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+}, { passive: false });  
+
 const pauseBtn = document.getElementById('pauseBtn');
 const solImg = new Image();
 solImg.src = "images/sol.png";
