@@ -1,28 +1,86 @@
+@font-face {
+    font-family: 'megamax'; /* The name you'll use in CSS */
+    src: url('assets/webfonts/megamax.ttf') format('truetype'); /* Path to your TTF */
+    font-weight: normal;
+    font-style: normal;
+}
+
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background: black;
+    background: linear-gradient(to left, #39034e, #109b65);
     display: flex;
     flex-direction: column; /* Stack title + canvas vertically */
     align-items: center;
     justify-content: center;
     font-family: Arial, sans-serif;
 }
-body {
-    background: black;
+/* Hero header: add margin-top to avoid being hidden behind the fixed nav */
+.hero-header {
+    padding-top: 5rem;
+    text-align: center;
+    margin-top: 160rem; /* slightly more than nav height, so it's fully visible */
+    background: linear-gradient(to right, #0c4d4d, #0d0436);
+    width: 100%;
+}
+
+.navbar {
+    position: sticky;      /* stays at top on scroll */
+    top: 0;
+    right: 0;
+    width: 100%;
+    background-color: #381e75;
+    z-index: 999;         /* ensure nav stays above other elements */
+}
+
+.nav-inner {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 100%; /* container max width */
+    margin: 0 auto;
+    padding: 2rem 2rem; /* space inside the nav */
+}
+
+.nav-logo {
+    font-family: 'megamax', sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 1.1rem;
     justify-content: center;
-    width: 100%;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #7346db;
+    border-radius: 0.75rem;
 }
 
 canvas {
     border: 1px solid white;
 }
 
-h1, h2 {
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'megamax', sans-serif;
     color: white;
+}
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
 }
 
 .page-title {
@@ -51,6 +109,154 @@ h1, h2 {
     margin-bottom: 1rem;
     width: 90%;
 }
+.section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    width: 75%;
+    text-align: center;
+}
+
+.section-container p {
+    font-family: 'megamax', sans-serif;
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.section-container .list {
+    list-style: none;
+}
+
+.section-container .list-text {
+    font-family: 'megamax', sans-serif;
+    color: white;
+    font-size: 1.2rem;
+    
+}
+.button-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.button-container .solbutton {
+    background-color: #FF5733;; /* Neon pink */
+    color: #fff;
+    border: none;
+    padding: 2rem 4rem;
+    cursor: pointer;
+    font-size: 2rem;
+    border-radius: 3rem;
+    transition: 
+      transform 0.2s ease, 
+      box-shadow 0.2s ease;
+    font-family: 'megamax', sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.5) 0.2rem 0.2rem 1rem;
+}
+.button-container .solbutton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #FF5733;;
+}
+
+/* Active (pressed) state: slightly shrink */
+.button-container .solbutton:active {
+    transform: scale(0.95);
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+.step {
+    display: flex;
+    align-items: center;
+    background: #005555;
+    border: 0.3rem solid #FF5733;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    width: 80%;
+    color: #FFFFFF;
+    text-align: left;
+    box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+    position: relative;
+    background-image: initial;
+    background-color: rgb(0, 68, 68);
+    border-color: rgb(163, 29, 0);
+    color: rgb(232, 230, 227);
+    box-shadow: rgba(0, 0, 0, 0.5) 0.2rem 0.2rem 1rem;
+}
+
+.step:hover {
+    transform: scale(1.05);
+}
+
+.step-img {
+    width: 5rem;
+    height: 5rem;
+    margin-right: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.step.left {
+    justify-content: flex-start;
+}
+
+.step.right {
+    justify-content: flex-end;
+}
+
+.tokenomics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.card {
+    background: #005555;
+    border: 0.3rem solid #FF5733;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    color: #FFFFFF;
+    width: 18rem;
+    transition: transform 0.3s;
+    background-image: initial;
+    background-color: #005555;
+    border-color: rgb(163, 29, 0);
+    color: rgb(232, 230, 227);
+    box-shadow: rgba(0, 0, 0, 0.5) 0.2rem 0.2rem 1rem;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.join-link {
+    display: inline-block;
+    padding: 1.2rem 2.5rem;
+    font-family: 'megamax', sans-serif;
+    font-size: 1.2rem;
+    background-color: #1DA1F2;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 1rem;
+    box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s, transform 0.3s;
+}
+.join-link:hover {
+    background-color: #0F75BC;
+    transform: scale(1.05);
+}
+
 .pause-button {
     background-color: #444;
     color: #fff;
@@ -71,4 +277,13 @@ iframe {
     margin-top: 1rem;
     overflow: hidden;
     /* Set scrolling="no" or overflow hidden inside the iframe. */
+}
+
+footer {
+    background: transparent;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.1rem;
+    display: inline;
 }

@@ -6,7 +6,7 @@ canvas.addEventListener('touchmove', (e) => { e.preventDefault(); }, { passive: 
 
 const pauseBtn = document.getElementById('pauseBtn');
 const solImg = new Image();
-solImg.src = "images/sol.png";
+solImg.src = "images/solicon.png";
 
 const coinbaseImg = new Image();
 coinbaseImg.src = "images/coinbase.png";
@@ -97,13 +97,13 @@ function loop() {
     }
 
     // draw apple
-    context.drawImage(coinbaseImg, apple.x, apple.y, grid, grid);
+    context.drawImage(solImg, apple.x, apple.y, grid, grid);
     
 
     // draw snake one cell at a time
     snake.cells.forEach(function(cell, index) {
 
-        context.drawImage(solImg, cell.x, cell.y, grid-1, grid-1);
+        context.drawImage(coinbaseImg, cell.x, cell.y, grid-1, grid-1);
 
         // snake ate apple
         if (cell.x === apple.x && cell.y === apple.y) {
@@ -140,25 +140,30 @@ document.addEventListener('keydown', function(e) {
     if (!paused) {
         // left arrow key
         if (e.which === 37 && snake.dx === 0) {
+            e.preventDefault();
             snake.dx = -grid;
             snake.dy = 0;
         }
         // up arrow key
         else if (e.which === 38 && snake.dy === 0) {
+            e.preventDefault();
             snake.dy = -grid;
             snake.dx = 0;
         }
         // right arrow key
         else if (e.which === 39 && snake.dx === 0) {
+            e.preventDefault();
             snake.dx = grid;
             snake.dy = 0;
         }
         // down arrow key
         else if (e.which === 40 && snake.dy === 0) {
+            e.preventDefault();
             snake.dy = grid;
             snake.dx = 0;
         }
         else if (e.which === 32) {
+            e.preventDefault();
             paused = !paused;
             console.log(paused);
         }
