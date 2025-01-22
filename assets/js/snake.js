@@ -1,14 +1,6 @@
 const canvas = document.getElementById('game');
 const context = canvas.getContext('2d');
 
-canvas.addEventListener('touchstart', (e) => {
-    e.preventDefault();
-}, { passive: false });
-  
-canvas.addEventListener('touchmove', (e) => {
-    e.preventDefault();
-}, { passive: false });  
-
 const pauseBtn = document.getElementById('pauseBtn');
 const solImg = new Image();
 solImg.src = "images/sol.png";
@@ -19,6 +11,8 @@ coinbaseImg.src = "images/coinbase.png";
 const snakepos = 160;
 const applepos = 320
 const sqrtgrid = 25;
+let tileCountX;
+let tileCountY;
 
 const grid = 16;
 let count = 0;
@@ -28,17 +22,12 @@ let score = 0;
 let snake = {
     x: snakepos,
     y: snakepos,
-
-    // snake velocity. moves one grid length every frame in either the x or y direction
     dx: grid,
     dy: 0,
-
-    // keep track of all grids the snake body occupies
     cells: [],
-
-    // length of the snake. grows when eating an apple
     maxCells: 4
 };
+
 let apple = {
     x: applepos,
     y: applepos
@@ -47,8 +36,19 @@ let apple = {
 let paused = false;
 let msg1 = "Status: PENDING";
 let msg2 = "The Solana network is currently experiencing delays!"; 
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    tileCountX = Math.floor(canvas.width / grid);
+    tileCountY = Math.floor(canvas.height / grid);
+
+    if (apple.x >= canvas.width) apple.x = (tileCountX - 1) * gridSize;
+    if (apple.y >= canvas.height) apple.y = (tileCountY - 1) * gridSize;
+}
+
 // get random whole numbers in a specific range
-// @see https://stackoverflow.com/a/1527820/2124254
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -187,11 +187,13 @@ let xDown = null;
 let yDown = null;
 
 function handleTouchStart(e) {
+    e.preventDefault();
     xDown = e.touches[0].clientX;
     yDown = e.touches[0].clientY;
 }
 
 function handleTouchEnd(e) {
+    e.preventDefault();
     if( !xDown || !yDown ) {
         return;
     }
@@ -257,6 +259,8 @@ pauseBtn.addEventListener('click', function() {
     }
 });
 
+window.addEventListener('resize', resizeCanvas);
+
 function restartGame() {
     paused = false;
     score = 0;
@@ -271,5 +275,5 @@ function restartGame() {
     apple.x = applepos;
     apple.y = applepos;
 }
-
+resizeCanvas();
 requestAnimationFrame(loop);
