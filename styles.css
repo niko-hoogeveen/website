@@ -60,7 +60,7 @@ h1, h2 {
 iframe {
     border: 2px solid #fff;
     width: 400px;
-    height: 400px;
+    height: 800px;
     margin-top: 1rem;
     overflow: hidden;
     /* Set scrolling="no" or overflow hidden inside the iframe. */
