@@ -44,3 +44,16 @@ h1, h2 {
 .score h2 {
     margin: 0;
 }
+.pause-button {
+    margin-bottom: 1rem;
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #777;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+.pause-button:hover {
+    background-color: #555;
+}
