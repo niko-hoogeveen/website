@@ -275,5 +275,4 @@ function restartGame() {
     apple.x = applepos;
     apple.y = applepos;
 }
-resizeCanvas();
 requestAnimationFrame(loop);
