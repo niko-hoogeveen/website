@@ -1,6 +1,9 @@
 const canvas = document.getElementById('game');
 const context = canvas.getContext('2d');
 
+canvas.addEventListener('touchstart', (e) => { e.preventDefault(); }, { passive: false });
+canvas.addEventListener('touchmove', (e) => { e.preventDefault(); }, { passive: false });
+
 const pauseBtn = document.getElementById('pauseBtn');
 const solImg = new Image();
 solImg.src = "images/sol.png";
@@ -174,11 +177,13 @@ let xDown = null;
 let yDown = null;
 
 function handleTouchStart(e) {
+    e.preventDefault();
     xDown = e.touches[0].clientX;
     yDown = e.touches[0].clientY;
 }
 
 function handleTouchEnd(e) {
+    e.preventDefault();
     if( !xDown || !yDown ) {
         return;
     }
@@ -230,8 +235,8 @@ function handleTouchEnd(e) {
     }
 }
 
-document.addEventListener('touchstart', handleTouchStart, { passive: false });
-document.addEventListener('touchend', handleTouchEnd, { passive: false });
+canvas.addEventListener('touchstart', handleTouchStart, { passive: false });
+canvas.addEventListener('touchend', handleTouchEnd, { passive: false });
 
 pauseBtn.addEventListener('click', function() {
     // If the game is paused due to collision, we interpret pressing
