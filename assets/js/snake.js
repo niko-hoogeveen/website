@@ -1,14 +1,6 @@
 const canvas = document.getElementById('game');
 const context = canvas.getContext('2d');
 
-canvas.addEventListener('touchstart', (e) => {
-    e.preventDefault();
-  }, { passive: false });
-
-canvas.addEventListener('touchmove', (e) => {
-    e.preventDefault();
-}, { passive: false });
-
 const pauseBtn = document.getElementById('pauseBtn');
 const solImg = new Image();
 solImg.src = "images/sol.png";
@@ -17,7 +9,7 @@ const coinbaseImg = new Image();
 coinbaseImg.src = "images/coinbase.png";
 
 const snakepos = 160;
-const applepos = 320
+const applepos = 320;
 const sqrtgrid = 25;
 
 const grid = 16;
@@ -42,17 +34,6 @@ let apple = {
 let paused = false;
 let msg1 = "Status: PENDING";
 let msg2 = "The Solana network is currently experiencing delays!"; 
-
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    tileCountX = Math.floor(canvas.width / grid);
-    tileCountY = Math.floor(canvas.height / grid);
-
-    if (apple.x >= canvas.width) apple.x = (tileCountX - 1) * gridSize;
-    if (apple.y >= canvas.height) apple.y = (tileCountY - 1) * gridSize;
-}
 
 // get random whole numbers in a specific range
 function getRandomInt(min, max) {
@@ -209,7 +190,7 @@ function handleTouchEnd(e) {
     let xDiff = xUp - xDown;
     let yDiff = yUp - yDown;
 
-    if (paused) {s
+    if (paused) {
         restartGame();
         xDown = null;
         yDown = null;
@@ -249,8 +230,8 @@ function handleTouchEnd(e) {
     }
 }
 
-document.addEventListener('touchstart', handleTouchStart, passive(false));
-document.addEventListener('touchend', handleTouchEnd, passive(false));
+document.addEventListener('touchstart', handleTouchStart, { passive: false });
+document.addEventListener('touchend', handleTouchEnd, { passive: false });
 
 pauseBtn.addEventListener('click', function() {
     // If the game is paused due to collision, we interpret pressing
@@ -261,8 +242,6 @@ pauseBtn.addEventListener('click', function() {
         paused = true; // Pause if currently running
     }
 });
-
-window.addEventListener('resize', resizeCanvas);
 
 function restartGame() {
     paused = false;
