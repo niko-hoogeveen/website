@@ -57,13 +57,3 @@ h1, h2 {
 .pause-button:hover {
     background-color: #555;
 }
-
-#game {
-    display: block;
-    position: absolute; 
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background: #000;
-    /* border: 1px solid #fff;  -- optional if you want a border */
-}

@@ -280,4 +280,5 @@ function restartGame() {
     apple.x = applepos;
     apple.y = applepos;
 }
+
 requestAnimationFrame(loop);
