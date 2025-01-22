@@ -1,0 +1,61 @@
+/* Global font */
+body {
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ----------------------
+   INDEX PAGE STYLES
+   ---------------------- */
+.index-page {
+    background-color: #f5f5f5;
+    color: #333;
+    text-align: center;
+}
+
+/* Header for main index page */
+.index-page header {
+    background-color: #ffc600;
+    padding: 40px;
+}
+
+/* Headings, paragraphs, and layout on index page */
+.index-page h1 {
+    margin: 0;
+    font-size: 1.8em;
+    text-transform: uppercase;
+}
+.index-page .container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+.index-page p {
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+.index-page .game-frame {
+    display: block;
+    margin: 0 auto;
+    border: 2px solid #333;
+    width: 500px;   /* Adjust width as desired */
+    height: 500px;  /* Adjust height as desired */
+}
+
+/* ----------------------
+   SNAKE GAME PAGE STYLES
+   ---------------------- */
+.snake-page {
+    background: #222;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+/* Snake canvas */
+#gameCanvas {
+    display: block;
+    margin: 0 auto;
+    background: #000;
+}
+
