@@ -265,7 +265,9 @@ footer {
         font-size: 1.4rem;
         margin-bottom: 1rem;
     }
-    
+    .hero-header {
+        padding: 2rem;
+    }
     /* Section container width & spacing */
     .section-container {
         width: 90%;
