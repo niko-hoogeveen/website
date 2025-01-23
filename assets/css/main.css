@@ -3932,6 +3932,71 @@ input, select, textarea {
 				display: none;
 			}
 
+			.step-img {
+				width: 6rem;
+				height: 6rem;
+			}
+			.dist-img {
+				width: 21rem;
+				height: 21rem;
+			}
+		
+			/* Positioning tweaks for smaller screens */
+			.tokenomics {
+				bottom: 0.25rem;
+				left: 2rem;
+				flex-direction: column;
+				padding: 0.5rem;
+				gap: 1rem;
+			}
+		
+			.distribution {
+				bottom: 42rem;
+				right: 7rem;
+			}
+		
+			.card {
+				width: 20rem;   /* Narrower width on mobile */
+				padding: 1rem;  /* Possibly reduce padding */
+			}
+		
+			.snake-container {
+				bottom: -1rem;
+				right: 25rem;
+			}
+		
+			.snake-container iframe {
+				width: 400px;
+        		height: 550px;
+			}
+		
+			.copy-container {
+				flex-direction: column; /* Stack the input & button vertically */
+			}
+
+			.copy-container button {
+				cursor: pointer;
+				font-family: inherit;
+				padding-left: 1rem;
+				padding-right: 1rem;
+			}
+		
+			.copy-container input {
+				width: 80%; /* Let it adapt to the container width */
+				margin-bottom: 1rem; /* Spacing from the button */
+			}
+			.image-container.one {
+				position: relative;
+				width: 32rem;
+				height: 64rem;
+			}
+
+			.image-container.two {
+				position: relative;
+				width: 50rem;
+				height: 34rem;
+			}
+
 		/* Banner */
 
 			#banner {
@@ -3954,6 +4019,7 @@ input, select, textarea {
 					#banner .content .image {
 						height: 9em;
 						width: 27em;
+						translate: -3rem;
 						padding: 0;
 					}
 
