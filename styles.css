@@ -93,6 +93,7 @@ h1 {
     color: white;
     margin-bottom: 1rem;
     font-size: 1.2rem;
+    width: fit-content;
 }
 .list {
     list-style: none;
