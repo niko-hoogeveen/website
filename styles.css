@@ -173,6 +173,7 @@ h1 {
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
+    flex-wrap: wrap;
 }
 .card {
     background: #005555;
@@ -336,7 +337,11 @@ footer {
     .step.right {
         justify-content: center; /* no left/right for stacked layout */
     }
-    
+    .tokenomics {
+        flex-direction: column; /* stack cards vertically */
+        gap: 1rem;
+        align-items: center;
+    }
     /* Tokenomics cards can go full width or 2-column on mobile */
     .card {
         width: 100%;
