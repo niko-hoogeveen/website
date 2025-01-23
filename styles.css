@@ -255,9 +255,10 @@ h1 {
     gap: 3rem;
 }
 .community-container {
-    display: inline; 
-    justify-content: space-between;   
-    gap: 2rem;
+    display: flex; 
+    justify-content: space-between;
+    margin-left: 10rem;
+    margin-right: 10rem;
 }
 canvas {
     display: block;
