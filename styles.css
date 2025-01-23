@@ -295,13 +295,13 @@ footer {
     .nav-inner {
         flex-direction: column;
         padding: 1rem;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+        padding-top: 3rem;
+        padding-bottom: 4rem;
         gap: 1rem;
     }
     .nav-links {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 1rem;
         margin: 0;
         padding: 0;
         align-items: center;
