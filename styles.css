@@ -268,7 +268,8 @@ footer {
         border-radius: 1em;
      }
     .hero-header {
-        padding: 2rem;
+        max-width: 100%;
+        padding-top: 2rem;
     }
     /* Section container width & spacing */
     .section-container {
