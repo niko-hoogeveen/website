@@ -173,7 +173,6 @@ h1 {
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
-    flex-wrap: wrap;
 }
 .card {
     background: #005555;
@@ -254,6 +253,11 @@ h1 {
     justify-content: center;
     align-items: center;
     gap: 3rem;
+}
+.community-container {
+    display: inline; 
+    justify-content: space-between;   
+    gap: 2rem;
 }
 canvas {
     display: block;
