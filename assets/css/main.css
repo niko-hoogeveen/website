@@ -3696,6 +3696,74 @@ input, select, textarea {
 				font-size: 13pt;
 			}
 
+			.step-img {
+				/* Slightly bigger than 6rem for mid-range screens */
+				width: 8rem;
+				height: 8rem;
+			}
+		
+			.dist-img {
+				/* Increase from 21rem to a middle-ground size */
+				width: 24rem;
+				height: 24rem;
+			}
+
+			.distribution {
+				/* Adjust to a more moderate position */
+				bottom: 96rem;
+				right: -8rem;
+			}
+		
+			.tokenomics {
+				/* Shift the tokenomics container slightly */
+				bottom: 74rem;
+				left: 3rem;
+				padding: 1rem;
+				gap: 1rem;
+			}
+		
+			.card {
+				/* Increase card width and padding a bit */
+				width: 20rem;
+				padding: 1.5rem;
+			}
+		
+			.snake-container {
+				/* Raise the bottom and bring it a bit closer */
+				bottom: 45rem;
+        		right: -24rem;	
+			}
+		
+			.copy-container {
+				/* Keep column layout if it suits your design, or revert to row */
+				flex-direction: column;
+			}
+		
+			.copy-container input {
+				/* Slightly narrower so it doesn't dominate wide screens */
+				width: 70%;
+				margin-bottom: 1rem;
+			}
+		
+			.copy-container button {
+				cursor: pointer;
+				font-family: inherit;
+				padding-left: 1rem;
+				padding-right: 1rem;
+			}
+		
+			.image-container.one {
+				/* Increase to provide more vertical space */
+				width: 40rem;
+				height: 72rem;
+			}
+		
+			.image-container.two {
+				/* Slightly expand the container for bigger images */
+				width: 56rem;
+				height: 38rem;
+			}
+
 	}
 
 /* Large */
@@ -3745,6 +3813,74 @@ input, select, textarea {
 
 			#footer {
 				padding: 4.5em 0;
+			}
+
+			.step-img {
+				/* Slightly bigger than 6rem for mid-range screens */
+				width: 8rem;
+				height: 8rem;
+			}
+		
+			.dist-img {
+				/* Increase from 21rem to a middle-ground size */
+				width: 26rem;
+				height: 26rem;
+			}
+
+			.distribution {
+				/* Adjust to a more moderate position */
+				bottom: 95rem;
+				right: -2rem;
+			}
+		
+			.tokenomics {
+				/* Shift the tokenomics container slightly */
+				bottom: 74rem;
+				left: 1rem;
+				padding: 1rem;
+				gap: 1rem;
+			}
+		
+			.card {
+				/* Increase card width and padding a bit */
+				width: 17rem;
+				padding: 1.5rem;
+			}
+		
+			.snake-container {
+				/* Raise the bottom and bring it a bit closer */
+				bottom: 45rem;
+        		right: -11rem;	
+			}
+		
+			.copy-container {
+				/* Keep column layout if it suits your design, or revert to row */
+				flex-direction: column;
+			}
+		
+			.copy-container input {
+				/* Slightly narrower so it doesn't dominate wide screens */
+				width: 70%;
+				margin-bottom: 1rem;
+			}
+		
+			.copy-container button {
+				cursor: pointer;
+				font-family: inherit;
+				padding-left: 1rem;
+				padding-right: 1rem;
+			}
+		
+			.image-container.one {
+				/* Increase to provide more vertical space */
+				width: 40rem;
+				height: 72rem;
+			}
+		
+			.image-container.two {
+				/* Slightly expand the container for bigger images */
+				width: 56rem;
+				height: 38rem;
 			}
 
 	}
