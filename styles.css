@@ -12,6 +12,9 @@ html, body {
     background: linear-gradient(to left, #39034e, #109b65);
     font-family: 'megamax', sans-serif;
 }
+body {
+    overflow: hidden;
+}
 .navbar {
     position: fixed;      /* stays at top on scroll */
     top: 0;
@@ -259,15 +262,56 @@ footer {
     .nav-inner {
         flex-direction: column;
         padding: 1rem;
+        gap: 1rem;
     }
     .nav-links {
+        flex-direction: column;
         gap: 1rem;
-        border: white;
-        border-radius: 1em;
-     }
+        margin: 0;
+        padding: 0;
+        align-items: center;
+    }
+    .nav-links a {
+        border: 0.1rem solid #fff;
+        border-radius: 0.5rem;
+        padding: 0.8rem 1.2rem;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
     .hero-header {
-        max-width: 100%;
+        margin-top: 0;
         padding-top: 2rem;
+    }
+    .logo {
+        position: absolute;
+        top: -60px;          /* start above the header (so it 'flies' in) */
+        left: 50%;           /* horizontally center the icon */
+        transform: translateX(-50%);
+        width: 60px;         /* adjust icon size as needed */
+        height: auto;
+      
+        /* The animation: 
+           - "flyIcon" is our custom keyframes name (defined below)
+           - 8s is the duration
+           - infinite means repeat forever
+           - ease-in-out adjusts speed smoothly 
+        */
+        animation: flyIcon 8s infinite ease-in-out;
+    }
+    @keyframes flyIcon {
+        0% {
+          top: -60px;            /* start above the header */
+          filter: hue-rotate(0deg);
+        }
+        50% {
+          top: 50%;              /* halfway down */
+          filter: hue-rotate(90deg);
+        }
+        100% {
+          top: 100%;             /* move to the bottom of header */
+          filter: hue-rotate(180deg);
+        }
     }
     /* Section container width & spacing */
     .section-container {
