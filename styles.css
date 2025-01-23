@@ -350,6 +350,9 @@ footer {
         width: 90%;
         margin-left: 1rem;
     }
+    .tokenomics-header h1 {
+        font-size: 3rem;
+    }
     /* Tokenomics cards can go full width or 2-column on mobile */
     .card {
         width: 100%;
