@@ -342,6 +342,7 @@ footer {
         justify-content: center; /* no left/right for stacked layout */
     }
     .tokenomics {
+        width: 100%;
         flex-direction: column; /* stack cards vertically */
         align-items: center;
         gap: 1rem;
@@ -357,5 +358,17 @@ footer {
     .solbutton {
         font-size: 1.5rem;
         padding: 1.5rem 3rem;
+    }
+    .community-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%; /* Ensure it does not overflow */
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .join-link {
+        width: 100%;
+        margin: 0.5rem 0;
+        text-align: center;
     }
 }
