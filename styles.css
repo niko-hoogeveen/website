@@ -74,7 +74,7 @@ h1 {
     margin-bottom: 1rem;
 }
 .section-container {
-    width: 75%;
+    width: 100%;
     max-width: 1200px;
     margin: 2rem auto;
     text-align: center;
@@ -264,6 +264,8 @@ footer {
         flex-direction: column;
         gap: 1rem;
         padding: 0;
+        border: white;
+        border-radius: 1em;
      }
     .hero-header {
         padding: 2rem;
@@ -292,12 +294,6 @@ footer {
     .card {
         width: 100%;
         margin: 0.5rem 0;
-    }
-    
-    /* Snake iframe smaller on mobile */
-    iframe {
-        width: 320px;
-        height: 400px;
     }
       
     /* Button font smaller on mobile? */
