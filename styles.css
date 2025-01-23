@@ -292,6 +292,7 @@ footer {
     .navbar {
         position:static;
         box-shadow: none;
+        width: 100%;
     }
     .nav-inner {
         flex-direction: column;
@@ -299,6 +300,7 @@ footer {
         padding-top: 3rem;
         padding-bottom: 4rem;
         gap: 1rem;
+        width: 100%;
     }
     .nav-logo {
         font-size: 2rem;
@@ -309,6 +311,7 @@ footer {
         margin: 0;
         padding: 0;
         align-items: center;
+        width: 100%;
     }
     .nav-links a {
         border: 0.1rem solid #fff;
