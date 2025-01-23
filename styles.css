@@ -340,16 +340,24 @@ footer {
         justify-content: center; /* no left/right for stacked layout */
     }
     .tokenomics {
-        width: 100%;
+        width: 90%;
         flex-direction: column; /* stack cards vertically */
         align-items: center;
+        margin-left: 1.2rem;
         gap: 1rem;
+    }
+    .tokenomics-spacer {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        width: 95%;
+        margin-left: 0.5rem;
     }
     /* Tokenomics cards can go full width or 2-column on mobile */
     .card {
         width: 100%;
-        margin: 0.5rem 0;
-        padding: 1rem;
+        margin: 0;
+        padding: 0.2rem;
     }
       
     /* Button font smaller on mobile? */
