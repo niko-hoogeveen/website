@@ -293,15 +293,13 @@ footer {
     .navbar {
         position:static;
         box-shadow: none;
-        width: 100%;
     }
     .nav-inner {
         flex-direction: column;
         padding: 1rem;
-        padding-top: 3rem;
-        padding-bottom: 4rem;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
         gap: 1rem;
-        width: 100%;
     }
     .nav-logo {
         font-size: 2rem;
@@ -312,11 +310,8 @@ footer {
         margin: 0;
         padding: 0;
         align-items: center;
-        width: 100%;
     }
     .nav-links a {
-        border: 0.1rem solid #fff;
-        border-radius: 0.5rem;
         padding: 0.4rem 0.6rem;
         text-align: center;
         width: 100%;
