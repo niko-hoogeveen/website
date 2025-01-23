@@ -8,6 +8,9 @@
 html, body {
     margin: 0;
     padding: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
     background: linear-gradient(to left, #39034e, #109b65);
     font-family: 'megamax', sans-serif;
 }
@@ -258,12 +261,9 @@ footer {
     .nav-inner {
         flex-direction: column;
         padding: 1rem;
-        gap: 1rem;
     }
     .nav-links {
-        flex-direction: column;
         gap: 1rem;
-        padding: 0;
         border: white;
         border-radius: 1em;
      }
