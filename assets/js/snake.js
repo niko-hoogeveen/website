@@ -5,6 +5,7 @@ canvas.addEventListener('touchstart', (e) => { e.preventDefault(); }, { passive:
 canvas.addEventListener('touchmove', (e) => { e.preventDefault(); }, { passive: false });
 
 const pauseBtn = document.getElementById('pauseBtn');
+const startBtn = document.getElementById('startBtn');
 const solImg = new Image();
 solImg.src = "images/solicon.png";
 
@@ -19,6 +20,7 @@ const grid = 16;
 let count = 0;
 
 let score = 0;
+let highscore = 0;
 
 let snake = {
     x: snakepos,
@@ -34,10 +36,12 @@ let apple = {
     y: applepos
 };
 
-let paused = false;
-let msg1 = "Status: PENDING";
-let msg2 = "The Solana network is currently experiencing delays!"; 
+let paused = true;
+let msg1 = "$TRUMP2 DROPPED ON YOUR ASS"; 
+let msg2 = "Better luck next time Coinbase!"
 
+let timer = 0;
+let timerInterval = null;
 // get random whole numbers in a specific range
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
@@ -45,7 +49,9 @@ function getRandomInt(min, max) {
 
 // game loop
 function loop() {
-    requestAnimationFrame(loop);
+    if (!paused) {
+        requestAnimationFrame(loop);
+    }
 
     // slow game loop to 15 fps instead of 60 (60/15 = 4)
     if (++count < 4) {
@@ -60,7 +66,7 @@ function loop() {
         context.fillRect(0, 0, canvas.width, canvas.height);
 
         context.fillStyle = 'white';
-        context.font = '15px Arial';
+        context.font = '15px megamax';
         context.fillText(msg1, 140, 100);
         context.fillText(msg2, 20, 130);
         context.fillText("Press 'R' to Restart", 130, 230);
@@ -120,7 +126,12 @@ function loop() {
         
             // snake occupies same space as a body part. reset game
             if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+                if (score > highscore) {
+                    highscore = score;
+                    document.getElementById('highscore').textContent = highscore;
+                }
                 paused = true;
+                stopTimer();
             }
             
         }
@@ -129,14 +140,7 @@ function loop() {
 
 // listen to keyboard events to move the snake
 document.addEventListener('keydown', function(e) {
-    // prevent snake from backtracking on itself by checking that it's 
-    // not already moving on the same axis (pressing left while moving
-    // left won't do anything, and pressing right while moving left
-    // shouldn't let you collide with your own body)
-    if (paused && (e.key === 'r' || e.key === 'R')) {
-        restartGame();
-        return;
-    }
+    
     if (!paused) {
         // left arrow key
         if (e.which === 37 && snake.dx === 0) {
@@ -161,11 +165,6 @@ document.addEventListener('keydown', function(e) {
             e.preventDefault();
             snake.dy = grid;
             snake.dx = 0;
-        }
-        else if (e.which === 32) {
-            e.preventDefault();
-            paused = !paused;
-            console.log(paused);
         }
     }
 });
@@ -243,20 +242,31 @@ function handleTouchEnd(e) {
 canvas.addEventListener('touchstart', handleTouchStart, { passive: false });
 canvas.addEventListener('touchend', handleTouchEnd, { passive: false });
 
-pauseBtn.addEventListener('click', function() {
-    // If the game is paused due to collision, we interpret pressing
-    // the button as a desire to "restart" instead of just toggling.
+startBtn.addEventListener('click', function() {
     if (paused) {
         restartGame();
-    } else {
-        paused = true; // Pause if currently running
+        paused = false;
+        requestAnimationFrame(loop);
+        startBtn.disabled = true;
+        pauseBtn.disabled = false;
+    }
+});
+
+pauseBtn.addEventListener('click', function() {
+    if (!paused) {
+        paused = true;
+        stopTimer();
+        startBtn.disabled = false;
+        pauseBtn.disabled = true;
     }
 });
 
 function restartGame() {
     paused = false;
     score = 0;
+    timer = 0;
     document.getElementById('score').textContent = score;
+    document.getElementById('time').textContent = timer;
     snake.x = snakepos;
     snake.y = snakepos;
     snake.dx = grid;
@@ -266,6 +276,28 @@ function restartGame() {
 
     apple.x = applepos;
     apple.y = applepos;
+    startTimer();
 }
 
-requestAnimationFrame(loop);
+function startTimer() {
+    if (!timerInterval) {
+        timerInterval = setInterval(function() {
+            timer++;
+            document.getElementById('time').textContent = timer;
+        }, 1000);
+    }
+}
+
+function stopTimer() {
+    if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+    }
+}
+
+document.getElementById('time').textContent = timer;
+
+window.onload = function() {
+    startBtn.disabled = false;
+    pauseBtn.disabled = true;
+};
