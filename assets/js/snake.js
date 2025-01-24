@@ -315,7 +315,6 @@ document.getElementById('time').textContent = timer;
 
 
 window.addEventListener("load", () => {
-    console.log("Page loaded");
     startBtn.disabled = false;
     pauseBtn.disabled = true;
 });
