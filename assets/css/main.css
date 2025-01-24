@@ -2669,6 +2669,17 @@ input, select, textarea {
 			cursor: pointer;
 			font-family: inherit;
 		}
+		.button.music {
+			cursor: pointer;
+			font-family: inherit;
+			padding-left: 0.5rem;
+			padding-right: 0.5rem;
+		}
+
+		.music-message {
+			display: none;
+			font-size: 1.5rem;
+		}
 
 /* List */
 
@@ -3534,11 +3545,10 @@ input, select, textarea {
 						#header nav ul li a:not(.button):before, #header nav ul li span:not(.button):before {
 							margin-right: 0.5em;
 						}
-
-					#header nav ul li.active > a, #header nav ul li.active > span {
-						color: #e44c65;
-					}
-
+						
+						#header nav ul li.active > a, #header nav ul li.active > span {
+							color: lightgrey;
+						}
 					#header nav ul li > ul {
 						display: none;
 					}
@@ -4086,7 +4096,7 @@ input, select, textarea {
 			}
 		
 			.distribution {
-				bottom: 43.5rem;
+				bottom: 33.5rem;
 				right: 7rem;
 			}
 		
@@ -4123,9 +4133,12 @@ input, select, textarea {
 			.image-container.one {
 				position: relative;
 				width: 32rem;
-				height: 65rem;
+				height: 55rem;
 			}
 
+			.content .tokenomics-header {
+				font-size: 2.5em;
+			}
 			.image-container.two {
 				position: relative;
 				width: 50rem;
@@ -4232,7 +4245,6 @@ input, select, textarea {
 					}
 
 					#titleBar .toggle:before {
-						background: #e44c65;
 						color: rgba(255, 255, 255, 0.5);
 						content: '\f0c9';
 						display: block;

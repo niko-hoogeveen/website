@@ -19,7 +19,6 @@ coinbaseImg.onload = () => { imagesLoaded++; checkImagesLoaded(); };
 function checkImagesLoaded() {
     if (imagesLoaded === 2) {
         // Once images are loaded, the user can click Start
-        startBtn.disabled = false;
         pauseBtn.disabled = true;
     }
 }
@@ -40,7 +39,7 @@ let snake = {
     dx: grid,
     dy: 0,
     cells: [],
-    maxCells: 4
+    maxCells: 7
 };
 
 let apple = {
@@ -136,7 +135,6 @@ function loop() {
                 }
                 paused = true;
                 stopTimer();
-                startBtn.disabled = false;
                 pauseBtn.disabled = true;
                 // Set the new messasge from the array
                 currentMsg = "GAME OVER";
@@ -253,7 +251,6 @@ function handleStart(e) {
         restartGame();
         paused = false;
         requestAnimationFrame(loop);
-        startBtn.disabled = true;
         pauseBtn.disabled = false;
     }
 }
@@ -263,7 +260,6 @@ function handlePause(e) {
     if (!paused) {
         paused = true;
         stopTimer();
-        startBtn.disabled = false;
         pauseBtn.disabled = true;
     }
 }
@@ -315,6 +311,5 @@ document.getElementById('time').textContent = timer;
 
 
 window.addEventListener("load", () => {
-    startBtn.disabled = false;
     pauseBtn.disabled = true;
 });

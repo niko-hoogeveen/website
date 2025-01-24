@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="icon" type="image/png" href="images/D.png" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<audio id="myAudio" src="assets/audio/fallen_down.mp3" preload="auto" loop muted autoplay></audio>
+		<audio id="myAudio" src="assets/audio/interstellar.mp3" preload="auto" loop muted autoplay></audio>
 	</head>
 	<body class="is-preload landing">
 		<div id="page-wrapper">
@@ -27,7 +27,6 @@
 							<li><a href="#snake">Sol Eater</a></li>
 							<li><a href="#howtobuy">How to Buy</a></li>
 							<li><a href="#account">CA Address</a></li>
-							<li><a href="javascript:toggleMusic();" >Turn on Music</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -42,6 +41,8 @@
 							<h2>Sold out of Sol</h2>
 							<p>Buy $SOLD on the Solana Network</p>
 						</header>
+						<button onclick="toggleMusic()" class="button music">Toggle Music</button>
+						<span id="music-message" style="display: none;">Music is playing</span>
 					</div>
 					<a href="#history" class="goto-next scrolly">Next</a>
 				</section>
@@ -60,19 +61,12 @@
 								</div>
 								<div class="col-4 col-12-medium">
 									<p>
-										It all started during the Great SOL FOMO of 2025. Rumors spread like wildfire 
-										that Coinbase was running out of Solana. In the midst of frantic refreshes, 
-										meme overload, and degens trying to snipe every last SOL, a lightbulb moment struck a 
-										small band of crypto rebels.
+										After one rug pull too many, a group of Solana degens decided enough was enough. 
+										They channeled their frustration into SOL’D OUT ($SOLD)—a no-nonsense meme coin born 
+										from a desire to finally see an honest project on Solana. Transparent from day one, 
+										SOL’D OUT refuses to play shady games or trick the community with bundle buys. It’s the 3.
+										coin that proves sometimes, when you’re tired of the chaos, you build something real instead.
 									</p>
-								</div>
-								<div class="col-4 col-12-medium">
-									<p>
-										When Coinbase “sold out” of Solana, we took it as a challenge. Why not launch something 
-										that captures that blink-and-you’ll-miss-it spirit of crypto? With $SOLD, we’re embracing 
-										the madness, building a community that turns scarcity into celebration, and proving once 
-										again that if you can’t beat the FOMO—own it.
-								</p>
 								</div>
 							</div>
 							<div class="row">
@@ -89,6 +83,11 @@
 
 			<!-- Two -->
 				<section id="tokenomics" class="spotlight style2 right">
+					<div class="content">
+						<header>
+							<h2 class="tokenomics-header">Tokenomics</h2>
+						</header>
+					</div>
 					<div class="image-container one">
 						<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
 						<div class="distribution">
@@ -100,20 +99,12 @@
 								<p>A pump-and-fun launch designed for maximum excitement!</p>
 							</div>
 							<div class="card">
-								<h2>Total Supply</h2>
-								<p>1,000,000,000 $SOLD</p>
-							</div>
-							<div class="card">
 								<h2>Giga Chad Community</h2>
 								<p>Fair distribution with a focus on user engagement and growth.</p>
 							</div>
 						</div>  
 					</div>
 					<div class="content">
-						<header>
-							<h2>Tokenomics</h2>
-							<p>SOL'd Out of SOL ($SOLD)</p>
-						</header>
 						<p>
 							Coinbase nearly lost its mind when $TRUMP coin crashed through the scene, 
 							users buying Solana were sidelined from one of the most hype exchanges in SOL's history. Who knew the 
@@ -262,8 +253,12 @@
 					var audio = document.getElementById("myAudio");
 					if (audio.muted) {
 						audio.muted = false;
+						audio.play().catch(err => console.error(err));
+						document.getElementById("music-message").setAttribute("style", "display: block;");
 					} else {
 						audio.muted = true;
+						audio.pause();
+						document.getElementById("music-message").setAttribute("style", "display: none;");
 					}
 				}
 			</script>
