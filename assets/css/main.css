@@ -3859,7 +3859,7 @@ input, select, textarea {
 			.snake-container {
 				/* Raise the bottom and bring it a bit closer */
 				bottom: 45rem;
-        		right: -11rem;	
+        		right: -5rem;	
 			}
 		
 			.copy-container {
