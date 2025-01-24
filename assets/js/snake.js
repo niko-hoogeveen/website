@@ -242,7 +242,14 @@ function handleTouchEnd(e) {
 canvas.addEventListener('touchstart', handleTouchStart, { passive: false });
 canvas.addEventListener('touchend', handleTouchEnd, { passive: false });
 
-startBtn.addEventListener('click', function() {
+startBtn.addEventListener('click', handleStart, { passive: false });
+startBtn.addEventListener('touchstart', handleStart, { passive: false });
+
+pauseBtn.addEventListener('click', handlePause, { passive: false });
+pauseBtn.addEventListener('touchstart', handlePause, { passive: false });
+
+function handleStart(e) {
+    e.preventDefault();
     if (paused) {
         restartGame();
         paused = false;
@@ -250,16 +257,17 @@ startBtn.addEventListener('click', function() {
         startBtn.disabled = true;
         pauseBtn.disabled = false;
     }
-});
+}
 
-pauseBtn.addEventListener('click', function() {
+function handlePause(e) {
+    e.preventDefault();
     if (!paused) {
         paused = true;
         stopTimer();
         startBtn.disabled = false;
         pauseBtn.disabled = true;
     }
-});
+}
 
 function restartGame() {
     paused = false;
