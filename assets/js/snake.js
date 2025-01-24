@@ -37,8 +37,18 @@ let apple = {
 };
 
 let paused = true;
-let msg1 = "$TRUMP2 DROPPED ON YOUR ASS"; 
-let msg2 = "Better luck next time Coinbase!"
+let startmsg = "Press Start! Eat that Sol!";
+let currentMsg = "";
+
+const gameOverMessages = [
+    "Game Over: $TRUMP Dropped you on your A$$!",
+    "Game Over: You let us down!",
+    "Game Over #3:Better luck next time Coinbase!",
+    "Game Over #4: Mr. Beast Meme Drop Can Save the World!",
+    "Game Over #5: It's time to buy more dips..."
+  ];
+
+
 
 let timer = 0;
 let timerInterval = null;
@@ -66,10 +76,8 @@ function loop() {
         context.fillRect(0, 0, canvas.width, canvas.height);
 
         context.fillStyle = 'white';
-        context.font = '15px megamax';
-        context.fillText(msg1, 140, 100);
-        context.fillText(msg2, 20, 130);
-        context.fillText("Press 'R' to Restart", 130, 230);
+        context.font = '10px megamax';
+        context.fillText(currentMsg, 140, 100);
         return;
     }
     context.clearRect(0,0,canvas.width,canvas.height);
@@ -132,6 +140,10 @@ function loop() {
                 }
                 paused = true;
                 stopTimer();
+
+                // Set the new messasge from the array
+                currentMsg = gameOverMessages[msgIndex];
+                msgIndex = (msgIndex + 1) % gameOverMessages.length;
             }
             
         }
@@ -181,13 +193,11 @@ let xDown = null;
 let yDown = null;
 
 function handleTouchStart(e) {
-    e.preventDefault();
     xDown = e.touches[0].clientX;
     yDown = e.touches[0].clientY;
 }
 
 function handleTouchEnd(e) {
-    e.preventDefault();
     if( !xDown || !yDown ) {
         return;
     }
@@ -198,13 +208,6 @@ function handleTouchEnd(e) {
 
     let xDiff = xUp - xDown;
     let yDiff = yUp - yDown;
-
-    if (paused) {
-        restartGame();
-        xDown = null;
-        yDown = null;
-        return;
-    }
 
     if (Math.abs(xDiff) > Math.abs(yDiff)) {
         // left or right swipe
@@ -304,8 +307,3 @@ function stopTimer() {
 }
 
 document.getElementById('time').textContent = timer;
-
-window.onload = function() {
-    startBtn.disabled = false;
-    pauseBtn.disabled = true;
-};
