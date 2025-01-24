@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="icon" type="image/png" href="images/D.png" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<audio id="myAudio" src="audio/music.mp3" preload="auto" loop muted autoplay></audio>
+		<audio id="myAudio" src="/assets/audio/fallen_down.mp3" preload="auto" loop muted autoplay></audio>
 	</head>
 	<body class="is-preload landing">
 		<div id="page-wrapper">
@@ -27,7 +27,7 @@
 							<li><a href="#snake">Sol Eater</a></li>
 							<li><a href="#howtobuy">How to Buy</a></li>
 							<li><a href="#account">CA Address</a></li>
-							<li><a href="javascript:void(0);" onclick="toggleMusic();">Turn on Music</a></li>
+							<li><a href="javascript:toggleMusic();" >Turn on Music</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -256,7 +256,8 @@
 					  console.error("Failed to copy text: ", err);
 					});
 				}
-
+			</script>
+			<script type="text/javascript">
 				function toggleMusic() {
 					var audio = document.getElementById("myAudio");
 					if (audio.muted) {
@@ -266,6 +267,5 @@
 					}
 				}
 			</script>
-
 	</body>
 </html>

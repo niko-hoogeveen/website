@@ -12,6 +12,18 @@ solImg.src = "images/solicon.png";
 const coinbaseImg = new Image();
 coinbaseImg.src = "images/coinbase.png";
 
+let imagesLoaded = 0;
+solImg.onload = () => { imagesLoaded++; checkImagesLoaded(); };
+coinbaseImg.onload = () => { imagesLoaded++; checkImagesLoaded(); };
+
+function checkImagesLoaded() {
+    if (imagesLoaded === 2) {
+        // Once images are loaded, the user can click Start
+        startBtn.disabled = false;
+        pauseBtn.disabled = true;
+    }
+}
+
 const snakepos = 160;
 const applepos = 320;
 const sqrtgrid = 25;
@@ -37,16 +49,7 @@ let apple = {
 };
 
 let paused = true;
-let startmsg = "Press Start! Eat that Sol!";
-let currentMsg = "";
-
-const gameOverMessages = [
-    "Game Over: $TRUMP Dropped you on your A$$!",
-    "Game Over: You let us down!",
-    "Game Over #3:Better luck next time Coinbase!",
-    "Game Over #4: Mr. Beast Meme Drop Can Save the World!",
-    "Game Over #5: It's time to buy more dips..."
-  ];
+let msg = "Game Over: You go Sol'D!";
 
 
 
@@ -59,9 +62,12 @@ function getRandomInt(min, max) {
 
 // game loop
 function loop() {
-    if (!paused) {
-        requestAnimationFrame(loop);
+    if (paused) {
+        drawCanvas(msg);
+        return;
     }
+    
+    requestAnimationFrame(loop);
 
     // slow game loop to 15 fps instead of 60 (60/15 = 4)
     if (++count < 4) {
@@ -70,16 +76,6 @@ function loop() {
 
     count = 0;
     
-    if (paused) {
-        // Optional: draw an overlay message on the canvas
-        context.fillStyle = 'rgba(0, 0, 0, 0.3)';
-        context.fillRect(0, 0, canvas.width, canvas.height);
-
-        context.fillStyle = 'white';
-        context.font = '10px megamax';
-        context.fillText(currentMsg, 140, 100);
-        return;
-    }
     context.clearRect(0,0,canvas.width,canvas.height);
 
     // move snake by it's velocity
@@ -140,10 +136,10 @@ function loop() {
                 }
                 paused = true;
                 stopTimer();
-
+                startBtn.disabled = false;
+                pauseBtn.disabled = true;
                 // Set the new messasge from the array
-                currentMsg = gameOverMessages[msgIndex];
-                msgIndex = (msgIndex + 1) % gameOverMessages.length;
+                currentMsg = "GAME OVER";
             }
             
         }
@@ -285,8 +281,8 @@ function restartGame() {
     snake.cells = [];
     snake.maxCells = 4;
 
-    apple.x = applepos;
-    apple.y = applepos;
+    apple.x = getRandomInt(0, sqrtgrid) * grid;
+    apple.y = getRandomInt(0, sqrtgrid) * grid;
     startTimer();
 }
 
@@ -306,4 +302,20 @@ function stopTimer() {
     }
 }
 
+function drawCanvas(msg) {
+    context.fillStyle = 'rgba(0, 0, 0, 0.3)';
+        context.fillRect(0, 0, canvas.width, canvas.height);
+        context.fillStyle = 'white';
+        context.font = '1.2rem megamax';
+        context.fillText(msg, 30, 150);
+        context.fillText('Press Start to Play Again!', 25, 200);
+}
+
 document.getElementById('time').textContent = timer;
+
+
+window.addEventListener("load", () => {
+    console.log("Page loaded");
+    startBtn.disabled = false;
+    pauseBtn.disabled = true;
+});
