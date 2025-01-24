@@ -252,6 +252,7 @@ function handleStart(e) {
         paused = false;
         requestAnimationFrame(loop);
         pauseBtn.disabled = false;
+        musicOn();
     }
 }
 
@@ -295,6 +296,15 @@ function stopTimer() {
     if (timerInterval) {
         clearInterval(timerInterval);
         timerInterval = null;
+    }
+}
+
+function musicOn() {
+    var audio = document.getElementById("myAudio");
+    if (audio.muted) {
+        audio.muted = false;
+        audio.play().catch(err => console.error(err));
+        document.getElementById("music-message").setAttribute("style", "display: block;");
     }
 }
 
