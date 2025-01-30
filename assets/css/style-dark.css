@@ -6841,7 +6841,7 @@ ul.progress-info { display: flex; justify-content: space-between; }
   .header-container:not(.container) { padding: 0 25px; }
   .header-container-s1:not(.container) { padding: 0 25px; }
   .header-banner { min-height: 98px; }
-  .logo img { height: 5rem; }
+  .logo img { height: 3rem; }
   .logo-md img { height: 50px; }
   .logo-lg img { height: 60px; } }
 
