@@ -6829,7 +6829,7 @@ ul.progress-info { display: flex; justify-content: space-between; }
 
 .logo-light, .is-transparent:not(.has-fixed) .logo-dark, .is-dark .logo-dark { display: none; }
 
-.logo img { height: 5rem; transition: all .4s; }
+.logo img { height: 3rem; transition: all .4s; }
 
 .logo-md img { height: 44px; }
 
