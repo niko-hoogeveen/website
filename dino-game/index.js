@@ -20,9 +20,9 @@ const GROUND_HEIGHT = 24;
 const GROUND_AND_CACTUS_SPEED = 0.5;
 
 const CACTI_CONFIG = [
-  { width: 48 / 1.5, height: 100 / 1.5, image: "images/kfc_bucket_full.png" },
+  { width: 68 / 1.5, height: 100 / 1.5, image: "images/kfc_bucket_full.png" },
   { width: 98 / 1.5, height: 100 / 1.5, image: "images/kfc_bucket_two.png" },
-  { width: 68 / 1.5, height: 70 / 1.5, image: "images/kfc_bucket_three.png" },
+  { width: 100 / 1.5, height: 102 / 1.5, image: "images/kfc_bucket_three.png" },
 ];
 
 //Game Objects
