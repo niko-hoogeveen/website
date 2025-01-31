@@ -31,6 +31,8 @@ export default class Player {
   
       const dinoRunImage2 = new Image();
       dinoRunImage2.src = "images/right.png";
+      console.log(dinoRunImage1);
+      console.log(dinoRunImage2);
   
       this.dinoRunImages.push(dinoRunImage1);
       this.dinoRunImages.push(dinoRunImage2);
