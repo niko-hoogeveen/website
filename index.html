@@ -469,7 +469,7 @@
 			if (audio.muted) {
 			    audio.muted = false;
 				audio.play().catch(err => console.error(err));
-				document.getElementById("music-message").setAttribute("style", "display: block; padding-left: 1rem;");
+				document.getElementById("music-message").setAttribute("style", "display: block; padding-left: 2rem;");
             } else {
 			    audio.muted = true;
 				audio.pause();
