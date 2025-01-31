@@ -25,6 +25,8 @@ const CACTI_CONFIG = [
   { width: 100 / 1.5, height: 102 / 1.5, image: "images/kfc_bucket_three.png" },
 ];
 
+const backgroundImage = new Image();
+backgroundImage.src = "images/background.jpg";
 //Game Objects
 let player = null;
 let ground = null;
@@ -162,8 +164,7 @@ function updateGameSpeed(frameTimeDelta) {
 }
 
 function clearScreen() {
-  ctx.fillStyle = "white";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
 }
 
 function gameLoop(currentTime) {
