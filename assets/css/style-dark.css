@@ -2244,7 +2244,7 @@ hr { position: relative; z-index: 5; }
 
 .title-md:not(:last-child) { margin-bottom: 1rem; }
 
-.title-lg { font-size: 1.75rem; }
+.title-lg { font-size: 4rem; }
 
 .title-xl { font-size: 1.75rem; }
 
@@ -6875,6 +6875,7 @@ ul.progress-info { display: flex; justify-content: space-between; }
   .header-menu .btn { line-height: 24px; padding: 6px 14px; min-width: 100px; }
   .header-menu .btn-transparent { padding: 6px 0; } }
 
+@media (max-width: 991px) { .niglet {margin-left: 12rem;} }
 /** 05.02 Menu */
 .menu { padding: 12px 0; }
 
