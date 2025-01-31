@@ -27,10 +27,10 @@ export default class Player {
       this.image = this.standingStillImage;
   
       const dinoRunImage1 = new Image();
-      dinoRunImage1.src = "images/dino_run1.png";
+      dinoRunImage1.src = "images/left.png";
   
       const dinoRunImage2 = new Image();
-      dinoRunImage2.src = "images/dino_run2.png";
+      dinoRunImage2.src = "images/right.png";
   
       this.dinoRunImages.push(dinoRunImage1);
       this.dinoRunImages.push(dinoRunImage2);
