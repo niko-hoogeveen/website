@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+    <audio id="myAudio" src="assets/audio/smokealarm.mp3" preload="auto" loop muted autoplay></audio>
 
 </head>
 
@@ -119,6 +120,12 @@
                                                         <input type="text" id="contract_address" placeholder="Coming Soon" style="padding-left:1rem;padding-right:1rem;border-radius:1.5rem;width:80%;background-color: transparent;border:1px solid;color:white !important;" class="py-custom mb-4 contract__address" disabled="">
                                                     </li>
                                                     <li><button id="copyButton" class="btn btn-md btn-grad btn-round">COPY</button></li>
+                                                </ul>
+                                            </div>
+                                            <div class="cpn-btns">
+                                                <ul class="animated" data-animate="fadeInUp" data-delay="1.55" style="display:flex;">
+                                                    <li><button class="btn btn-md btn-grad btn-round" onclick="toggleMusic()">Toggle Music</button>
+                                                        <span id="music-message" style="display: none; padding-left: 2rem;">Music is playing</span></li>
                                                 </ul>
                                             </div>
                                             <div class="cpn-btns">
@@ -452,6 +459,20 @@
     <script src="assets/js/scripts.js"></script>
     <script src="assets/js/charts.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script>
+        function toggleMusic() {
+		    var audio = document.getElementById("myAudio");
+			if (audio.muted) {
+			    audio.muted = false;
+				audio.play().catch(err => console.error(err));
+				document.getElementById("music-message").setAttribute("style", "display: block; padding-left: 1rem;");
+            } else {
+			    audio.muted = true;
+				audio.pause();
+				document.getElementById("music-message").setAttribute("style", "display: none;");
+			}
+		}
+    </script>
 </body>
 
 </html>
