@@ -6803,7 +6803,7 @@ ul.progress-info { display: flex; justify-content: space-between; }
 
 .header-navbar::before { background: #fff; left: 50%; transform: translateX(-50%); transition: all .4s; }
 
-.is-dark .header-navbar::before { background: #645481; }
+.is-dark .header-navbar::before { background: #c4077b; }
 
 .header-navbar-overlay { background: rgba(8, 9, 27, 0.7); left: 100%; width: 0; z-index: -1; opacity: 0; visibility: hidden; transition: opacity .3s; transition-delay: .2s; }
 
