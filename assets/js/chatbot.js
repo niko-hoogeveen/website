@@ -34,7 +34,7 @@ function displayMessage(role, text) {
         messageElem.innerHTML = `<strong>You:</strong> ${text}`;
     } else {
         messageElem.style.backgroundColor = "#C4077B";
-        messageElem.innerHTML = `<strong>Cupid AI:</strong> ${text}`;
+        messageElem.innerHTML = `<strong>Cupid:</strong> ${text}`;
     }
 
     chatMessages.appendChild(messageElem);
@@ -101,4 +101,8 @@ userInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
         sendBtn.click();   
     }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    displayMessage("assistant", "Hello! I'm Cupid AI, a whimsical, romantic chatbot who loves to give advice on relationships and matters of the heart. How can I help you today?");
 });
