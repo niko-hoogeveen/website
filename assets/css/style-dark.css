@@ -2094,7 +2094,7 @@ hr { position: relative; z-index: 5; }
 
 @media (min-width: 576px) { .btn { font-size: 13px; line-height: 25px; padding: 12px 30px; letter-spacing: 0.1em; min-width: 120px; }
   .btn.btn-grad { padding: 14px 30px; }
-  .btn-lg { font-size: 14px; font-weight: 700; line-height: 24px; padding: 15px 40px; min-width: 190px; margin-left:3rem; }
+  .btn-lg { font-size: 14px; font-weight: 700; line-height: 24px; padding: 15px 40px; min-width: 190px; }
   .btn-lg.btn-nocap { font-size: 16px; }
   .btn-md { font-size: 12px; line-height: 24px; padding: 8px 20px; min-width: 160px; }
   .btn-md.btn-grad { padding: 10px 30px; }
@@ -2122,6 +2122,7 @@ hr { position: relative; z-index: 5; }
 
 @media (min-width: 992px) { .text-lg-left .btn-grp { justify-content: flex-start; }
   .btn-grp .btn-lg { padding: 15px 35px; } }
+  .btn-lg {margin-left: 3rem;}
 
 @media (min-width: 1200px) { .text-xl-left .btn-grp { justify-content: flex-start; } }
 
