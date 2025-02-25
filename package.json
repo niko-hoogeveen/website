@@ -2,7 +2,7 @@
   "name": "next-site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://niko-hoogeveen.github.io/website",
+  "homepage": "https://nikohoogeveen.com",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
