@@ -4,18 +4,36 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #2b2b2b;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #9b9a9a;
   }
 }
 
 body {
-  color: var(--foreground);
+  color: #d3d1d1;
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.animate-gradientBg {
+  background: #000000
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.3s ease-out forwards;
 }
