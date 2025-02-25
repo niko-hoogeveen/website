@@ -2,7 +2,6 @@
 import Header from "@/components/Header";
 import Experiences from "@/components/Experiences";
 import Projects from "@/components/Projects";
-import AIChatBot from "@/components/Chatbot";
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import {
@@ -13,6 +12,9 @@ import {
 } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 import Head from "next/head";
+import Education from "@/components/Education";
+import Footer from "@/components/Footer";
+import { FaLaptop } from "react-icons/fa";
 
 export default function Home() {
   const [init, setInit] = useState(false);
@@ -69,7 +71,7 @@ export default function Home() {
           color: "#ffffff",
           distance: 150,
           enable: true,
-          opacity: 0.5,
+          opacity: 0.1,
           width: 1,
         },
         move: {
@@ -79,17 +81,17 @@ export default function Home() {
             default: OutMode.out,
           },
           random: true,
-          speed: 8,
+          speed: 4,
           straight: false,
         },
         number: {
           density: {
             enable: true,
           },
-          value: 160,
+          value: 150,
         },
         opacity: {
-          value: 0.5,
+          value: 0.1,
         },
         shape: {
           type: "circle",
@@ -173,8 +175,10 @@ export default function Home() {
           <hr className="my-8" />
           <Experiences />
           <hr className="my-8" />
+          <Education/>
+          <hr className="my-8" />
           <Projects />
-          <AIChatBot />
+          <Footer />
         </main>
       </>
     );

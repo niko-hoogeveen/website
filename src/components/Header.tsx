@@ -7,6 +7,7 @@ export default function Header() {
   return (
     <header className="font-geist text-center mb-4">
       <h1 className="text-3xl font-bold">Niko Hoogeveen</h1>
+      <p className="text-lg text-gray-400">Toronto, Ontario, Canada</p>
       <p className="text-lg text-gray-400">Software Engineer</p>
       <div className="flex justify-center gap-4 mt-4">
         {/* LinkedIn */}
@@ -14,7 +15,7 @@ export default function Header() {
           href="https://www.linkedin.com/in/niko-hoogeveen-52b7a9205/"
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-md transition-transform duration-300 bg-blue-600 hover:bg-blue-800 hover:scale-105 group"
+          className="rounded-md transition-transform duration-300 hover:scale-105 group"
         >
           <FaLinkedin size={24} className="transition-transform duration-300 group-hover:rotate-180" />
         </a>
@@ -22,7 +23,7 @@ export default function Header() {
         {/* Email */}
         <a
           href="mailto:niko.hoogeveen@gmail.com"
-          className="rounded-md transition-transform duration-300 bg-blue-600 hover:bg-blue-800 hover:scale-105 group"
+          className="rounded-md transition-transform duration-300 hover:scale-105 group"
         >
           <HiOutlineMail size={24} className="transition-transform duration-300 group-hover:rotate-180" />
         </a>
@@ -32,7 +33,7 @@ export default function Header() {
           href="https://github.com/niko-hoogeveen"
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-md transition-transform duration-300 bg-blue-600 hover:bg-blue-800 hover:scale-105 group"
+          className="rounded-md transition-transform duration-300 hover:scale-105 group"
         >
           <FaGithub size={24} className="transition-transform duration-300 group-hover:rotate-180"/>
         </a>
