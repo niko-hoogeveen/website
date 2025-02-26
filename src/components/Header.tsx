@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
+import Technologies from "./Technologies";
 
 export default function Header() {
   return (
@@ -17,7 +18,10 @@ export default function Header() {
           rel="noopener noreferrer"
           className="rounded-md transition-transform duration-300 hover:scale-105 group"
         >
-          <FaLinkedin size={24} className="transition-transform duration-300 group-hover:rotate-180" />
+          <FaLinkedin
+            size={24}
+            className="transition-transform duration-300 group-hover:rotate-180"
+          />
         </a>
 
         {/* Email */}
@@ -25,7 +29,10 @@ export default function Header() {
           href="mailto:niko.hoogeveen@gmail.com"
           className="rounded-md transition-transform duration-300 hover:scale-105 group"
         >
-          <HiOutlineMail size={24} className="transition-transform duration-300 group-hover:rotate-180" />
+          <HiOutlineMail
+            size={24}
+            className="transition-transform duration-300 group-hover:rotate-180"
+          />
         </a>
 
         {/* GitHub */}
@@ -35,24 +42,28 @@ export default function Header() {
           rel="noopener noreferrer"
           className="rounded-md transition-transform duration-300 hover:scale-105 group"
         >
-          <FaGithub size={24} className="transition-transform duration-300 group-hover:rotate-180"/>
+          <FaGithub
+            size={24}
+            className="transition-transform duration-300 group-hover:rotate-180"
+          />
         </a>
       </div>
 
-      <div className="mt-8 w-full flex items-center justify-center" >
+      <div className="mt-8 w-full flex items-center justify-center">
         <a
-        href="https://cal.com/niko-hoogeveen"
-        target="_blank"
-        rel="noopener noreferrer"
+          href="https://cal.com/niko-hoogeveen"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <ContactCard/>
+          <ContactCard />
         </a>
-        
+      </div>
+      <div className="mt-8">
+        <Technologies />
       </div>
     </header>
   );
 }
-
 
 function ContactCard() {
   // Track mouse position for radial highlight
@@ -95,7 +106,9 @@ function ContactCard() {
       <div className="p-3 flex-row">
         <div>
           <h3 className="text-lg font-bold">Contact Me</h3>
-          <p className="text-sm text-gray-400">Set up a meeting at your convenience</p>
+          <p className="text-sm text-gray-400">
+            Set up a meeting at your convenience
+          </p>
         </div>
       </div>
     </div>
