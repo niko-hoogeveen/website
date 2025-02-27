@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaNodeJs, FaHtml5, FaPython, FaCss3, FaPhp, FaGit } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { RiNextjsFill } from "react-icons/ri";

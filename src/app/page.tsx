@@ -14,7 +14,6 @@ import { loadSlim } from "@tsparticles/slim";
 import Head from "next/head";
 import Education from "@/components/Education";
 import Footer from "@/components/Footer";
-import { FaLaptop } from "react-icons/fa";
 
 export default function Home() {
   const [init, setInit] = useState(false);

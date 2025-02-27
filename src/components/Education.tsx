@@ -14,16 +14,6 @@ const schools: School[] = [
 ];
 
 export default function Education() {
-  const [expanded, setExpanded] = useState<boolean[]>(
-    schools.map(() => false)
-  );
-
-  const handleToggle = (index: number) => {
-    setExpanded((prev) =>
-      prev.map((isExpanded, i) => (i === index ? !isExpanded : isExpanded))
-    );
-  };
-
   return (
     <section>
       <h2 className="text-2xl font-semibold mb-4">Education</h2>
