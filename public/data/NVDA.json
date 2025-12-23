@@ -1,0 +1,318 @@
+{
+  "metadata": {
+    "ticker": "NVDA",
+    "companyName": "NVIDIA Corporation",
+    "lastUpdated": "2025-01-27",
+    "researchReportUrl": "/research/NVDA-research-report.pdf"
+  },
+  "priceHistory": [
+    {
+      "date": "2023-01-03",
+      "open": 143.50,
+      "high": 145.20,
+      "low": 142.80,
+      "close": 144.95,
+      "volume": 42500000
+    },
+    {
+      "date": "2023-01-04",
+      "open": 145.10,
+      "high": 147.50,
+      "low": 144.50,
+      "close": 146.80,
+      "volume": 38900000
+    },
+    {
+      "date": "2023-01-05",
+      "open": 147.20,
+      "high": 149.10,
+      "low": 146.30,
+      "close": 148.50,
+      "volume": 41200000
+    },
+    {
+      "date": "2023-01-06",
+      "open": 148.80,
+      "high": 150.40,
+      "low": 147.90,
+      "close": 149.75,
+      "volume": 39800000
+    },
+    {
+      "date": "2023-01-09",
+      "open": 150.20,
+      "high": 152.80,
+      "low": 149.50,
+      "close": 151.90,
+      "volume": 44500000
+    },
+    {
+      "date": "2023-01-10",
+      "open": 152.50,
+      "high": 154.20,
+      "low": 151.80,
+      "close": 153.60,
+      "volume": 43200000
+    },
+    {
+      "date": "2023-01-11",
+      "open": 154.00,
+      "high": 156.50,
+      "low": 153.20,
+      "close": 155.80,
+      "volume": 46800000
+    },
+    {
+      "date": "2023-01-12",
+      "open": 156.20,
+      "high": 158.90,
+      "low": 155.50,
+      "close": 157.40,
+      "volume": 45100000
+    },
+    {
+      "date": "2023-01-13",
+      "open": 157.80,
+      "high": 160.20,
+      "low": 157.10,
+      "close": 159.50,
+      "volume": 48900000
+    },
+    {
+      "date": "2023-01-17",
+      "open": 160.10,
+      "high": 162.80,
+      "low": 159.40,
+      "close": 161.90,
+      "volume": 51200000
+    },
+    {
+      "date": "2024-12-20",
+      "open": 485.20,
+      "high": 492.50,
+      "low": 483.80,
+      "close": 490.10,
+      "volume": 67800000
+    },
+    {
+      "date": "2024-12-23",
+      "open": 491.50,
+      "high": 498.20,
+      "low": 490.30,
+      "close": 496.80,
+      "volume": 71200000
+    },
+    {
+      "date": "2024-12-24",
+      "open": 497.20,
+      "high": 502.40,
+      "low": 496.10,
+      "close": 500.50,
+      "volume": 58900000
+    },
+    {
+      "date": "2024-12-27",
+      "open": 501.80,
+      "high": 508.90,
+      "low": 500.50,
+      "close": 507.20,
+      "volume": 72300000
+    },
+    {
+      "date": "2024-12-30",
+      "open": 508.50,
+      "high": 515.60,
+      "low": 507.20,
+      "close": 513.40,
+      "volume": 75600000
+    },
+    {
+      "date": "2024-12-31",
+      "open": 514.20,
+      "high": 520.80,
+      "low": 512.90,
+      "close": 518.75,
+      "volume": 81200000
+    }
+  ],
+  "earnings": [
+    {
+      "quarter": "2024-Q4",
+      "earningsDate": "2024-11-21",
+      "epsActual": 5.16,
+      "epsEstimate": 4.60,
+      "epsSurprise": 12.17,
+      "revenueActual": 22103,
+      "revenueEstimate": 20000,
+      "revenueSurprise": 10.52,
+      "priceReaction": 2.85
+    },
+    {
+      "quarter": "2024-Q3",
+      "earningsDate": "2024-08-23",
+      "epsActual": 4.40,
+      "epsEstimate": 4.15,
+      "epsSurprise": 6.02,
+      "revenueActual": 18120,
+      "revenueEstimate": 17500,
+      "revenueSurprise": 3.54,
+      "priceReaction": 1.20
+    },
+    {
+      "quarter": "2024-Q2",
+      "earningsDate": "2024-05-22",
+      "epsActual": 3.87,
+      "epsEstimate": 3.50,
+      "epsSurprise": 10.57,
+      "revenueActual": 15001,
+      "revenueEstimate": 14500,
+      "revenueSurprise": 3.46,
+      "priceReaction": 3.45
+    },
+    {
+      "quarter": "2024-Q1",
+      "earningsDate": "2024-02-21",
+      "epsActual": 3.34,
+      "epsEstimate": 3.10,
+      "epsSurprise": 7.74,
+      "revenueActual": 13051,
+      "revenueEstimate": 12800,
+      "revenueSurprise": 1.96,
+      "priceReaction": 0.85
+    },
+    {
+      "quarter": "2023-Q4",
+      "earningsDate": "2023-11-21",
+      "epsActual": 2.70,
+      "epsEstimate": 2.50,
+      "epsSurprise": 8.00,
+      "revenueActual": 18120,
+      "revenueEstimate": 17500,
+      "revenueSurprise": 3.54,
+      "priceReaction": 2.10
+    },
+    {
+      "quarter": "2023-Q3",
+      "earningsDate": "2023-08-23",
+      "epsActual": 2.48,
+      "epsEstimate": 2.35,
+      "epsSurprise": 5.53,
+      "revenueActual": 13507,
+      "revenueEstimate": 13200,
+      "revenueSurprise": 2.33,
+      "priceReaction": -1.20
+    }
+  ],
+  "fundamentals": {
+    "revenue": [
+      {
+        "period": "2024-Q4",
+        "value": 22103,
+        "type": "quarterly"
+      },
+      {
+        "period": "2024-Q3",
+        "value": 18120,
+        "type": "quarterly"
+      },
+      {
+        "period": "2024-Q2",
+        "value": 15001,
+        "type": "quarterly"
+      },
+      {
+        "period": "2024-Q1",
+        "value": 13051,
+        "type": "quarterly"
+      },
+      {
+        "period": "2023",
+        "value": 60922,
+        "type": "annual"
+      },
+      {
+        "period": "2022",
+        "value": 26974,
+        "type": "annual"
+      }
+    ],
+    "netIncome": [
+      {
+        "period": "2024-Q4",
+        "value": 12800,
+        "type": "quarterly"
+      },
+      {
+        "period": "2024-Q3",
+        "value": 9240,
+        "type": "quarterly"
+      },
+      {
+        "period": "2024-Q2",
+        "value": 6180,
+        "type": "quarterly"
+      },
+      {
+        "period": "2024-Q1",
+        "value": 4760,
+        "type": "quarterly"
+      },
+      {
+        "period": "2023",
+        "value": 29760,
+        "type": "annual"
+      },
+      {
+        "period": "2022",
+        "value": 4368,
+        "type": "annual"
+      }
+    ],
+    "operatingMargin": [
+      {
+        "period": "2024-Q4",
+        "value": 57.8,
+        "type": "quarterly"
+      },
+      {
+        "period": "2024-Q3",
+        "value": 51.0,
+        "type": "quarterly"
+      },
+      {
+        "period": "2024-Q2",
+        "value": 41.2,
+        "type": "quarterly"
+      },
+      {
+        "period": "2024-Q1",
+        "value": 36.5,
+        "type": "quarterly"
+      },
+      {
+        "period": "2023",
+        "value": 48.9,
+        "type": "annual"
+      },
+      {
+        "period": "2022",
+        "value": 16.2,
+        "type": "annual"
+      }
+    ]
+  },
+  "valuation": {
+    "pe": 65.2,
+    "forwardPe": 58.5,
+    "evEbitda": 52.8,
+    "priceToFcf": 48.3,
+    "peg": 1.15,
+    "asOfDate": "2025-01-27"
+  },
+  "dcfDefaults": {
+    "terminalGrowthRate": 2.5,
+    "discountRate": 10.5,
+    "freeCashFlowGrowthRate": 25.0
+  }
+}
+

@@ -1,0 +1,278 @@
+{
+  "metadata": {
+    "ticker": "GOOG",
+    "companyName": "Alphabet Inc.",
+    "lastUpdated": "2025-01-27",
+    "researchReportUrl": "/research/GOOG-research-report.pdf"
+  },
+  "priceHistory": [
+    {
+      "date": "2023-01-03",
+      "open": 88.50,
+      "high": 90.20,
+      "low": 87.80,
+      "close": 89.95,
+      "volume": 32500000
+    },
+    {
+      "date": "2023-01-04",
+      "open": 90.20,
+      "high": 92.50,
+      "low": 89.50,
+      "close": 91.80,
+      "volume": 31200000
+    },
+    {
+      "date": "2023-01-05",
+      "open": 92.10,
+      "high": 94.80,
+      "low": 91.30,
+      "close": 93.50,
+      "volume": 29800000
+    },
+    {
+      "date": "2023-01-06",
+      "open": 93.80,
+      "high": 96.20,
+      "low": 93.10,
+      "close": 95.40,
+      "volume": 32400000
+    },
+    {
+      "date": "2023-01-09",
+      "open": 96.20,
+      "high": 98.50,
+      "low": 95.50,
+      "close": 97.80,
+      "volume": 35600000
+    },
+    {
+      "date": "2024-12-20",
+      "open": 168.20,
+      "high": 170.50,
+      "low": 167.80,
+      "close": 169.90,
+      "volume": 45200000
+    },
+    {
+      "date": "2024-12-23",
+      "open": 170.50,
+      "high": 172.80,
+      "low": 169.90,
+      "close": 171.60,
+      "volume": 47800000
+    },
+    {
+      "date": "2024-12-24",
+      "open": 172.20,
+      "high": 174.40,
+      "low": 171.60,
+      "close": 173.50,
+      "volume": 38900000
+    },
+    {
+      "date": "2024-12-27",
+      "open": 174.80,
+      "high": 176.90,
+      "low": 173.50,
+      "close": 175.20,
+      "volume": 52300000
+    },
+    {
+      "date": "2024-12-30",
+      "open": 176.50,
+      "high": 178.60,
+      "low": 175.20,
+      "close": 177.40,
+      "volume": 55600000
+    },
+    {
+      "date": "2024-12-31",
+      "open": 178.20,
+      "high": 180.80,
+      "low": 177.40,
+      "close": 179.75,
+      "volume": 61200000
+    }
+  ],
+  "earnings": [
+    {
+      "quarter": "2024-Q4",
+      "earningsDate": "2025-01-30",
+      "epsActual": 1.80,
+      "epsEstimate": 1.70,
+      "epsSurprise": 5.88,
+      "revenueActual": 86310,
+      "revenueEstimate": 85000,
+      "revenueSurprise": 1.54,
+      "priceReaction": 0.90
+    },
+    {
+      "quarter": "2024-Q3",
+      "earningsDate": "2024-10-24",
+      "epsActual": 1.89,
+      "epsEstimate": 1.75,
+      "epsSurprise": 8.00,
+      "revenueActual": 80594,
+      "revenueEstimate": 79000,
+      "revenueSurprise": 2.02,
+      "priceReaction": 1.20
+    },
+    {
+      "quarter": "2024-Q2",
+      "earningsDate": "2024-07-25",
+      "epsActual": 1.74,
+      "epsEstimate": 1.65,
+      "epsSurprise": 5.45,
+      "revenueActual": 80594,
+      "revenueEstimate": 79000,
+      "revenueSurprise": 2.02,
+      "priceReaction": 0.60
+    },
+    {
+      "quarter": "2024-Q1",
+      "earningsDate": "2024-04-25",
+      "epsActual": 1.89,
+      "epsEstimate": 1.80,
+      "epsSurprise": 5.00,
+      "revenueActual": 80594,
+      "revenueEstimate": 79000,
+      "revenueSurprise": 2.02,
+      "priceReaction": -0.30
+    },
+    {
+      "quarter": "2023-Q4",
+      "earningsDate": "2024-01-30",
+      "epsActual": 1.64,
+      "epsEstimate": 1.55,
+      "epsSurprise": 5.81,
+      "revenueActual": 86310,
+      "revenueEstimate": 85000,
+      "revenueSurprise": 1.54,
+      "priceReaction": 2.10
+    },
+    {
+      "quarter": "2023-Q3",
+      "earningsDate": "2023-10-24",
+      "epsActual": 1.55,
+      "epsEstimate": 1.45,
+      "epsSurprise": 6.90,
+      "revenueActual": 76593,
+      "revenueEstimate": 75500,
+      "revenueSurprise": 1.45,
+      "priceReaction": 1.80
+    }
+  ],
+  "fundamentals": {
+    "revenue": [
+      {
+        "period": "2024-Q4",
+        "value": 86310,
+        "type": "quarterly"
+      },
+      {
+        "period": "2024-Q3",
+        "value": 80594,
+        "type": "quarterly"
+      },
+      {
+        "period": "2024-Q2",
+        "value": 80594,
+        "type": "quarterly"
+      },
+      {
+        "period": "2024-Q1",
+        "value": 80594,
+        "type": "quarterly"
+      },
+      {
+        "period": "2023",
+        "value": 307394,
+        "type": "annual"
+      },
+      {
+        "period": "2022",
+        "value": 282836,
+        "type": "annual"
+      }
+    ],
+    "netIncome": [
+      {
+        "period": "2024-Q4",
+        "value": 20687,
+        "type": "quarterly"
+      },
+      {
+        "period": "2024-Q3",
+        "value": 19689,
+        "type": "quarterly"
+      },
+      {
+        "period": "2024-Q2",
+        "value": 18368,
+        "type": "quarterly"
+      },
+      {
+        "period": "2024-Q1",
+        "value": 16437,
+        "type": "quarterly"
+      },
+      {
+        "period": "2023",
+        "value": 73797,
+        "type": "annual"
+      },
+      {
+        "period": "2022",
+        "value": 59972,
+        "type": "annual"
+      }
+    ],
+    "operatingMargin": [
+      {
+        "period": "2024-Q4",
+        "value": 24.0,
+        "type": "quarterly"
+      },
+      {
+        "period": "2024-Q3",
+        "value": 24.4,
+        "type": "quarterly"
+      },
+      {
+        "period": "2024-Q2",
+        "value": 22.8,
+        "type": "quarterly"
+      },
+      {
+        "period": "2024-Q1",
+        "value": 20.4,
+        "type": "quarterly"
+      },
+      {
+        "period": "2023",
+        "value": 24.0,
+        "type": "annual"
+      },
+      {
+        "period": "2022",
+        "value": 21.2,
+        "type": "annual"
+      }
+    ]
+  },
+  "valuation": {
+    "pe": 25.8,
+    "forwardPe": 23.5,
+    "evEbitda": 16.2,
+    "priceToFcf": 20.5,
+    "peg": 1.05,
+    "asOfDate": "2025-01-27"
+  },
+  "dcfDefaults": {
+    "terminalGrowthRate": 3.0,
+    "discountRate": 10.0,
+    "freeCashFlowGrowthRate": 12.0
+  }
+}
+
