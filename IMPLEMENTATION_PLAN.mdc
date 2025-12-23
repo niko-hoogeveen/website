@@ -357,7 +357,7 @@ This document outlines the phased implementation approach for the equity researc
 - Display intrinsic value and upside/downside
 
 ### Tasks
-financial
+
 #### 7.1 DCF Component
 - [ ] Create `DCFCalculator` component
 - [ ] Design slider inputs for assumptions:

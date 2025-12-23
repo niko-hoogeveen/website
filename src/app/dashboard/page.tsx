@@ -3,9 +3,14 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
-import { getAvailableTickers, loadTickerData } from "@/lib/dashboard/dataLoader";
+import PageParticles from "@/components/Particles";
+import {
+  getAvailableTickers,
+  loadTickerData,
+} from "@/lib/dashboard/dataLoader";
 import type { TickerData } from "@/types/dashboard";
-
+import LatestPrice from "@/components/dashboard/LatestPrice";
+import { TimeRange } from "@/types/dashboard";
 /**
  * Dashboard overview page
  * Displays a list of available tickers with navigation cards
@@ -14,6 +19,7 @@ export default function DashboardPage() {
   const [tickerData, setTickerData] = useState<
     Record<string, TickerData | null>
   >({});
+  const [timeRange] = useState<TimeRange>("1Y");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -35,11 +41,30 @@ export default function DashboardPage() {
   const tickers = getAvailableTickers();
 
   return (
-    <div className="max-w-6xl mx-auto p-6">
-      <DashboardHeader />
+    <div className="max-w-6xl mx-auto p-6 animate-fade-in">
+      <PageParticles id="dashboard-particles" />
+      <div className="animate-slide-in-top">
+        <DashboardHeader />
+        <br></br>
+        <h3 className="text-left text-2xl font-bold font-geist">
+          Why I Created this Dashboard
+        </h3>
+        <p className="mt-1 mx-0.25">
+          I built this dashboard as a way to learn how equity research actually
+          works by doing it myself. While moving from software engineering into
+          market and stock analysis, I realized that reading reports alone
+          wasn’t enough—I wanted to work directly with price data, earnings
+          results, and valuation metrics in a way that felt realistic. This
+          project brings those pieces together in one place and reflects how I
+          personally analyze companies: looking at the business, the numbers,
+          and how the market reacts over time. It also gave me a way to combine
+          my technical background with my growing interest in financial analysis
+          in a practical, hands-on way.
+        </p>
+      </div>
 
       {loading ? (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-pulse">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-pulse mt-6">
           {[1, 2, 3].map((i) => (
             <div
               key={i}
@@ -53,8 +78,8 @@ export default function DashboardPage() {
           ))}
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {tickers.map((ticker) => {
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+          {tickers.map((ticker, index) => {
             const data = tickerData[ticker];
             if (!data) {
               return (
@@ -68,27 +93,45 @@ export default function DashboardPage() {
             }
 
             return (
-              <Link
-                key={ticker}
-                href={`/dashboard/${ticker}`}
-                className="block border border-gray-700 rounded-lg p-6 bg-gray-900/50 hover:bg-gray-800/50 transition-all duration-200 hover:scale-105 hover:shadow-lg"
-              >
-                <div className="mb-4">
-                  <h2 className="text-2xl font-bold mb-1">
-                    {data.metadata.companyName}
-                  </h2>
-                  <p className="text-lg text-gray-400">{ticker}</p>
-                </div>
-                <div className="space-y-2 text-sm text-gray-500">
-                  <p>
-                    Last updated:{" "}
-                    {new Date(data.metadata.lastUpdated).toLocaleDateString()}
-                  </p>
-                  {data.valuation && (
-                    <p>P/E: {data.valuation.pe.toFixed(1)}</p>
-                  )}
-                </div>
-              </Link>
+              <div className="animate-slide-in-bottom" key={ticker}>
+                <Link
+                  key={ticker}
+                  href={`/dashboard/${ticker}`}
+                  className="block border border-gray-700 rounded-lg p-6 bg-gray-900/50 
+                            hover:bg-gray-800/50 transition-all duration-300 ease-out hover:scale-105 
+                            hover:shadow-lg cursor-pointer"
+                  style={{
+                    animationDelay: `${index * 0.1}s`,
+                    animationFillMode: "both",
+                  }}
+                >
+                  <div className="mb-4">
+                    <h2 className="text-2xl font-bold mb-1">
+                      {data.metadata.companyName}
+                    </h2>
+                    <p className="text-lg text-gray-400">{ticker}</p>
+                  </div>
+                  <div className="flex flex-row justify-between">
+                    <div className="text-sm text-gray-500">
+                      <p>
+                        Last updated:{" "}
+                        {new Date(
+                          data.metadata.lastUpdated
+                        ).toLocaleDateString()}
+                      </p>
+                      {data.valuation &&
+                        data.valuation.pe !== null &&
+                        data.valuation.pe !== undefined && (
+                          <p>P/E: {data.valuation.pe.toFixed(1)}</p>
+                        )}
+                    </div>
+                    <LatestPrice
+                        priceData={data.priceHistory}
+                        timeRange={timeRange}
+                      />
+                  </div>
+                </Link>
+              </div>
             );
           })}
         </div>
@@ -96,4 +139,3 @@ export default function DashboardPage() {
     </div>
   );
 }
-

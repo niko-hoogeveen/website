@@ -33,11 +33,21 @@ export interface FundamentalDataPoint {
 }
 
 export interface ValuationMetrics {
-  pe: number; // Price-to-Earnings ratio
-  forwardPe: number; // Forward P/E
-  evEbitda: number; // Enterprise Value to EBITDA
-  priceToFcf: number; // Price to Free Cash Flow
-  peg?: number; // Price/Earnings to Growth (optional)
+  pe: number | null; // Price-to-Earnings ratio
+  forwardPeGrowth?: number | null; // Forward P/E Growth rate (optional)
+  evEbitda: number | null; // Enterprise Value to EBITDA
+  priceToFcf: number | null; // Price to Free Cash Flow
+  peg?: number | null; // Price/Earnings to Growth (optional)
+  priceToBook?: number | null; // Price to Book ratio (optional)
+  priceToSales?: number | null; // Price to Sales ratio (optional)
+  evToSales?: number | null; // Enterprise Value to Sales (optional)
+  debtToEquity?: number | null; // Debt to Equity ratio (optional)
+  currentRatio?: number | null; // Current Ratio (optional)
+  quickRatio?: number | null; // Quick Ratio (optional)
+  returnOnEquity?: number | null; // Return on Equity (optional)
+  returnOnAssets?: number | null; // Return on Assets (optional)
+  operatingMargin?: number | null; // Operating Profit Margin (optional)
+  netProfitMargin?: number | null; // Net Profit Margin (optional)
   asOfDate: string; // ISO 8601 date string
 }
 
@@ -70,7 +80,7 @@ export interface TickerData {
 /**
  * Supported ticker symbols
  */
-export type TickerSymbol = "NVDA" | "META" | "GOOG";
+export type TickerSymbol = "NVDA" | "META" | "AMZN";
 
 /**
  * Time range options for price charts

@@ -1,16 +1,16 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { createChart, IChartApi, ISeriesApi, LineSeriesPartialOptions, LineSeries } from "lightweight-charts";
-import type { PriceDataPoint, EarningsData, TimeRange } from "@/types/dashboard";
+import { createChart, IChartApi, ISeriesApi, LineSeriesPartialOptions, LineSeries, CandlestickSeries, CandlestickSeriesPartialOptions } from "lightweight-charts";
+import type { PriceDataPoint, TimeRange } from "@/types/dashboard";
 import {
   toLineData,
+  toCandlestickData,
   filterByTimeRange,
 } from "@/lib/dashboard/chartUtils";
 
 interface PriceChartProps {
   priceData: PriceDataPoint[];
-  earnings: EarningsData[];
   timeRange: TimeRange;
   height?: number;
 }
@@ -21,14 +21,15 @@ interface PriceChartProps {
  */
 export default function PriceChart({
   priceData,
-  earnings,
   timeRange,
   height = 400,
 }: PriceChartProps) {
   const chartContainerRef = useRef<HTMLDivElement>(null);
   const chartRef = useRef<IChartApi | null>(null);
-  const seriesRef = useRef<ISeriesApi<"Line"> | null>(null);
+  const seriesRef = useRef<ISeriesApi<"Line"> | ISeriesApi<"Candlestick"> | null>(null);
+  const currentSeriesTypeRef = useRef<"line" | "candlestick" | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [chartType, setChartType] = useState<"line" | "candlestick">("line");
 
   useEffect(() => {
     if (!chartContainerRef.current) return;
@@ -77,21 +78,7 @@ export default function PriceChart({
 
     chartRef.current = chart;
 
-    // Add candlestick series using the built-in series definition
-    const lineSeriesInstance = chart.addSeries(LineSeries, {
-      upColor: "#26a69a",
-      downColor: "#ef5350",
-      borderVisible: false,
-      wickUpColor: "#26a69a",
-      wickDownColor: "#ef5350",
-      priceFormat: {
-        type: "price",
-        precision: 2,
-        minMove: 0.01,
-      },
-    } as LineSeriesPartialOptions);
-
-    seriesRef.current = lineSeriesInstance;
+    // Initial series will be added in the effect that handles chartType
 
     // Handle resize
     const handleResize = () => {
@@ -113,16 +100,60 @@ export default function PriceChart({
     };
   }, [height]);
 
-  // Update chart data when priceData or timeRange changes
+  // Handle chart type changes and data updates
   useEffect(() => {
-    if (!seriesRef.current || !chartRef.current || isLoading) return;
+    if (!chartRef.current || isLoading) return;
 
     // Filter data by time range
     const filteredData = filterByTimeRange(priceData, timeRange);
-    const candlestickData = toLineData(filteredData);
 
-    // Set data
-    seriesRef.current.setData(candlestickData);
+    // If series exists and chart type has changed, remove it to recreate
+    if (seriesRef.current && currentSeriesTypeRef.current !== chartType) {
+      chartRef.current.removeSeries(seriesRef.current);
+      seriesRef.current = null;
+      currentSeriesTypeRef.current = null;
+    }
+
+    // Create series if it doesn't exist
+    if (!seriesRef.current) {
+      if (chartType === "line") {
+        const lineSeries = chartRef.current.addSeries(LineSeries, {
+          color: "#3b82f6",
+          lineWidth: 2,
+          priceFormat: {
+            type: "price",
+            precision: 2,
+            minMove: 0.01,
+          },
+        } as LineSeriesPartialOptions);
+        seriesRef.current = lineSeries;
+        currentSeriesTypeRef.current = "line";
+      } else {
+        const candlestickSeries = chartRef.current.addSeries(CandlestickSeries, {
+          upColor: "#26a69a",
+          downColor: "#ef5350",
+          borderVisible: false,
+          wickUpColor: "#26a69a",
+          wickDownColor: "#ef5350",
+          priceFormat: {
+            type: "price",
+            precision: 2,
+            minMove: 0.01,
+          },
+        } as CandlestickSeriesPartialOptions);
+        seriesRef.current = candlestickSeries;
+        currentSeriesTypeRef.current = "candlestick";
+      }
+    }
+
+    // Update data based on current chart type
+    if (chartType === "line") {
+      const lineData = toLineData(filteredData);
+      (seriesRef.current as ISeriesApi<"Line">).setData(lineData);
+    } else {
+      const candlestickData = toCandlestickData(filteredData);
+      (seriesRef.current as ISeriesApi<"Candlestick">).setData(candlestickData);
+    }
 
     // Fit content to show all data
     chartRef.current.timeScale().fitContent();
@@ -131,10 +162,35 @@ export default function PriceChart({
     // Note: Marker API implementation will be added in a future update
     // For now, earnings dates are available in the data but not visually marked
     // This can be enhanced with price line markers or custom overlays
-  }, [priceData, earnings, timeRange, isLoading]);
+  }, [chartType, priceData, timeRange, isLoading]);
 
   return (
-    <div className="w-full">
+    <div className="w-full relative">
+      {/* Toggle button in top left */}
+      <div className="absolute top-2 left-2 z-10 flex gap-1 bg-gray-900/90 backdrop-blur-sm border border-gray-700 rounded-lg p-1">
+        <button
+          onClick={() => setChartType("line")}
+          className={`px-3 py-1.5 text-xs font-medium rounded transition-all duration-200 ${
+            chartType === "line"
+              ? "bg-gray-700 text-white"
+              : "text-gray-400 hover:text-white hover:bg-gray-800"
+          }`}
+          title="Line Chart"
+        >
+          Line
+        </button>
+        <button
+          onClick={() => setChartType("candlestick")}
+          className={`px-3 py-1.5 text-xs font-medium rounded transition-all duration-200 ${
+            chartType === "candlestick"
+              ? "bg-gray-700 text-white"
+              : "text-gray-400 hover:text-white hover:bg-gray-800"
+          }`}
+          title="Candlestick Chart"
+        >
+          Candles
+        </button>
+      </div>
       <div ref={chartContainerRef} style={{ width: "100%", height: `${height}px` }} />
     </div>
   );

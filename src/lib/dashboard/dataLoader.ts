@@ -34,7 +34,7 @@ export async function loadTickerData(ticker: TickerSymbol): Promise<TickerData |
  * Get all available ticker symbols
  */
 export function getAvailableTickers(): TickerSymbol[] {
-  return ["NVDA", "META", "GOOG"];
+  return ["NVDA", "META", "AMZN"];
 }
 
 /**

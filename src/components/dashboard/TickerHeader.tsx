@@ -14,8 +14,8 @@ export default function TickerHeader({ metadata }: TickerHeaderProps) {
   const formattedDate = format(lastUpdatedDate, "MMMM d, yyyy");
 
   return (
-    <header className="mb-8 pb-6 border-b border-gray-700">
-      <div className="flex items-start justify-between">
+    <header className="pb-6">
+      <div className="flex items-start justify-center">
         <div>
           <h1 className="text-4xl font-bold mb-2">{metadata.companyName}</h1>
           <p className="text-2xl text-gray-400 mb-4">{metadata.ticker}</p>
