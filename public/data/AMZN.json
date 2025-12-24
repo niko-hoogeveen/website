@@ -2,18 +2,10 @@
   "metadata": {
     "ticker": "AMZN",
     "companyName": "Amazon.com, Inc.",
-    "lastUpdated": "2025-12-23",
+    "lastUpdated": "2025-12-24",
     "researchReportUrl": "/data/reports/AMZN.pdf"
   },
   "priceHistory": [
-    {
-      "date": "2020-12-24",
-      "open": 159.7,
-      "high": 160.1,
-      "low": 158.45,
-      "close": 158.63,
-      "volume": 29038000
-    },
     {
       "date": "2020-12-28",
       "open": 159.7,
@@ -10040,11 +10032,11 @@
     },
     {
       "date": "2025-12-23",
-      "open": 229.055,
-      "high": 232.445,
+      "open": 229.06,
+      "high": 232.45,
       "low": 228.73,
-      "close": 232.18,
-      "volume": 21392179
+      "close": 232.14,
+      "volume": 29230233
     }
   ],
   "earnings": [
@@ -10229,7 +10221,7 @@
     "returnOnAssets": 0.10506909403630339,
     "operatingMargin": 0.11022377157074045,
     "netProfitMargin": 0.11063023447557606,
-    "asOfDate": "2025-12-23"
+    "asOfDate": "2025-12-24"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 3,
