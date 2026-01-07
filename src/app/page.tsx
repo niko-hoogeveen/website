@@ -6,7 +6,6 @@ import Head from "next/head";
 import Education from "@/components/Education";
 import Footer from "@/components/Footer";
 import PageParticles from "@/components/Particles";
-import Technologies from "@/components/Technologies"
 
 export default function Home() {
   return (
