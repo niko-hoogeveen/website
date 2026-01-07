@@ -6,6 +6,7 @@ import Head from "next/head";
 import Education from "@/components/Education";
 import Footer from "@/components/Footer";
 import PageParticles from "@/components/Particles";
+import Technologies from "@/components/Technologies"
 
 export default function Home() {
   return (
@@ -74,9 +75,9 @@ export default function Home() {
         </div>
         <div className="animate-slide-in-bottom">
           <hr className="my-8" />
-          <Experiences />
-          <hr className="my-8" />
           <Education />
+          <hr className="my-8" />
+          <Experiences />
           <hr className="my-8" />
           <Projects />
           <Footer />

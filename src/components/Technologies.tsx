@@ -18,10 +18,6 @@ const technologies: Technology[] = [
     logo: <FaPhp size={size} color="#777BB4" />,
   },
   {
-    name: "Javascript",
-    logo: <IoLogoJavascript size={size} color="#F0DB4F" />,
-  },
-  {
     name: "Git Project Management",
     logo: <FaGit size={size} color="#F1502F" />,
   },
@@ -29,22 +25,26 @@ const technologies: Technology[] = [
     name: "NextJS",
     logo: <RiNextjsFill size={size} color="#FFFFFF" />,
   },
+  // {
+  //   name: "Javascript",
+  //   logo: <IoLogoJavascript size={size} color="#F0DB4F" />,
+  // },
   {
     name: "NodeJS",
     logo: <FaNodeJs size={size} color="#68A063" />,
   },
-  {
-    name: "HTML5",
-    logo: <FaHtml5 size={size} color="#E34F26" />,
-  },
-  {
-    name: "CSS3",
-    logo: <FaCss3 size={size} color="#1572B6" />,
-  },
-  {
-    name:"Python",
-    logo: <FaPython size={size} color="#4B8BBE" />
-  }
+  // {
+  //   name: "HTML5",
+  //   logo: <FaHtml5 size={size} color="#E34F26" />,
+  // },
+  // {
+  //   name: "CSS3",
+  //   logo: <FaCss3 size={size} color="#1572B6" />,
+  // },
+  // {
+  //   name:"Python",
+  //   logo: <FaPython size={size} color="#4B8BBE" />
+  // }
 ];
 
 export default function Technologies() {

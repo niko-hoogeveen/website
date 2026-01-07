@@ -10,62 +10,144 @@ const projects: Project[] = [
   {
     title: "Cactus Loyalty App",
     shortDescription:
-      "A custom rewards program application for small-medium sized businesses",
+      "Custom loyalty and rewards platform for small-to-medium sized businesses",
     longDescription: (
       <>
         <strong>
-          Skills: React Native, Laravel Forge, RESTful APIs, Mobile Development
+          Skills: React Native, Laravel (PHP), REST APIs, PostgreSQL, Mobile
+          Development, CI/CD
         </strong>
-        <br></br>
-        The project entails two full stack applications built with React-Native
-        and Laravel Forge. One app for consumers to track their rewards, and
-        another for businesses to manage their loyalty program.<br></br>
-        <br></br>
-        <a
-          href="https://cactusapp.ca/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-500 underline hover:text-blue-300"
-        >
-          Learn More About Cactus
-        </a>
+        <ul className="list-disc ml-5 mt-2 space-y-1">
+          <li>
+            Led development of a full-stack loyalty rewards platform consisting
+            of separate customer and business-facing mobile applications.
+          </li>
+          <li>
+            Built core features including QR-based point collection, rewards
+            management, user authentication, and role-based access controls.
+          </li>
+          <li>
+            Designed and implemented backend services and APIs using Laravel,
+            supporting analytics and business reporting.
+          </li>
+          <li>
+            Managed deployments, production stability, and CI/CD workflows to
+            support ongoing feature development.
+          </li>
+          <li>
+            Successfully exited the company for monetary investment after 12
+            months
+          </li>
+        </ul>
+        <div className="mt-3">
+          <a
+            href="https://cactusapp.ca/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 underline hover:text-blue-300"
+          >
+            Learn More About Cactus
+          </a>
+        </div>
       </>
     ),
   },
   {
     title: "Calorie Prediction Network",
-    shortDescription: "Machine Learning Model for Calorie Prediction",
+    shortDescription:
+      "Machine learning model for calorie expenditure estimation",
     longDescription: (
       <>
         <strong>
-          Skills: Python, Tensorflow, Machine Learning, Data Science
+          Skills: Python, TensorFlow, Machine Learning, Data Science, Computer
+          Vision
         </strong>
-        <br></br>
-        Project was carried out with a group, using a convolutional neural
-        network (CNN) for image classification. Using the model&aposs output, an
-        estimate of exercise type and duration was generated, and eventually an
-        estimate of calories burned.<br></br>
-        <br></br>
-        <a
-          href="https://github.com/niko-hoogeveen/capstoneWebsite"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-500 underline hover:text-blue-300"
-        >
-          Website Repository
-        </a>
-        {" | "}
-        <a
-          href="https://github.com/niko-hoogeveen/498-Capstone-Project"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-500 underline hover:text-blue-300"
-        >
-          Image Classification Model Repository
-        </a>
+        <ul className="list-disc ml-5 mt-2 space-y-1">
+          <li>
+            Collaborated on a capstone project using a convolutional neural
+            network (CNN) to classify exercise activities from image data.
+          </li>
+          <li>
+            Used model outputs to infer exercise type and duration, enabling
+            downstream calorie expenditure estimation.
+          </li>
+          <li>
+            Trained, evaluated, and iterated on model performance using labeled
+            datasets and validation metrics.
+          </li>
+          <li>
+            Contributed to project documentation, experimentation, and final
+            presentation of results.
+          </li>
+        </ul>
+        <div className="mt-3">
+          <a
+            href="https://github.com/niko-hoogeveen/capstoneWebsite"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 underline hover:text-blue-300"
+          >
+            Website Repository
+          </a>
+          {" | "}
+          <a
+            href="https://github.com/niko-hoogeveen/498-Capstone-Project"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 underline hover:text-blue-300"
+          >
+            Image Classification Model Repository
+          </a>
+        </div>
       </>
     ),
-  }
+  },
+  {
+    title: "Equity Research & Market Dashboard",
+    shortDescription:
+      "Interactive dashboard for tracking earnings, valuation, and market performance of technology stocks",
+    longDescription: (
+      <>
+        <strong>
+          Skills: Python, Financial Analysis, Data Visualization, Next.js,
+          GitHub Actions
+        </strong>
+        <ul className="list-disc ml-5 mt-2 space-y-1">
+          <li>
+            Built a personal equity research dashboard to better understand how
+            earnings results, valuation, and market expectations interact over
+            time.
+          </li>
+          <li>
+            Implemented interactive stock price charts with earnings date
+            overlays, enabling analysis of post-earnings price behavior.
+          </li>
+          <li>
+            Visualized EPS and revenue estimates versus actuals, including
+            percentage surprises across recent quarters.
+          </li>
+          <li>
+            Added valuation snapshots (P/E, forward P/E, EV/EBITDA, FCF
+            multiples) to contextualize price movements against fundamentals.
+          </li>
+          <li>
+            Automated data updates using scheduled GitHub Actions, with outputs
+            stored as static JSON files for a fully static deployment.
+          </li>
+        </ul>
+        <div className="mt-3">
+          <a
+            href="https://www.nikohoogeveen.com/dashboard"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 underline hover:text-blue-300"
+          >
+            View the Equity Research Dashboard
+          </a>
+        </div>
+      </>
+    ),
+  },
 ];
 
 export default function Projects() {
@@ -159,7 +241,7 @@ function ProjectCard({
           ${isExpanded ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}
         `}
       >
-        <p>{exp.longDescription}</p>
+        <div>{exp.longDescription}</div>
       </div>
     </div>
   );
