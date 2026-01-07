@@ -54,7 +54,7 @@ export default function DashboardPage() {
             <div className="flex-shrink-0 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
             <div className="flex-1">
               <h3 className="text-3xl font-bold font-geist mb-3 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                Why I Created this Dashboard
+                Why I Created This Dashboard:
               </h3>
               <p className="text-gray-300 leading-relaxed text-lg">
                 I built this dashboard as a way to learn how equity research actually
