@@ -22,7 +22,6 @@ export default function DashboardPage() {
   >({});
   const [timeRange] = useState<TimeRange>("1Y");
   const [loading, setLoading] = useState(true);
-  const formattedDate = null;
 
   useEffect(() => {
     async function loadAllTickers() {
