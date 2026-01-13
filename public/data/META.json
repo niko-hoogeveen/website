@@ -2,18 +2,10 @@
   "metadata": {
     "ticker": "META",
     "companyName": "Meta Platforms, Inc.",
-    "lastUpdated": "2026-01-12",
+    "lastUpdated": "2026-01-13",
     "researchReportUrl": "undefined"
   },
   "priceHistory": [
-    {
-      "date": "2021-01-13",
-      "open": 251.55,
-      "high": 253.95,
-      "low": 249.2,
-      "close": 251.64,
-      "volume": 19528938
-    },
     {
       "date": "2021-01-14",
       "open": 253.4,
@@ -10037,6 +10029,14 @@
       "low": 642.85,
       "close": 653.06,
       "volume": 11634944
+    },
+    {
+      "date": "2026-01-12",
+      "open": 652.53,
+      "high": 653.97,
+      "low": 641.23,
+      "close": 641.97,
+      "volume": 14797197
     }
   ],
   "earnings": [
@@ -10060,7 +10060,7 @@
       "revenueActual": 47520,
       "revenueEstimate": 44550,
       "revenueSurprise": 6.67,
-      "priceReaction": 12.0
+      "priceReaction": 12
     },
     {
       "quarter": "2025-Q1",
@@ -10071,7 +10071,7 @@
       "revenueActual": 42310,
       "revenueEstimate": 41450,
       "revenueSurprise": 2.07,
-      "priceReaction": 5.0
+      "priceReaction": 5
     },
     {
       "quarter": "2024-Q4",
@@ -10082,7 +10082,7 @@
       "revenueActual": 48390,
       "revenueEstimate": 46960,
       "revenueSurprise": 3.05,
-      "priceReaction": 2.0
+      "priceReaction": 2
     },
     {
       "quarter": "2024-Q3",
@@ -10093,44 +10093,116 @@
       "revenueActual": 40590,
       "revenueEstimate": 40210,
       "revenueSurprise": 0.95,
-      "priceReaction": -3.0
+      "priceReaction": -3
     }
   ],
   "fundamentals": {
     "revenue": [
-      { "period": "2025-Q3", "value": 51242, "type": "quarterly" },
-      { "period": "2025-Q2", "value": 47516, "type": "quarterly" },
-      { "period": "2025-Q1", "value": 42314, "type": "quarterly" },
-      { "period": "2024-Q4", "value": 48390, "type": "quarterly" },
-      { "period": "2024", "value": 164501, "type": "annual" },
-      { "period": "2023", "value": 134902, "type": "annual" }
+      {
+        "period": "2025-Q3",
+        "value": 51242,
+        "type": "quarterly"
+      },
+      {
+        "period": "2025-Q2",
+        "value": 47516,
+        "type": "quarterly"
+      },
+      {
+        "period": "2025-Q1",
+        "value": 42314,
+        "type": "quarterly"
+      },
+      {
+        "period": "2024-Q4",
+        "value": 48390,
+        "type": "quarterly"
+      },
+      {
+        "period": "2024",
+        "value": 164501,
+        "type": "annual"
+      },
+      {
+        "period": "2023",
+        "value": 134902,
+        "type": "annual"
+      }
     ],
     "netIncome": [
-      { "period": "2025-Q3", "value": 2709, "type": "quarterly" },
-      { "period": "2025-Q2", "value": 18337, "type": "quarterly" },
-      { "period": "2025-Q1", "value": 16000, "type": "quarterly" },
-      { "period": "2024-Q4", "value": 20838, "type": "quarterly" },
-      { "period": "2024", "value": 62360, "type": "annual" },
-      { "period": "2023", "value": 39098, "type": "annual" }
+      {
+        "period": "2025-Q3",
+        "value": 2709,
+        "type": "quarterly"
+      },
+      {
+        "period": "2025-Q2",
+        "value": 18337,
+        "type": "quarterly"
+      },
+      {
+        "period": "2025-Q1",
+        "value": 16000,
+        "type": "quarterly"
+      },
+      {
+        "period": "2024-Q4",
+        "value": 20838,
+        "type": "quarterly"
+      },
+      {
+        "period": "2024",
+        "value": 62360,
+        "type": "annual"
+      },
+      {
+        "period": "2023",
+        "value": 39098,
+        "type": "annual"
+      }
     ],
     "operatingMargin": [
-      { "period": "2025-Q3", "value": 40.0, "type": "quarterly" },
-      { "period": "2025-Q2", "value": 43.0, "type": "quarterly" },
-      { "period": "2025-Q1", "value": 39.0, "type": "quarterly" },
-      { "period": "2024-Q4", "value": 42.8, "type": "quarterly" },
-      { "period": "2024", "value": 42.1, "type": "annual" },
-      { "period": "2023", "value": 35.0, "type": "annual" }
+      {
+        "period": "2025-Q3",
+        "value": 40,
+        "type": "quarterly"
+      },
+      {
+        "period": "2025-Q2",
+        "value": 43,
+        "type": "quarterly"
+      },
+      {
+        "period": "2025-Q1",
+        "value": 39,
+        "type": "quarterly"
+      },
+      {
+        "period": "2024-Q4",
+        "value": 42.8,
+        "type": "quarterly"
+      },
+      {
+        "period": "2024",
+        "value": 42.1,
+        "type": "annual"
+      },
+      {
+        "period": "2023",
+        "value": 35,
+        "type": "annual"
+      }
     ]
   },
   "valuation": {
-    "pe": 28.0848827911427,
-    "forwardPeGrowth": 2.1392579906682543,
-    "evEbitda": 16.417364759427766,
-    "priceToFcf": 37.621068126379875,
-    "peg": -1.5517994807840378,
-    "priceToBook": 8.470066987519708,
-    "priceToSales": 8.688479791483028,
-    "evToSales": 8.904217399489067,
+    "pe": 27.607956704483325,
+    "forwardPeGrowth": 2.1029299792810754,
+    "evEbitda": 16.145326523468444,
+    "priceToFcf": 36.99768129432885,
+    "peg": -1.5254474515035814,
+    "priceToBook": 8.326231745900879,
+    "priceToSales": 8.540935552230849,
+    "evToSales": 8.756673160236888,
     "debtToEquity": 0.2631063658755269,
     "currentRatio": 1.9784079225066291,
     "quickRatio": 1.9784079225066291,
@@ -10138,7 +10210,7 @@
     "returnOnAssets": 0.19262516291254722,
     "operatingMargin": 0.432261674152974,
     "netProfitMargin": 0.3089249803385465,
-    "asOfDate": "2026-01-12"
+    "asOfDate": "2026-01-13"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 3,
