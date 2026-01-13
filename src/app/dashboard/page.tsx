@@ -11,6 +11,7 @@ import {
 import type { TickerData } from "@/types/dashboard";
 import LatestPrice from "@/components/dashboard/LatestPrice";
 import { TimeRange } from "@/types/dashboard";
+import { format, parseISO } from "date-fns";
 /**
  * Dashboard overview page
  * Displays a list of available tickers with navigation cards
@@ -21,6 +22,7 @@ export default function DashboardPage() {
   >({});
   const [timeRange] = useState<TimeRange>("1Y");
   const [loading, setLoading] = useState(true);
+  const formattedDate = null;
 
   useEffect(() => {
     async function loadAllTickers() {
@@ -54,19 +56,20 @@ export default function DashboardPage() {
             <div className="flex-shrink-0 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
             <div className="flex-1">
               <h3 className="text-3xl font-bold font-geist mb-3 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                Why I Created This Dashboard:
+                Why I Created This Dashboard
               </h3>
               <p className="text-gray-300 leading-relaxed text-lg">
-                I built this dashboard as a way to learn how equity research actually
-                works by doing it myself. While moving from software engineering into
-                market and stock analysis, I realized that reading reports alone
-                wasn&apos;t enough—I wanted to work directly with price data, earnings
-                results, and valuation metrics in a way that felt realistic. This
-                project brings those pieces together in one place and reflects how I
-                personally analyze companies: looking at the business, the numbers,
-                and how the market reacts over time. It also gave me a way to combine
-                my technical background with my growing interest in financial analysis
-                in a practical, hands-on way.
+                I built this dashboard as a way to learn how equity research
+                actually works by doing it myself. While moving from software
+                engineering into market and stock analysis, I realized that
+                reading reports alone wasn&apos;t enough—I wanted to work
+                directly with price data, earnings results, and valuation
+                metrics in a way that felt realistic. This project brings those
+                pieces together in one place and reflects how I personally
+                analyze companies: looking at the business, the numbers, and how
+                the market reacts over time. It also gave me a way to combine my
+                technical background with my growing interest in financial
+                analysis in a practical, hands-on way.
               </p>
             </div>
           </div>
@@ -127,23 +130,26 @@ export default function DashboardPage() {
                   >
                     {/* Subtle gradient overlay on hover */}
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:to-purple-500/5 transition-all duration-300 rounded-xl"></div>
-                    
+
                     <div className="relative z-10">
                       <div className="mb-5">
                         <h2 className="text-2xl font-bold mb-1 group-hover:text-white transition-colors">
                           {data.metadata.companyName}
                         </h2>
-                        <p className="text-lg text-gray-400 font-medium">{ticker}</p>
+                        <p className="text-lg text-gray-400 font-medium">
+                          {ticker}
+                        </p>
                       </div>
-                      
+
                       <div className="flex flex-row justify-between items-end pt-4 border-t border-gray-700/50">
                         <div className="text-sm space-y-1">
                           <p className="text-gray-400">
                             Updated:{" "}
                             <span className="text-gray-300">
-                              {new Date(
-                                data.metadata.lastUpdated
-                              ).toLocaleDateString()}
+                              {format(
+                                parseISO(data.metadata.lastUpdated),
+                                "dd/MM/yyyy"
+                              )}
                             </span>
                           </p>
                           {data.valuation &&

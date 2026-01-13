@@ -3,7 +3,7 @@
     "ticker": "META",
     "companyName": "Meta Platforms, Inc.",
     "lastUpdated": "2026-01-12",
-    "researchReportUrl": "/data/reports/META.pdf"
+    "researchReportUrl": "undefined"
   },
   "priceHistory": [
     {
@@ -10041,168 +10041,85 @@
   ],
   "earnings": [
     {
+      "quarter": "2025-Q3",
+      "earningsDate": "2025-10-29",
+      "epsActual": 7.25,
+      "epsEstimate": 6.72,
+      "epsSurprise": 7.91,
+      "revenueActual": 51240,
+      "revenueEstimate": 49410,
+      "revenueSurprise": 3.71,
+      "priceReaction": -7.7
+    },
+    {
+      "quarter": "2025-Q2",
+      "earningsDate": "2025-07-30",
+      "epsActual": 7.14,
+      "epsEstimate": 5.89,
+      "epsSurprise": 21.28,
+      "revenueActual": 47520,
+      "revenueEstimate": 44550,
+      "revenueSurprise": 6.67,
+      "priceReaction": 12.0
+    },
+    {
+      "quarter": "2025-Q1",
+      "earningsDate": "2025-04-30",
+      "epsActual": 6.43,
+      "epsEstimate": 5.33,
+      "epsSurprise": 20.64,
+      "revenueActual": 42310,
+      "revenueEstimate": 41450,
+      "revenueSurprise": 2.07,
+      "priceReaction": 5.0
+    },
+    {
       "quarter": "2024-Q4",
-      "earningsDate": "2025-02-01",
-      "epsActual": 5.33,
-      "epsEstimate": 5,
-      "epsSurprise": 6.6,
-      "revenueActual": 40117,
-      "revenueEstimate": 39000,
-      "revenueSurprise": 2.86,
-      "priceReaction": 1.5
+      "earningsDate": "2025-01-29",
+      "epsActual": 8.02,
+      "epsEstimate": 6.75,
+      "epsSurprise": 18.81,
+      "revenueActual": 48390,
+      "revenueEstimate": 46960,
+      "revenueSurprise": 3.05,
+      "priceReaction": 2.0
     },
     {
       "quarter": "2024-Q3",
       "earningsDate": "2024-10-30",
-      "epsActual": 4.39,
-      "epsEstimate": 4.25,
-      "epsSurprise": 3.29,
-      "revenueActual": 34146,
-      "revenueEstimate": 33500,
-      "revenueSurprise": 1.93,
-      "priceReaction": 0.8
-    },
-    {
-      "quarter": "2024-Q2",
-      "earningsDate": "2024-07-31",
-      "epsActual": 4.65,
-      "epsEstimate": 4.4,
-      "epsSurprise": 5.68,
-      "revenueActual": 32165,
-      "revenueEstimate": 31000,
-      "revenueSurprise": 3.76,
-      "priceReaction": 2.2
-    },
-    {
-      "quarter": "2024-Q1",
-      "earningsDate": "2024-04-24",
-      "epsActual": 4.71,
-      "epsEstimate": 4.5,
-      "epsSurprise": 4.67,
-      "revenueActual": 36455,
-      "revenueEstimate": 36100,
-      "revenueSurprise": 0.98,
-      "priceReaction": -0.5
-    },
-    {
-      "quarter": "2023-Q4",
-      "earningsDate": "2024-02-01",
-      "epsActual": 5.33,
-      "epsEstimate": 4.9,
-      "epsSurprise": 8.78,
-      "revenueActual": 40117,
-      "revenueEstimate": 39000,
-      "revenueSurprise": 2.86,
-      "priceReaction": 3.2
-    },
-    {
-      "quarter": "2023-Q3",
-      "earningsDate": "2023-10-25",
-      "epsActual": 4.39,
-      "epsEstimate": 4.15,
-      "epsSurprise": 5.78,
-      "revenueActual": 34146,
-      "revenueEstimate": 33500,
-      "revenueSurprise": 1.93,
-      "priceReaction": 1.9
+      "epsActual": 6.03,
+      "epsEstimate": 5.19,
+      "epsSurprise": 16.18,
+      "revenueActual": 40590,
+      "revenueEstimate": 40210,
+      "revenueSurprise": 0.95,
+      "priceReaction": -3.0
     }
   ],
   "fundamentals": {
     "revenue": [
-      {
-        "period": "2024-Q4",
-        "value": 40117,
-        "type": "quarterly"
-      },
-      {
-        "period": "2024-Q3",
-        "value": 34146,
-        "type": "quarterly"
-      },
-      {
-        "period": "2024-Q2",
-        "value": 32165,
-        "type": "quarterly"
-      },
-      {
-        "period": "2024-Q1",
-        "value": 36455,
-        "type": "quarterly"
-      },
-      {
-        "period": "2023",
-        "value": 134902,
-        "type": "annual"
-      },
-      {
-        "period": "2022",
-        "value": 116609,
-        "type": "annual"
-      }
+      { "period": "2025-Q3", "value": 51242, "type": "quarterly" },
+      { "period": "2025-Q2", "value": 47516, "type": "quarterly" },
+      { "period": "2025-Q1", "value": 42314, "type": "quarterly" },
+      { "period": "2024-Q4", "value": 48390, "type": "quarterly" },
+      { "period": "2024", "value": 164501, "type": "annual" },
+      { "period": "2023", "value": 134902, "type": "annual" }
     ],
     "netIncome": [
-      {
-        "period": "2024-Q4",
-        "value": 14017,
-        "type": "quarterly"
-      },
-      {
-        "period": "2024-Q3",
-        "value": 11583,
-        "type": "quarterly"
-      },
-      {
-        "period": "2024-Q2",
-        "value": 12369,
-        "type": "quarterly"
-      },
-      {
-        "period": "2024-Q1",
-        "value": 12369,
-        "type": "quarterly"
-      },
-      {
-        "period": "2023",
-        "value": 39098,
-        "type": "annual"
-      },
-      {
-        "period": "2022",
-        "value": 23200,
-        "type": "annual"
-      }
+      { "period": "2025-Q3", "value": 2709, "type": "quarterly" },
+      { "period": "2025-Q2", "value": 18337, "type": "quarterly" },
+      { "period": "2025-Q1", "value": 16000, "type": "quarterly" },
+      { "period": "2024-Q4", "value": 20838, "type": "quarterly" },
+      { "period": "2024", "value": 62360, "type": "annual" },
+      { "period": "2023", "value": 39098, "type": "annual" }
     ],
     "operatingMargin": [
-      {
-        "period": "2024-Q4",
-        "value": 34.9,
-        "type": "quarterly"
-      },
-      {
-        "period": "2024-Q3",
-        "value": 33.9,
-        "type": "quarterly"
-      },
-      {
-        "period": "2024-Q2",
-        "value": 38.4,
-        "type": "quarterly"
-      },
-      {
-        "period": "2024-Q1",
-        "value": 33.9,
-        "type": "quarterly"
-      },
-      {
-        "period": "2023",
-        "value": 29,
-        "type": "annual"
-      },
-      {
-        "period": "2022",
-        "value": 19.9,
-        "type": "annual"
-      }
+      { "period": "2025-Q3", "value": 40.0, "type": "quarterly" },
+      { "period": "2025-Q2", "value": 43.0, "type": "quarterly" },
+      { "period": "2025-Q1", "value": 39.0, "type": "quarterly" },
+      { "period": "2024-Q4", "value": 42.8, "type": "quarterly" },
+      { "period": "2024", "value": 42.1, "type": "annual" },
+      { "period": "2023", "value": 35.0, "type": "annual" }
     ]
   },
   "valuation": {

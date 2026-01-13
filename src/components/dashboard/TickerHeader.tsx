@@ -1,4 +1,4 @@
-import { format } from "date-fns";
+import { format, parseISO } from "date-fns";
 import type { TickerMetadata } from "@/types/dashboard";
 
 interface TickerHeaderProps {
@@ -10,7 +10,8 @@ interface TickerHeaderProps {
  * Displays company name, ticker symbol, and last updated timestamp
  */
 export default function TickerHeader({ metadata }: TickerHeaderProps) {
-  const lastUpdatedDate = new Date(metadata.lastUpdated);
+  // Use parseISO to correctly parse date strings without timezone shift
+  const lastUpdatedDate = parseISO(metadata.lastUpdated);
   const formattedDate = format(lastUpdatedDate, "MMMM d, yyyy");
 
   return (

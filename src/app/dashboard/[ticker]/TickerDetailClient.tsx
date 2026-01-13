@@ -35,7 +35,7 @@ export default function TickerDetailClient() {
 
   useEffect(() => {
     // Minimum delay before showing skeleton (prevents flash on fast loads)
-    const MIN_LOADING_TIME = 50; // milliseconds
+    const MIN_LOADING_TIME = 75; // milliseconds
 
     // Set timeout to show skeleton only if loading takes longer than minimum
     const skeletonTimeout = setTimeout(() => {
@@ -127,10 +127,12 @@ export default function TickerDetailClient() {
           </Link>
           <div>
             <TickerHeader metadata={data.metadata} />
-            <ResearchReportLink
-              url={data.metadata.researchReportUrl}
-              companyName={data.metadata.companyName}
-            />
+            {data.metadata.researchReportUrl !== "undefined" && (
+              <ResearchReportLink
+                url={data.metadata.researchReportUrl}
+                companyName={data.metadata.companyName}
+              />
+            )}
           </div>
           <div>
             <Hero />
