@@ -4,6 +4,7 @@ import { HiOutlineMail } from "react-icons/hi";
 import Technologies from "@/components/Technologies";
 import ContactCard from "@/components/ContactCard";
 import DashboardCard from "@/components/DashboardCard";
+import AboutCard from "@/components/AboutCard";
 import Link from "next/link";
 
 export default function Header() {
@@ -53,14 +54,13 @@ export default function Header() {
 
       <div className="mt-8 w-full flex items-center justify-center">
         <div className="flex flex-column gap-3">
+          <Link href="/about">
+            <AboutCard />
+          </Link>
           <Link href="/dashboard">
             <DashboardCard />
           </Link>
-          <Link
-            href="https://cal.com/niko-hoogeveen"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link href="/contact">
             <ContactCard />
           </Link>
         </div>

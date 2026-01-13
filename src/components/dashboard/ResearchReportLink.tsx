@@ -18,7 +18,7 @@ export default function ResearchReportLink({
   }
 
   return (
-    <div className="mb-6">
+    <div className="mb-2">
       <Link
         href={url}
         target="_blank"

@@ -3,7 +3,7 @@
  * Converts JSON price data to formats compatible with TradingView lightweight-charts
  */
 
-import { subYears, parseISO, isAfter, subMonths, subWeeks, subDays } from "date-fns";
+import { subYears, parseISO, isAfter, subMonths, subWeeks } from "date-fns";
 import type { PriceDataPoint, EarningsData, TimeRange } from "@/types/dashboard";
 
 /**
@@ -94,9 +94,6 @@ export function filterByTimeRange(
   let cutoffDate: Date;
 
   switch (range) {
-    case "1D":
-      cutoffDate = subDays(latestDate, 1);
-      break;
     case "1W":
       cutoffDate = subWeeks(latestDate, 1);
       break;
@@ -148,9 +145,6 @@ export function filterEarningsByTimeRange(
   let cutoffDate: Date;
 
   switch (range) {
-    case "1D":
-      cutoffDate = subDays(latestDate, 1);
-      break;
     case "1W":
       cutoffDate = subWeeks(latestDate, 1);
       break;

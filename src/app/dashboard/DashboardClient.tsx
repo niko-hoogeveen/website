@@ -177,6 +177,20 @@ export default function DashboardClient() {
             })}
           </div>
         )}
+        <div className="flex flex-wrap gap-4 pt-6">
+          <Link
+            href="/about"
+            className="text-gray-400 hover:text-white transition-colors underline"
+          >
+            About Me
+          </Link>
+          <Link
+            href="/dashboard"
+            className="text-gray-400 hover:text-white transition-colors underline"
+          >
+            Contact Me
+          </Link>
+        </div>
       </div>
     </div>
   );

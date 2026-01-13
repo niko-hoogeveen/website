@@ -16,7 +16,6 @@ export default function TimeRangeSelector({
   onRangeChange,
 }: TimeRangeSelectorProps) {
   const ranges: { value: TimeRange; label: string }[] = [
-    { value: "1D", label: "1D" },
     { value: "1W", label: "1W" },
     { value: "1M", label: "1M" },
     { value: "6M", label: "6M" },

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import { FaArrowLeft } from "react-icons/fa";
 import TickerHeader from "@/components/dashboard/TickerHeader";
 import ResearchReportLink from "@/components/dashboard/ResearchReportLink";
 import PriceChart from "@/components/dashboard/PriceChart";
@@ -16,7 +17,7 @@ import MarginChart from "@/components/dashboard/MarginChart";
 import ValuationCards from "@/components/dashboard/ValuationCards";
 import LoadingSkeleton from "@/components/dashboard/LoadingSkeleton";
 import PageParticles from "@/components/Particles";
-import Hero from "@/components/Hero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { loadTickerData, isValidTicker } from "@/lib/dashboard/dataLoader";
 import type { TickerData, TimeRange } from "@/types/dashboard";
 
@@ -90,14 +91,16 @@ export default function TickerDetailClient() {
     return (
       <div className="max-w-6xl mx-auto p-6">
         <PageParticles id={`ticker-error-particles`} />
-        <div className="mb-4">
-          <Link
-            href="/dashboard"
-            className="text-gray-400 hover:text-white transition-colors duration-200"
-          >
-            ← Back to Dashboard
-          </Link>
-        </div>
+
+        {/* Back Navigation */}
+        <Link
+          href="/dashboard"
+          className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-4 group"
+        >
+          <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
+          Back to Dashboard
+        </Link>
+
         <div className="text-center py-12">
           <h1 className="text-2xl font-bold mb-4">Ticker Not Found</h1>
           <p className="text-gray-400 mb-6">
@@ -115,30 +118,39 @@ export default function TickerDetailClient() {
   }
 
   return (
-    <div className="max-w-6xl mx-auto mt-10 animate-fade-in">
+    <div className="max-w-6xl mx-auto p-6 animate-fade-in">
       <PageParticles id={`ticker-${ticker}-particles`} />
-      <header className="font-geist text-center mt-5 animate-slide-in-top">
-        <div className="flex flex-row justify-center gap-64">
-          <Link
-            href="/dashboard"
-            className="text-gray-400 hover:text-white transition-colors duration-200 right-10"
-          >
-            ← Back to Dashboard
-          </Link>
-          <div>
-            <TickerHeader metadata={data.metadata} />
-            {data.metadata.researchReportUrl !== "undefined" && (
-              <ResearchReportLink
-                url={data.metadata.researchReportUrl}
-                companyName={data.metadata.companyName}
-              />
-            )}
+
+      {/* Back Navigation */}
+      <Link
+        href="/dashboard"
+        className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-4 group"
+      >
+        <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
+        Back to Dashboard
+      </Link>
+
+      {/* Breadcrumbs */}
+      <Breadcrumbs
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Dashboard", href: "/dashboard" },
+          { name: data.metadata.companyName, href: `/dashboard/${ticker}` },
+        ]}
+      />
+
+      {/* Header Section */}
+      <div className="animate-slide-in-top">
+        <TickerHeader metadata={data.metadata} />
+        {data.metadata.researchReportUrl !== "undefined" && (
+          <div className="mt-4">
+            <ResearchReportLink
+              url={data.metadata.researchReportUrl}
+              companyName={data.metadata.companyName}
+            />
           </div>
-          <div>
-            <Hero />
-          </div>
-        </div>
-      </header>
+        )}
+      </div>
 
       {/* Main Content Sections */}
       <div className="space-y-6 p-6">

@@ -83,7 +83,6 @@ const jsonLd = {
         "https://www.linkedin.com/in/niko-hoogeveen-52b7a9205/",
         "https://github.com/niko-hoogeveen",
         "https://www.instagram.com/nikohoogeveen/?hl=en",
-        
       ],
       jobTitle: "Software Engineer",
       description:
@@ -98,6 +97,16 @@ const jsonLd = {
           "@type": "WebPage",
           name: "Home",
           url: BASE_URL,
+        },
+        {
+          "@type": "WebPage",
+          name: "About",
+          url: `${BASE_URL}/about`,
+        },
+        {
+          "@type": "WebPage",
+          name: "Contact",
+          url: `${BASE_URL}/contact`,
         },
         {
           "@type": "WebPage",
