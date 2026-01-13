@@ -2,50 +2,10 @@
   "metadata": {
     "ticker": "AMZN",
     "companyName": "Amazon.com, Inc.",
-    "lastUpdated": "2026-01-06",
-    "researchReportUrl": "/data/reports/AMZN.pdf"
+    "lastUpdated": "2026-01-13",
+    "researchReportUrl": "undefined"
   },
   "priceHistory": [
-    {
-      "date": "2021-01-07",
-      "open": 157.85,
-      "high": 160.43,
-      "low": 157.75,
-      "close": 158.11,
-      "volume": 70290000
-    },
-    {
-      "date": "2021-01-08",
-      "open": 159,
-      "high": 159.53,
-      "low": 157.11,
-      "close": 159.13,
-      "volume": 70754000
-    },
-    {
-      "date": "2021-01-11",
-      "open": 157.4,
-      "high": 157.82,
-      "low": 155.5,
-      "close": 155.71,
-      "volume": 73668000
-    },
-    {
-      "date": "2021-01-12",
-      "open": 156,
-      "high": 157.11,
-      "low": 154.3,
-      "close": 156.04,
-      "volume": 70292000
-    },
-    {
-      "date": "2021-01-13",
-      "open": 156.42,
-      "high": 159.5,
-      "low": 156.1,
-      "close": 158.29,
-      "volume": 66424000
-    },
     {
       "date": "2021-01-14",
       "open": 158.38,
@@ -10044,184 +10004,246 @@
       "high": 243.18,
       "low": 232.07,
       "close": 240.93,
-      "volume": 53256970
+      "volume": 53764700
+    },
+    {
+      "date": "2026-01-07",
+      "open": 239.61,
+      "high": 245.29,
+      "low": 239.52,
+      "close": 241.56,
+      "volume": 42236531
+    },
+    {
+      "date": "2026-01-08",
+      "open": 243.06,
+      "high": 246.41,
+      "low": 241.88,
+      "close": 246.29,
+      "volume": 39509844
+    },
+    {
+      "date": "2026-01-09",
+      "open": 244.57,
+      "high": 247.86,
+      "low": 242.24,
+      "close": 247.38,
+      "volume": 34560000
+    },
+    {
+      "date": "2026-01-12",
+      "open": 246.73,
+      "high": 248.94,
+      "low": 245.96,
+      "close": 246.47,
+      "volume": 35867770
     }
   ],
   "earnings": [
     {
+      "quarter": "2025-Q3",
+      "earningsDate": "2025-10-30",
+      "epsActual": 1.95,
+      "epsEstimate": 1.57,
+      "epsSurprise": 24.2,
+      "revenueActual": 180170,
+      "revenueEstimate": 177530,
+      "revenueSurprise": 1.49,
+      "priceReaction": 10
+    },
+    {
+      "quarter": "2025-Q2",
+      "earningsDate": "2025-07-31",
+      "epsActual": 1.68,
+      "epsEstimate": 1.31,
+      "epsSurprise": 28.24,
+      "revenueActual": 167700,
+      "revenueEstimate": 161800,
+      "revenueSurprise": 3.65,
+      "priceReaction": -7
+    },
+    {
+      "quarter": "2025-Q1",
+      "earningsDate": "2025-05-01",
+      "epsActual": 1.59,
+      "epsEstimate": 1.38,
+      "epsSurprise": 15.22,
+      "revenueActual": 155670,
+      "revenueEstimate": 154960,
+      "revenueSurprise": 0.46,
+      "priceReaction": -3
+    },
+    {
       "quarter": "2024-Q4",
-      "earningsDate": "2025-01-30",
-      "epsActual": 1.8,
-      "epsEstimate": 1.7,
-      "epsSurprise": 5.88,
-      "revenueActual": 86310,
-      "revenueEstimate": 85000,
-      "revenueSurprise": 1.54,
-      "priceReaction": 0.9
+      "earningsDate": "2025-02-06",
+      "epsActual": 1.86,
+      "epsEstimate": 1.52,
+      "epsSurprise": 22.37,
+      "revenueActual": 187800,
+      "revenueEstimate": 187250,
+      "revenueSurprise": 0.29,
+      "priceReaction": -5
     },
     {
       "quarter": "2024-Q3",
-      "earningsDate": "2024-10-24",
-      "epsActual": 1.89,
-      "epsEstimate": 1.75,
-      "epsSurprise": 8,
-      "revenueActual": 80594,
-      "revenueEstimate": 79000,
-      "revenueSurprise": 2.02,
-      "priceReaction": 1.2
+      "earningsDate": "2024-10-31",
+      "epsActual": 1.43,
+      "epsEstimate": 1.14,
+      "epsSurprise": 25.44,
+      "revenueActual": 158880,
+      "revenueEstimate": 157280,
+      "revenueSurprise": 1.02,
+      "priceReaction": 6
     },
     {
       "quarter": "2024-Q2",
-      "earningsDate": "2024-07-25",
-      "epsActual": 1.74,
-      "epsEstimate": 1.65,
-      "epsSurprise": 5.45,
-      "revenueActual": 80594,
-      "revenueEstimate": 79000,
-      "revenueSurprise": 2.02,
-      "priceReaction": 0.6
-    },
-    {
-      "quarter": "2024-Q1",
-      "earningsDate": "2024-04-25",
-      "epsActual": 1.89,
-      "epsEstimate": 1.8,
-      "epsSurprise": 5,
-      "revenueActual": 80594,
-      "revenueEstimate": 79000,
-      "revenueSurprise": 2.02,
-      "priceReaction": -0.3
-    },
-    {
-      "quarter": "2023-Q4",
-      "earningsDate": "2024-01-30",
-      "epsActual": 1.64,
-      "epsEstimate": 1.55,
-      "epsSurprise": 5.81,
-      "revenueActual": 86310,
-      "revenueEstimate": 85000,
-      "revenueSurprise": 1.54,
-      "priceReaction": 2.1
-    },
-    {
-      "quarter": "2023-Q3",
-      "earningsDate": "2023-10-24",
-      "epsActual": 1.55,
-      "epsEstimate": 1.45,
-      "epsSurprise": 6.9,
-      "revenueActual": 76593,
-      "revenueEstimate": 75500,
-      "revenueSurprise": 1.45,
-      "priceReaction": 1.8
+      "earningsDate": "2024-08-01",
+      "epsActual": 1.26,
+      "epsEstimate": 1.05,
+      "epsSurprise": 20,
+      "revenueActual": 148000,
+      "revenueEstimate": 148630,
+      "revenueSurprise": -0.42,
+      "priceReaction": -7
     }
   ],
   "fundamentals": {
     "revenue": [
       {
+        "period": "2025-Q3",
+        "value": 180200,
+        "type": "quarterly"
+      },
+      {
+        "period": "2025-Q2",
+        "value": 167700,
+        "type": "quarterly"
+      },
+      {
+        "period": "2025-Q1",
+        "value": 155700,
+        "type": "quarterly"
+      },
+      {
         "period": "2024-Q4",
-        "value": 86310,
+        "value": 187800,
         "type": "quarterly"
       },
       {
         "period": "2024-Q3",
-        "value": 80594,
+        "value": 158900,
         "type": "quarterly"
       },
       {
         "period": "2024-Q2",
-        "value": 80594,
+        "value": 148000,
         "type": "quarterly"
       },
       {
-        "period": "2024-Q1",
-        "value": 80594,
-        "type": "quarterly"
-      },
-      {
-        "period": "2023",
-        "value": 307394,
+        "period": "2024",
+        "value": 638000,
         "type": "annual"
       },
       {
-        "period": "2022",
-        "value": 282836,
+        "period": "2023",
+        "value": 574800,
         "type": "annual"
       }
     ],
     "netIncome": [
       {
+        "period": "2025-Q3",
+        "value": 21200,
+        "type": "quarterly"
+      },
+      {
+        "period": "2025-Q2",
+        "value": 18200,
+        "type": "quarterly"
+      },
+      {
+        "period": "2025-Q1",
+        "value": 17100,
+        "type": "quarterly"
+      },
+      {
         "period": "2024-Q4",
-        "value": 20687,
+        "value": 20000,
         "type": "quarterly"
       },
       {
         "period": "2024-Q3",
-        "value": 19689,
+        "value": 15300,
         "type": "quarterly"
       },
       {
         "period": "2024-Q2",
-        "value": 18368,
+        "value": 13500,
         "type": "quarterly"
       },
       {
-        "period": "2024-Q1",
-        "value": 16437,
-        "type": "quarterly"
-      },
-      {
-        "period": "2023",
-        "value": 73797,
+        "period": "2024",
+        "value": 59200,
         "type": "annual"
       },
       {
-        "period": "2022",
-        "value": 59972,
+        "period": "2023",
+        "value": 30400,
         "type": "annual"
       }
     ],
     "operatingMargin": [
       {
+        "period": "2025-Q3",
+        "value": 9.66,
+        "type": "quarterly"
+      },
+      {
+        "period": "2025-Q2",
+        "value": 11.45,
+        "type": "quarterly"
+      },
+      {
+        "period": "2025-Q1",
+        "value": 11.82,
+        "type": "quarterly"
+      },
+      {
         "period": "2024-Q4",
-        "value": 24,
+        "value": 11.29,
         "type": "quarterly"
       },
       {
         "period": "2024-Q3",
-        "value": 24.4,
+        "value": 10.95,
         "type": "quarterly"
       },
       {
         "period": "2024-Q2",
-        "value": 22.8,
+        "value": 9.93,
         "type": "quarterly"
       },
       {
-        "period": "2024-Q1",
-        "value": 20.4,
-        "type": "quarterly"
-      },
-      {
-        "period": "2023",
-        "value": 24,
+        "period": "2024",
+        "value": 10.75,
         "type": "annual"
       },
       {
-        "period": "2022",
-        "value": 21.2,
+        "period": "2023",
+        "value": 6.42,
         "type": "annual"
       }
     ]
   },
   "valuation": {
-    "pe": 33.62473287832431,
-    "forwardPeGrowth": 1.512104864979556,
-    "evEbitda": 16.825864029878577,
-    "priceToFcf": 250.37395551126895,
-    "peg": 4.325951210692112,
-    "priceToBook": 6.957443558575985,
-    "priceToSales": 3.7253583240984764,
-    "evToSales": 3.8244383582355748,
+    "pe": 34.39790774299835,
+    "forwardPeGrowth": 1.5155481196668912,
+    "evEbitda": 17.20273843632904,
+    "priceToFcf": 255.98196088361743,
+    "peg": 4.4254231307819065,
+    "priceToBook": 7.117424620770444,
+    "priceToSales": 3.811020072803147,
+    "evToSales": 3.9101001069402455,
     "debtToEquity": 0.3663626697977172,
     "currentRatio": 1.0085555031865407,
     "quickRatio": 0.7959794258079059,
@@ -10229,7 +10251,7 @@
     "returnOnAssets": 0.10506909403630339,
     "operatingMargin": 0.11022377157074045,
     "netProfitMargin": 0.11063023447557606,
-    "asOfDate": "2026-01-06"
+    "asOfDate": "2026-01-13"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 3,
