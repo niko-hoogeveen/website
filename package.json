@@ -12,7 +12,7 @@
     "deploy": "gh-pages -d out"
   },
   "dependencies": {
-    "@tsparticles/engine": "^3.8.1",
+    "@tsparticles/engine": "^3.9.1",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.8.1",
     "date-fns": "^4.1.0",
