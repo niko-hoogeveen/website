@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import HomeClient from "./HomeClient";
 
 export const metadata: Metadata = {
-  title: "Niko Hoogeveen - Software Engineer & Creative Technologist",
+  title: "Niko Hoogeveen",
   description:
     "Niko Hoogeveen is a skilled software engineer specializing in modern web applications and creative technology solutions.",
   keywords: [
