@@ -2,18 +2,10 @@
   "metadata": {
     "ticker": "NVDA",
     "companyName": "NVIDIA Corporation",
-    "lastUpdated": "2026-02-25",
+    "lastUpdated": "2026-02-26",
     "researchReportUrl": "/data/reports/NVDA.pdf"
   },
   "priceHistory": [
-    {
-      "date": "2021-02-26",
-      "open": 13.75,
-      "high": 13.85,
-      "low": 13.36,
-      "close": 13.71,
-      "volume": 500932000
-    },
     {
       "date": "2021-03-01",
       "open": 13.88,
@@ -10037,6 +10029,14 @@
       "low": 187.4,
       "close": 192.85,
       "volume": 175123602
+    },
+    {
+      "date": "2026-02-25",
+      "open": 194.45,
+      "high": 197.63,
+      "low": 193.79,
+      "close": 195.56,
+      "volume": 250637102
     }
   ],
   "earnings": [
@@ -10195,22 +10195,22 @@
     ]
   },
   "valuation": {
-    "pe": 47.29391671203048,
-    "forwardPeGrowth": 1.622125535625704,
-    "evEbitda": 39.42107128947015,
-    "priceToFcf": 60.714078162834305,
-    "peg": 3.2196243300113085,
-    "priceToBook": 39.45820289830693,
-    "priceToSales": 25.08960778373107,
-    "evToSales": 25.08605967587714,
-    "debtToEquity": 0.09101995845143275,
-    "currentRatio": 4.467574304889741,
-    "quickRatio": 3.7088398849472677,
-    "returnOnEquity": 1.0381843965693174,
-    "returnOnAssets": 0.6155707796559684,
-    "operatingMargin": 0.5884408630879225,
-    "netProfitMargin": 0.5300680766476793,
-    "asOfDate": "2026-02-25"
+    "pe": 39.58531686475052,
+    "forwardPeGrowth": 1.3577296571381772,
+    "evEbitda": 32.941553166750836,
+    "priceToFcf": 49.2545663019467,
+    "peg": 1.8473147870216904,
+    "priceToBook": 30.21679439008729,
+    "priceToSales": 22.04938200690476,
+    "evToSales": 22.051396474020322,
+    "debtToEquity": 0.07018748450344262,
+    "currentRatio": 3.905263812455306,
+    "quickRatio": 3.239809719242608,
+    "returnOnEquity": 1.0436887718291739,
+    "returnOnAssets": 0.5805863551302447,
+    "operatingMargin": 0.6038168363141272,
+    "netProfitMargin": 0.5560253406070261,
+    "asOfDate": "2026-02-26"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 2.5,
