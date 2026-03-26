@@ -2,18 +2,10 @@
   "metadata": {
     "ticker": "NVDA",
     "companyName": "NVIDIA Corporation",
-    "lastUpdated": "2026-03-25",
+    "lastUpdated": "2026-03-26",
     "researchReportUrl": "/data/reports/NVDA.pdf"
   },
   "priceHistory": [
-    {
-      "date": "2021-03-26",
-      "open": 12.55,
-      "high": 12.86,
-      "low": 12.37,
-      "close": 12.84,
-      "volume": 363968960
-    },
     {
       "date": "2021-03-29",
       "open": 12.82,
@@ -10037,6 +10029,14 @@
       "low": 173.98,
       "close": 175.2,
       "volume": 147667844
+    },
+    {
+      "date": "2026-03-25",
+      "open": 177.1,
+      "high": 181.22,
+      "low": 176.85,
+      "close": 178.68,
+      "volume": 162241300
     }
   ],
   "earnings": [
@@ -10195,14 +10195,14 @@
     ]
   },
   "valuation": {
-    "pe": 35.464039244755014,
-    "forwardPeGrowth": 1.0351681387955634,
-    "evEbitda": 29.4637427415878,
-    "priceToFcf": 44.05481133665025,
-    "peg": 1.654988498088567,
-    "priceToBook": 27.070885544811276,
-    "priceToSales": 19.71971557012661,
-    "evToSales": 19.723452753947893,
+    "pe": 36.16846194208234,
+    "forwardPeGrowth": 1.055729697716845,
+    "evEbitda": 30.048870576719796,
+    "priceToFcf": 44.9297068518143,
+    "peg": 1.6878615572971754,
+    "priceToBook": 27.608594915221914,
+    "priceToSales": 20.111408550630273,
+    "evToSales": 20.115145734451556,
     "debtToEquity": 0.07255249756823254,
     "currentRatio": 3.905263812455306,
     "quickRatio": 3.239809719242608,
@@ -10210,7 +10210,7 @@
     "returnOnAssets": 0.5805863551302447,
     "operatingMargin": 0.6038168363141272,
     "netProfitMargin": 0.5560253406070261,
-    "asOfDate": "2026-03-25"
+    "asOfDate": "2026-03-26"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 2.5,
