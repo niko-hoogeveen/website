@@ -2,7 +2,7 @@
   "metadata": {
     "ticker": "AMZN",
     "companyName": "Amazon.com, Inc.",
-    "lastUpdated": "2026-04-01",
+    "lastUpdated": "2026-04-02",
     "researchReportUrl": "undefined"
   },
   "priceHistory": [
@@ -10036,7 +10036,15 @@
       "high": 210.28,
       "low": 204.14,
       "close": 208.27,
-      "volume": 58470078
+      "volume": 58470100
+    },
+    {
+      "date": "2026-04-01",
+      "open": 210.44,
+      "high": 213.58,
+      "low": 208.19,
+      "close": 210.57,
+      "volume": 45955395
     }
   ],
   "earnings": [
@@ -10236,14 +10244,14 @@
     ]
   },
   "valuation": {
-    "pe": 28.715893266383418,
-    "forwardPeGrowth": 1.3349069763971808,
-    "evEbitda": 13.922372367380142,
-    "priceToFcf": 299.1473644697856,
-    "peg": 25.880198806328032,
-    "priceToBook": 5.425816914599881,
-    "priceToSales": 3.1185480882143715,
-    "evToSales": 3.21085494361327,
+    "pe": 29.033013132483582,
+    "forwardPeGrowth": 1.3496488309403867,
+    "evEbitda": 14.07170204363104,
+    "priceToFcf": 302.3559827935023,
+    "peg": 26.166003085650804,
+    "priceToBook": 5.485736148784255,
+    "priceToSales": 3.1529873286373453,
+    "evToSales": 3.245294184036244,
     "debtToEquity": 0.37217228418863196,
     "currentRatio": 1.0508153482718285,
     "quickRatio": 0.8750166280589895,
@@ -10251,7 +10259,7 @@
     "returnOnAssets": 0.09494622525493801,
     "operatingMargin": 0.11155296795755199,
     "netProfitMargin": 0.10833784334183261,
-    "asOfDate": "2026-04-01"
+    "asOfDate": "2026-04-02"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 3,
