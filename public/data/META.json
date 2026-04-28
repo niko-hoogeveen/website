@@ -2,18 +2,10 @@
   "metadata": {
     "ticker": "META",
     "companyName": "Meta Platforms, Inc.",
-    "lastUpdated": "2026-04-27",
+    "lastUpdated": "2026-04-28",
     "researchReportUrl": "undefined"
   },
   "priceHistory": [
-    {
-      "date": "2021-04-28",
-      "open": 307.36,
-      "high": 310.92,
-      "low": 305.37,
-      "close": 307.1,
-      "volume": 33907210
-    },
     {
       "date": "2021-04-29",
       "open": 330.12,
@@ -10036,7 +10028,15 @@
       "high": 680.67,
       "low": 653.84,
       "close": 675.03,
-      "volume": 13348279
+      "volume": 13348300
+    },
+    {
+      "date": "2026-04-27",
+      "open": 671,
+      "high": 682.5,
+      "low": 670.84,
+      "close": 678.62,
+      "volume": 12805222
     }
   ],
   "earnings": [
@@ -10195,14 +10195,14 @@
     ]
   },
   "valuation": {
-    "pe": 28.148484071586886,
-    "forwardPeGrowth": 1.759961623462001,
-    "evEbitda": 16.568129745394664,
-    "priceToFcf": 38.07554491186102,
-    "peg": -11.347069234759351,
-    "priceToBook": 7.833628931657175,
-    "priceToSales": 8.496966155175503,
-    "evToSales": 8.735931950384643,
+    "pe": 28.297347249330112,
+    "forwardPeGrowth": 1.7692691754889018,
+    "evEbitda": 16.653353449747087,
+    "priceToFcf": 38.2713991834349,
+    "peg": -11.40707817804961,
+    "priceToBook": 7.87505705592355,
+    "priceToSales": 8.541902336459898,
+    "evToSales": 8.780868131669038,
     "debtToEquity": 0.38618965858508675,
     "currentRatio": 2.5987666124868536,
     "quickRatio": 2.5987666124868536,
@@ -10210,7 +10210,7 @@
     "returnOnAssets": 0.16517631502017643,
     "operatingMargin": 0.41437855159579234,
     "netProfitMargin": 0.3008369574952977,
-    "asOfDate": "2026-04-27"
+    "asOfDate": "2026-04-28"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 3,
