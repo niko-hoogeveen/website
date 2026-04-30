@@ -2,18 +2,10 @@
   "metadata": {
     "ticker": "META",
     "companyName": "Meta Platforms, Inc.",
-    "lastUpdated": "2026-04-29",
+    "lastUpdated": "2026-04-30",
     "researchReportUrl": "undefined"
   },
   "priceHistory": [
-    {
-      "date": "2021-04-30",
-      "open": 326.14,
-      "high": 329.82,
-      "low": 324.5,
-      "close": 325.08,
-      "volume": 26332423
-    },
     {
       "date": "2021-05-03",
       "open": 326.17,
@@ -10036,7 +10028,15 @@
       "high": 678.18,
       "low": 665.63,
       "close": 671.34,
-      "volume": 10606755
+      "volume": 10606800
+    },
+    {
+      "date": "2026-04-29",
+      "open": 668.91,
+      "high": 674.25,
+      "low": 663.81,
+      "close": 669.12,
+      "volume": 18947464
     }
   ],
   "earnings": [
@@ -10195,22 +10195,22 @@
     ]
   },
   "valuation": {
-    "pe": 27.993783122167457,
-    "forwardPeGrowth": 1.7502890693948299,
-    "evEbitda": 16.479563934996794,
-    "priceToFcf": 37.872010080635015,
-    "peg": -11.284706999575354,
-    "priceToBook": 7.79057617506663,
-    "priceToSales": 8.450267770707484,
-    "evToSales": 8.689233565916624,
-    "debtToEquity": 0.38618965858508675,
-    "currentRatio": 2.5987666124868536,
-    "quickRatio": 2.5987666124868536,
-    "returnOnEquity": 0.30557184157855366,
-    "returnOnAssets": 0.16517631502017643,
-    "operatingMargin": 0.41437855159579234,
-    "netProfitMargin": 0.3008369574952977,
-    "asOfDate": "2026-04-29"
+    "pe": 24.020713162480344,
+    "forwardPeGrowth": 1.4973370908920798,
+    "evEbitda": 15.480008620436733,
+    "priceToFcf": 36.39035537359335,
+    "peg": 3.8550315270517275,
+    "priceToBook": 6.958072562079113,
+    "priceToSales": 7.873916989630773,
+    "evToSales": 8.168586304815246,
+    "debtToEquity": 0.35607618156524307,
+    "currentRatio": 2.3477637798643936,
+    "quickRatio": 2.3477637798643936,
+    "returnOnEquity": 0.33215067171729057,
+    "returnOnAssets": 0.17858823529411766,
+    "operatingMargin": 0.41213139005317195,
+    "netProfitMargin": 0.3283681377725469,
+    "asOfDate": "2026-04-30"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 3,
