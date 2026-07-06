@@ -2,18 +2,10 @@
   "metadata": {
     "ticker": "META",
     "companyName": "Meta Platforms, Inc.",
-    "lastUpdated": "2026-07-03",
+    "lastUpdated": "2026-07-06",
     "researchReportUrl": "undefined"
   },
   "priceHistory": [
-    {
-      "date": "2021-07-06",
-      "open": 356.5,
-      "high": 358.79,
-      "low": 349.18,
-      "close": 352.78,
-      "volume": 13488500
-    },
     {
       "date": "2021-07-07",
       "open": 355.26,
@@ -10210,7 +10202,7 @@
     "returnOnAssets": 0.17858823529411766,
     "operatingMargin": 0.41213139005317195,
     "netProfitMargin": 0.3283681377725469,
-    "asOfDate": "2026-07-03"
+    "asOfDate": "2026-07-06"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 3,
