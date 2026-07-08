@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   workflow_run:
-    workflows: ["Update dashboard JSON data"]
+    workflows: ["Update dashboard JSON data", "Update fantasy league data"]
     types:
       - completed
   workflow_dispatch:
