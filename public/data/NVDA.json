@@ -2,26 +2,10 @@
   "metadata": {
     "ticker": "NVDA",
     "companyName": "NVIDIA Corporation",
-    "lastUpdated": "2026-07-31",
+    "lastUpdated": "2026-08-03",
     "researchReportUrl": "/data/reports/NVDA.pdf"
   },
   "priceHistory": [
-    {
-      "date": "2021-08-02",
-      "open": 19.7,
-      "high": 19.96,
-      "low": 19.36,
-      "close": 19.75,
-      "volume": 217444000
-    },
-    {
-      "date": "2021-08-03",
-      "open": 19.74,
-      "high": 20.22,
-      "low": 19.22,
-      "close": 19.82,
-      "volume": 301811000
-    },
     {
       "date": "2021-08-04",
       "open": 19.99,
@@ -10036,7 +10020,23 @@
       "high": 197.25,
       "low": 191.52,
       "close": 195.04,
-      "volume": 129010151
+      "volume": 129010200
+    },
+    {
+      "date": "2026-07-31",
+      "open": 198.44,
+      "high": 202,
+      "low": 194.95,
+      "close": 200.75,
+      "volume": 139961152
+    },
+    {
+      "date": "2026-08-03",
+      "open": 198.4405,
+      "high": 199.79,
+      "low": 197.1,
+      "close": 198.57,
+      "volume": 10115611
     }
   ],
   "earnings": [
@@ -10195,14 +10195,14 @@
     ]
   },
   "valuation": {
-    "pe": 29.73170731707317,
-    "forwardPeGrowth": 0.7133352676996307,
-    "evEbitda": 24.478627973260092,
-    "priceToFcf": 39.66912593637677,
-    "peg": 0.2729753244900871,
-    "priceToBook": 24.232079151191463,
-    "priceToSales": 18.636021949497223,
-    "evToSales": 18.634353251200242,
+    "pe": 30.357469512195124,
+    "forwardPeGrowth": 0.728348809916135,
+    "evEbitda": 24.993874928745402,
+    "priceToFcf": 40.50411539688938,
+    "peg": 0.2787206265154758,
+    "priceToBook": 24.742090866304473,
+    "priceToSales": 19.028253646086057,
+    "evToSales": 19.026584947789075,
     "debtToEquity": 0.06555347514247419,
     "currentRatio": 3.440775681341719,
     "quickRatio": 2.8529304530124873,
@@ -10210,7 +10210,7 @@
     "returnOnAssets": 0.6151406306604901,
     "operatingMargin": 0.6402002437956377,
     "netProfitMargin": 0.629659435640713,
-    "asOfDate": "2026-07-31"
+    "asOfDate": "2026-08-03"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 2.5,

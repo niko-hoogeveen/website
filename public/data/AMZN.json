@@ -2,26 +2,10 @@
   "metadata": {
     "ticker": "AMZN",
     "companyName": "Amazon.com, Inc.",
-    "lastUpdated": "2026-07-31",
+    "lastUpdated": "2026-08-03",
     "researchReportUrl": "undefined"
   },
   "priceHistory": [
-    {
-      "date": "2021-08-02",
-      "open": 167.65,
-      "high": 167.95,
-      "low": 165.85,
-      "close": 166.57,
-      "volume": 67078000
-    },
-    {
-      "date": "2021-08-03",
-      "open": 167.04,
-      "high": 169.55,
-      "low": 164.99,
-      "close": 168.31,
-      "volume": 83146000
-    },
     {
       "date": "2021-08-04",
       "open": 168.97,
@@ -10036,7 +10020,23 @@
       "high": 239.82,
       "low": 231.06,
       "close": 235.5,
-      "volume": 101839774
+      "volume": 101839800
+    },
+    {
+      "date": "2026-07-31",
+      "open": 265,
+      "high": 273.23,
+      "low": 262.01,
+      "close": 271.58,
+      "volume": 129054771
+    },
+    {
+      "date": "2026-08-03",
+      "open": 278.29001,
+      "high": 286.81,
+      "low": 278,
+      "close": 286.27,
+      "volume": 16866418
     }
   ],
   "earnings": [
@@ -10236,14 +10236,14 @@
     ]
   },
   "valuation": {
-    "pe": 18.69047619047619,
-    "forwardPeGrowth": 2.5010395260838103,
-    "evEbitda": 10.544675921369151,
-    "priceToFcf": -230.39277849462366,
-    "peg": 0.21157239545564419,
-    "priceToBook": 4.591998114644139,
-    "priceToSales": 3.265904818997525,
-    "evToSales": 3.4528620694100662,
+    "pe": 22.753174603174603,
+    "forwardPeGrowth": -2.081086686377209,
+    "evEbitda": 12.712638437705959,
+    "priceToFcf": -277.76103443113976,
+    "peg": 0.25756131657400694,
+    "priceToBook": 5.590148363003516,
+    "priceToSales": 3.9758057772045174,
+    "evToSales": 4.162763027617059,
     "debtToEquity": 0.4046843841775135,
     "currentRatio": 1.0331158765552857,
     "quickRatio": 0.8748559728773097,
@@ -10251,7 +10251,7 @@
     "returnOnAssets": 0.12346660411850444,
     "operatingMargin": 0.12081270627062707,
     "netProfitMargin": 0.1744031043729373,
-    "asOfDate": "2026-07-31"
+    "asOfDate": "2026-08-03"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 3,
