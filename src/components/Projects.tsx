@@ -82,6 +82,13 @@ const projects: Project[] = [
         </ul>
         <div className="mt-3">
           <a
+            href="https://www.nikohoogeveen.com/projects/calorie-prediction"
+            className="text-blue-500 underline hover:text-blue-300"
+          >
+            Read the Full Case Study
+          </a>
+          {" | "}
+          <a
             href="https://github.com/niko-hoogeveen/capstoneWebsite"
             target="_blank"
             rel="noopener noreferrer"
@@ -162,7 +169,7 @@ export default function Projects() {
   };
 
   return (
-    <section>
+    <section id="projects">
       <h2 className="text-2xl font-semibold mb-4">Projects</h2>
       <div className="space-y-4">
         {projects.map((exp, idx) => (
@@ -207,7 +214,7 @@ function ProjectCard({
 
   // If we're hovering, create a small radial gradient around the cursor
   const backgroundStyle = hoverPos
-    ? `radial-gradient(circle 400px at ${hoverPos.x}px ${hoverPos.y}px, rgba(200, 200, 200, 0.3), transparent 80%)`
+    ? `radial-gradient(circle 400px at ${hoverPos.x}px ${hoverPos.y}px, rgba(148, 163, 184, 0.12), transparent 80%)`
     : "transparent";
 
   return (

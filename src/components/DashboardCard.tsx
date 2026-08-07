@@ -21,7 +21,7 @@ export default function DashboardCard() {
 
   // If we're hovering, create a small radial gradient around the cursor
   const backgroundStyle = hoverPos
-    ? `radial-gradient(circle 100px at ${hoverPos.x}px ${hoverPos.y}px, rgba(200, 200, 200, 0.3), transparent 80%)`
+    ? `radial-gradient(circle 100px at ${hoverPos.x}px ${hoverPos.y}px, rgba(148, 163, 184, 0.12), transparent 80%)`
     : "transparent";
 
   return (

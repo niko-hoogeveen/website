@@ -37,6 +37,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    {
+      url: `${BASE_URL}/projects/calorie-prediction`,
+      lastModified: currentDate,
+      changeFrequency: "yearly",
+      priority: 0.7,
+    },
   ];
 
   // Dashboard ticker pages
