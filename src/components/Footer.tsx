@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 
@@ -47,6 +48,14 @@ export default function Footer() {
             />
           </a>
         </div>
+        <p className="mt-6">
+          <Link
+            href="/fantasy"
+            className="text-xs text-gray-600 hover:text-gray-400 transition-colors"
+          >
+            Fantasy League
+          </Link>
+        </p>
       </div>
     </footer>
   );
