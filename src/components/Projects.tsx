@@ -8,51 +8,6 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Cactus Loyalty App",
-    shortDescription:
-      "Custom loyalty and rewards platform for small-to-medium sized businesses",
-    longDescription: (
-      <>
-        <strong>
-          Skills: React Native, Laravel (PHP), REST APIs, PostgreSQL, Mobile
-          Development, CI/CD
-        </strong>
-        <ul className="list-disc ml-5 mt-2 space-y-1">
-          <li>
-            Led development of a full-stack loyalty rewards platform consisting
-            of separate customer and business-facing mobile applications.
-          </li>
-          <li>
-            Built core features including QR-based point collection, rewards
-            management, user authentication, and role-based access controls.
-          </li>
-          <li>
-            Designed and implemented backend services and APIs using Laravel,
-            supporting analytics and business reporting.
-          </li>
-          <li>
-            Managed deployments, production stability, and CI/CD workflows to
-            support ongoing feature development.
-          </li>
-          <li>
-            Successfully exited the company for monetary investment after 12
-            months
-          </li>
-        </ul>
-        <div className="mt-3">
-          <a
-            href="https://cactusapp.ca/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-500 underline hover:text-blue-300"
-          >
-            Learn More About Cactus
-          </a>
-        </div>
-      </>
-    ),
-  },
-  {
     title: "Calorie Prediction Network",
     shortDescription:
       "Machine learning model for calorie expenditure estimation",

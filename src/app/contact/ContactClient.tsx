@@ -158,8 +158,7 @@ export default function ContactClient() {
             </p>
             <p>
               🎯 Particularly interested in roles involving{" "}
-              <strong>software engineering</strong>, <strong>financial technology</strong>,
-              and <strong>equity research tools</strong>
+              <strong>software engineering</strong> and <strong>financial technology</strong>
             </p>
           </div>
         </section>

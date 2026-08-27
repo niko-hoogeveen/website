@@ -15,9 +15,9 @@ export default function HomeClient() {
       </div>
       <div className="animate-slide-in-bottom">
         <hr className="my-8" />
-        <Education />
-        <hr className="my-8" />
         <Experiences />
+        <hr className="my-8" />
+        <Education />
         <hr className="my-8" />
         <Projects />
         <Footer />

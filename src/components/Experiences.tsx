@@ -23,20 +23,23 @@ const experiences: Experience[] = [
         </strong>
         <ul className="list-disc ml-5 mt-2 space-y-1">
           <li>
-            Worked on client-facing projects delivering custom e-learning
-            solutions using Moodle, an open-source learning management system.
+            Design and implement custom Moodle solutions for university and college clients,
+            adapting e-learning platforms to meet institution-specific requirements.
           </li>
           <li>
-            Developed and maintained custom plugins, themes, and integrations to
-            meet institution-specific requirements.
+            Create project specifications and technical proposals by translating client requirements
+            into scoped implementation plans for Moodle customizations and integrations.
           </li>
           <li>
-            Debugged and resolved complex issues in production environments
-            using structured, analytical problem-solving.
+            Develop and maintain user-facing features and backend functionality using PHP and JavaScript
+            within client environments.
           </li>
           <li>
-            Communicated tradeoffs, risks, and resolutions clearly to both
-            technical teams and non-technical stakeholders.
+            Investigate and resolve client-reported issues through structured debugging and root-cause analysis.
+          </li>
+          <li>
+            Implement Moodle and hosted-database optimization initiatives that reduce database load, improve
+            resource utilization, and lower infrastructure costs for client sites.
           </li>
         </ul>
       </>
@@ -76,6 +79,52 @@ const experiences: Experience[] = [
             reporting on progress, blockers, and delivery risks.
           </li>
         </ul>
+      </>
+    ),
+  },
+  {
+    role: "Tech Lead & Software Developer",
+    company: "Cactus Loyalty App",
+    shortDescription:
+      "Custom loyalty and rewards platform for small-to-medium sized businesses.",
+    longDescription: (
+      <>
+        <strong>
+          Skills: React Native, Laravel (PHP), REST APIs, PostgreSQL, Mobile
+          Development, CI/CD
+        </strong>
+        <ul className="list-disc ml-5 mt-2 space-y-1">
+          <li>
+              Architected a scalable loyalty rewards platform using Laravel (PHP), 
+              featuring an optimized relational database schema and RESTful APIs to support robust integrations.    
+          </li>
+          <li>
+            Led development of a full-stack loyalty rewards platform consisting
+            of separate customer and business-facing mobile applications.
+          </li>
+          <li>
+            Developed two fully responsive mobile applications using React Native
+            and Tailwind CSS, alongside a high-performance web application powered by Vite.js.
+          </li>
+          <li>
+            Built core features including QR-based point collection, rewards
+            management, user authentication, and role-based access controls.
+          </li>
+          <li>
+            Established and maintained a CI/CD pipeline in a collaborative Scrum
+            environment, enabling streamlined deployments and faster iteration cycles via GitHub Actions.
+          </li>
+        </ul>
+        <div className="mt-3">
+          <a
+            href="https://cactusapp.ca/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 underline hover:text-blue-300"
+          >
+            Learn More About Cactus
+          </a>
+        </div>
       </>
     ),
   },
@@ -213,7 +262,7 @@ function ExperienceCard({
           mx-4 mb-4 text-gray-200
           overflow-hidden
           transition-all duration-500 ease-in-out
-          ${isExpanded ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}
+          ${isExpanded ? "max-h-[700px] opacity-100" : "max-h-0 opacity-0"}
         `}
       >
         <div>{exp.longDescription}</div>

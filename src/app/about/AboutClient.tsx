@@ -8,26 +8,29 @@ import PageParticles from "@/components/Particles";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 const skills = [
-  "TypeScript",
+  "PHP",
+  "JavaScript",
   "React",
+  "React Native",
   "Next.js",
   "Node.js",
-  "PHP",
-  "Python",
-  "PostgreSQL",
   "Docker",
   "Git",
   "Linux",
   "Moodle",
+  "Python",
+  "PostgreSQL",
   "Tailwind CSS",
 ];
 
 const interests = [
-  "Equity Research & Stock Analysis",
+  "Recreational Sports (hockey, ultimate frisbee)",
+  "Mountain Biking",
+  "Road Biking",
+  "Kitesurfing",
+  "Software Engineering",
+  "AI driven software development",
   "Financial Markets",
-  "E-Learning Technology",
-  "Open Source Software",
-  "Search and Rescue Operations",
 ];
 
 export default function AboutClient() {

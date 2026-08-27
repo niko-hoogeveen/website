@@ -2,10 +2,30 @@ import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import Technologies from "@/components/Technologies";
-import ContactCard from "@/components/ContactCard";
-import DashboardCard from "@/components/DashboardCard";
-import AboutCard from "@/components/AboutCard";
-import Link from "next/link";
+import NavCard from "@/components/NavCard";
+
+const navLinks = [
+  {
+    href: "/about",
+    title: "About Me",
+    description: "Learn more about my background",
+  },
+  {
+    href: "/contact",
+    title: "Contact Me",
+    description: "Set up a meeting at your convenience",
+  },
+  {
+    href: "/dashboard",
+    title: "Equity Research Dashboard",
+    description: "View my financial reports",
+  },
+  {
+    href: "/projects/calorie-prediction",
+    title: "Calorie Prediction Demo",
+    description: "See the model classify exercises live",
+  }
+];
 
 export default function Header() {
   return (
@@ -52,18 +72,10 @@ export default function Header() {
         </a>
       </div>
 
-      <div className="mt-8 w-full flex items-center justify-center">
-        <div className="flex flex-column gap-3">
-          <Link href="/about">
-            <AboutCard />
-          </Link>
-          <Link href="/dashboard">
-            <DashboardCard />
-          </Link>
-          <Link href="/contact">
-            <ContactCard />
-          </Link>
-        </div>
+      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {navLinks.map((link) => (
+          <NavCard key={link.href} {...link} />
+        ))}
       </div>
       <div className="mt-8">
         <Technologies />
