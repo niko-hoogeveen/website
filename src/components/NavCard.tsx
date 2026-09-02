@@ -7,9 +7,15 @@ interface NavCardProps {
   href: string;
   title: string;
   description: string;
+  className?: string;
 }
 
-export default function NavCard({ href, title, description }: NavCardProps) {
+export default function NavCard({
+  href,
+  title,
+  description,
+  className = "",
+}: NavCardProps) {
   // Track mouse position for radial highlight
   const [hoverPos, setHoverPos] = useState<{ x: number; y: number } | null>(
     null
@@ -31,9 +37,9 @@ export default function NavCard({ href, title, description }: NavCardProps) {
   return (
     <Link
       href={href}
-      className="block h-full py-4 pr-2 text-center border border-gray-700 rounded-xl bg-transparent
+      className={`block h-full py-4 pr-2 text-center border border-gray-700 rounded-xl bg-transparent
                  transition-all duration-300 ease-out
-                 hover:scale-105 hover:shadow-lg cursor-pointer"
+                 hover:scale-105 hover:shadow-lg cursor-pointer ${className}`}
       style={{ background: backgroundStyle }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}

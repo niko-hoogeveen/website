@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 
 interface Project {
   title: string;
@@ -36,12 +37,12 @@ const projects: Project[] = [
           </li>
         </ul>
         <div className="mt-3">
-          <a
-            href="https://www.nikohoogeveen.com/projects/calorie-prediction"
+          <Link
+            href="/projects/calorie-prediction"
             className="text-blue-500 underline hover:text-blue-300"
           >
             Read the Full Case Study
-          </a>
+          </Link>
           {" | "}
           <a
             href="https://github.com/niko-hoogeveen/capstoneWebsite"
@@ -98,14 +99,12 @@ const projects: Project[] = [
           </li>
         </ul>
         <div className="mt-3">
-          <a
-            href="https://www.nikohoogeveen.com/dashboard"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/dashboard"
             className="text-blue-500 underline hover:text-blue-300"
           >
             View the Equity Research Dashboard
-          </a>
+          </Link>
         </div>
       </>
     ),

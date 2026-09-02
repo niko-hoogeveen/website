@@ -1,7 +1,13 @@
 import { Metadata } from "next";
 import ContactClient from "./ContactClient";
-
-const BASE_URL = "https://nikohoogeveen.com";
+import {
+  BASE_URL,
+  EMAIL,
+  PERSON_ID,
+  TELEPHONE,
+  organizationSchema,
+  personSchema,
+} from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Contact Niko Hoogeveen",
@@ -35,27 +41,29 @@ export const metadata: Metadata = {
 // ContactPage schema for rich results
 const contactJsonLd = {
   "@context": "https://schema.org",
-  "@type": "ContactPage",
-  "@id": `${BASE_URL}/contact`,
-  mainEntity: {
-    "@type": "Person",
-    "@id": `${BASE_URL}/#person`,
-    name: "Niko Hoogeveen",
-    email: "mailto:niko.hoogeveen@gmail.com",
-    url: BASE_URL,
-    sameAs: [
-      "https://www.linkedin.com/in/niko-hoogeveen-52b7a9205/",
-      "https://github.com/niko-hoogeveen",
-      "https://www.instagram.com/nikohoogeveen/",
-      "https://cal.com/niko-hoogeveen",
-    ],
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "professional inquiries",
-      email: "niko.hoogeveen@gmail.com",
-      url: "https://cal.com/niko-hoogeveen",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "@id": `${BASE_URL}/contact`,
+      url: `${BASE_URL}/contact`,
+      name: "Contact Niko Hoogeveen",
+      isPartOf: { "@id": `${BASE_URL}/#website` },
+      mainEntity: { "@id": PERSON_ID },
     },
-  },
+    {
+      ...personSchema,
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "professional inquiries",
+        email: EMAIL,
+        telephone: TELEPHONE,
+        url: "https://cal.com/niko-hoogeveen",
+        areaServed: "CA",
+        availableLanguage: "English",
+      },
+    },
+    organizationSchema,
+  ],
 };
 
 export default function ContactPage() {

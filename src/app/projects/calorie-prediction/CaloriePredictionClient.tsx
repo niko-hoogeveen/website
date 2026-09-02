@@ -6,6 +6,8 @@ import Image from "next/image";
 import { FaGithub, FaArrowLeft } from "react-icons/fa";
 import PageParticles from "@/components/Particles";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import SiteNav from "@/components/SiteNav";
+import Footer from "@/components/Footer";
 import CalorieDemo from "@/components/CalorieDemo";
 
 const techStack = [
@@ -61,6 +63,7 @@ export default function CaloriePredictionClient() {
   return (
     <div className="max-w-4xl mx-auto p-6 animate-fade-in">
       <PageParticles id="calorie-prediction-particles" />
+      <SiteNav currentPath="/projects" />
 
       {/* Back Navigation */}
       <Link
@@ -74,7 +77,7 @@ export default function CaloriePredictionClient() {
       <Breadcrumbs
         items={[
           { name: "Home", href: "/" },
-          { name: "Projects", href: "/#projects" },
+          { name: "Projects", href: "/projects" },
           {
             name: "Calorie Prediction Network",
             href: "/projects/calorie-prediction",
@@ -340,6 +343,12 @@ export default function CaloriePredictionClient() {
             Back to Portfolio
           </Link>
           <Link
+            href="/projects"
+            className="text-gray-400 hover:text-white transition-colors underline"
+          >
+            All Projects
+          </Link>
+          <Link
             href="/dashboard"
             className="text-gray-400 hover:text-white transition-colors underline"
           >
@@ -347,6 +356,8 @@ export default function CaloriePredictionClient() {
           </Link>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

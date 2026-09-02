@@ -12,6 +12,8 @@ import {
 import { HiOutlineMail } from "react-icons/hi";
 import PageParticles from "@/components/Particles";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import SiteNav from "@/components/SiteNav";
+import Footer from "@/components/Footer";
 
 const contactMethods = [
   {
@@ -60,6 +62,7 @@ export default function ContactClient() {
   return (
     <div className="max-w-4xl mx-auto p-6 animate-fade-in">
       <PageParticles id="contact-particles" />
+      <SiteNav currentPath="/contact" />
 
       {/* Back Navigation */}
       <Link
@@ -185,6 +188,8 @@ export default function ContactClient() {
           </Link>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
 import PageParticles from "@/components/Particles";
+import SiteNav from "@/components/SiteNav";
+import Footer from "@/components/Footer";
 import {
   getAvailableTickers,
   loadTickerData,
@@ -45,6 +47,7 @@ export default function DashboardClient() {
   return (
     <div className="max-w-6xl mx-auto p-6 animate-fade-in">
       <PageParticles id="dashboard-particles" />
+      <SiteNav currentPath="/dashboard" />
       <div className="animate-slide-in-top">
         <DashboardHeader />
       </div>
@@ -185,13 +188,15 @@ export default function DashboardClient() {
             About Me
           </Link>
           <Link
-            href="/dashboard"
+            href="/contact"
             className="text-gray-400 hover:text-white transition-colors underline"
           >
             Contact Me
           </Link>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

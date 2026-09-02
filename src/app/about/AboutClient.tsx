@@ -6,6 +6,8 @@ import { FaGithub, FaLinkedin, FaArrowLeft, FaCalendarAlt } from "react-icons/fa
 import { HiOutlineMail } from "react-icons/hi";
 import PageParticles from "@/components/Particles";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import SiteNav from "@/components/SiteNav";
+import Footer from "@/components/Footer";
 
 const skills = [
   "PHP",
@@ -37,6 +39,7 @@ export default function AboutClient() {
   return (
     <div className="max-w-4xl mx-auto p-6 animate-fade-in">
       <PageParticles id="about-particles" />
+      <SiteNav currentPath="/about" />
 
       {/* Back Navigation */}
       <Link
@@ -195,6 +198,18 @@ export default function AboutClient() {
             Back to Portfolio
           </Link>
           <Link
+            href="/resume"
+            className="text-gray-400 hover:text-white transition-colors underline"
+          >
+            View Resume
+          </Link>
+          <Link
+            href="/services"
+            className="text-gray-400 hover:text-white transition-colors underline"
+          >
+            Consulting Services
+          </Link>
+          <Link
             href="/dashboard"
             className="text-gray-400 hover:text-white transition-colors underline"
           >
@@ -202,6 +217,8 @@ export default function AboutClient() {
           </Link>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

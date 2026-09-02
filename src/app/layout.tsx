@@ -1,43 +1,67 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
-const BASE_URL = "https://nikohoogeveen.com";
+import {
+  BASE_URL,
+  NAV_ITEMS,
+  PERSON_NAME,
+  PROFILE_IMAGE,
+  WEBSITE_ID,
+  ORG_ID,
+  PERSON_ID,
+  absoluteUrl,
+  organizationSchema,
+  personSchema,
+} from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Niko Hoogeveen - Software Engineer & Portfolio",
+    default: "Niko Hoogeveen - Software Engineer in Toronto, Ontario",
     template: "%s | Niko Hoogeveen",
   },
   description:
-    "Niko Hoogeveen is a skilled software engineer specializing in modern web applications, equity research dashboards, and creative technology solutions.",
+    "Niko Hoogeveen is a software engineer in Toronto, Ontario. He builds custom Moodle and web applications at Catalyst IT Canada.",
+  applicationName: PERSON_NAME,
   keywords: [
     "Niko Hoogeveen",
-    "Software Engineer",
-    "Web Developer",
-    "Portfolio",
-    "Equity Research",
-    "Stock Analysis",
-    "React",
-    "Next.js",
-    "TypeScript",
+    "Niko Hoogeveen Consulting",
+    "Niko Hoogeveen Toronto",
+    "Niko Hoogeveen Software Engineer",
+    "Software Engineer Toronto",
+    "Moodle Developer Canada",
+    "Software Consultant Ontario",
   ],
-  authors: [{ name: "Niko Hoogeveen", url: BASE_URL }],
-  creator: "Niko Hoogeveen",
+  authors: [{ name: PERSON_NAME, url: BASE_URL }],
+  creator: PERSON_NAME,
+  publisher: PERSON_NAME,
+  // Google reads rel="icon" from the home page head; the URL must stay stable.
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_CA",
     url: BASE_URL,
-    siteName: "Niko Hoogeveen",
-    title: "Niko Hoogeveen - Software Engineer & Portfolio",
+    siteName: PERSON_NAME,
+    title: "Niko Hoogeveen - Software Engineer in Toronto, Ontario",
     description:
-      "Discover the portfolio of Niko Hoogeveen, a software engineer specializing in web applications and equity research tools.",
+      "Portfolio and consulting site of Niko Hoogeveen, a software engineer in Toronto building web applications, Moodle solutions, and equity research tools.",
+    images: [{ url: PROFILE_IMAGE, width: 400, height: 400, alt: PERSON_NAME }],
   },
   twitter: {
-    card: "summary_large_image",
+    // profile.jpg is square, so the small-thumbnail card renders it uncropped.
+    card: "summary",
+    site: "@nikohoogeveen",
+    creator: "@nikohoogeveen",
     title: "Niko Hoogeveen - Software Engineer",
     description:
-      "Explore the work of Niko Hoogeveen, software engineer and creative technologist.",
+      "Portfolio and consulting site of Niko Hoogeveen, software engineer in Toronto, Ontario.",
+    images: [PROFILE_IMAGE],
   },
   robots: {
     index: true,
@@ -61,74 +85,23 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": `${BASE_URL}/#website`,
+      "@id": WEBSITE_ID,
       url: BASE_URL,
-      name: "Niko Hoogeveen",
-      description: "Software Engineer & Portfolio",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: `${BASE_URL}/dashboard/{search_term_string}`,
-        },
-        "query-input": "required name=search_term_string",
-      },
+      // Drives the site name shown above the title link in Google results.
+      name: PERSON_NAME,
+      alternateName: "Niko Hoogeveen Consulting",
+      description: "Software engineer and consultant in Toronto, Ontario",
+      inLanguage: "en-CA",
+      publisher: { "@id": ORG_ID },
+      about: { "@id": PERSON_ID },
     },
-    {
-      "@type": "Person",
-      "@id": `${BASE_URL}/#person`,
-      name: "Niko Hoogeveen",
-      url: BASE_URL,
-      sameAs: [
-        "https://www.linkedin.com/in/niko-hoogeveen-52b7a9205/",
-        "https://github.com/niko-hoogeveen",
-        "https://www.instagram.com/nikohoogeveen/?hl=en",
-      ],
-      jobTitle: "Software Engineer",
-      description:
-        "Niko Hoogeveen is a software engineer specializing in modern web applications and equity research dashboards.",
-    },
+    personSchema,
+    organizationSchema,
     {
       "@type": "SiteNavigationElement",
       "@id": `${BASE_URL}/#navigation`,
-      name: "Main Navigation",
-      hasPart: [
-        {
-          "@type": "WebPage",
-          name: "Home",
-          url: BASE_URL,
-        },
-        {
-          "@type": "WebPage",
-          name: "About",
-          url: `${BASE_URL}/about`,
-        },
-        {
-          "@type": "WebPage",
-          name: "Contact",
-          url: `${BASE_URL}/contact`,
-        },
-        {
-          "@type": "WebPage",
-          name: "Stock Dashboard",
-          url: `${BASE_URL}/dashboard`,
-        },
-        {
-          "@type": "WebPage",
-          name: "Amazon Analysis",
-          url: `${BASE_URL}/dashboard/AMZN`,
-        },
-        {
-          "@type": "WebPage",
-          name: "Meta Analysis",
-          url: `${BASE_URL}/dashboard/META`,
-        },
-        {
-          "@type": "WebPage",
-          name: "Nvidia Analysis",
-          url: `${BASE_URL}/dashboard/NVDA`,
-        },
-      ],
+      name: NAV_ITEMS.map((item) => item.label),
+      url: NAV_ITEMS.map((item) => absoluteUrl(item.href)),
     },
   ],
 };
@@ -139,7 +112,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-CA">
       <head>
         <script
           type="application/ld+json"

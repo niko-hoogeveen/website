@@ -3,29 +3,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import Technologies from "@/components/Technologies";
 import NavCard from "@/components/NavCard";
-
-const navLinks = [
-  {
-    href: "/about",
-    title: "About Me",
-    description: "Learn more about my background",
-  },
-  {
-    href: "/contact",
-    title: "Contact Me",
-    description: "Set up a meeting at your convenience",
-  },
-  {
-    href: "/dashboard",
-    title: "Equity Research Dashboard",
-    description: "View my financial reports",
-  },
-  {
-    href: "/projects/calorie-prediction",
-    title: "Calorie Prediction Demo",
-    description: "See the model classify exercises live",
-  }
-];
+import { NAV_ITEMS } from "@/lib/seo";
 
 export default function Header() {
   return (
@@ -73,8 +51,19 @@ export default function Header() {
       </div>
 
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {navLinks.map((link) => (
-          <NavCard key={link.href} {...link} />
+        {NAV_ITEMS.map((link, index) => (
+          <NavCard
+            key={link.href}
+            href={link.href}
+            title={link.label}
+            description={link.description}
+            // An odd card count would otherwise leave the last one orphaned.
+            className={
+              index === NAV_ITEMS.length - 1 && NAV_ITEMS.length % 2 === 1
+                ? "sm:col-span-2"
+                : ""
+            }
+          />
         ))}
       </div>
       <div className="mt-8">

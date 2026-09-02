@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import { FaChevronRight } from "react-icons/fa";
-
-const BASE_URL = "https://nikohoogeveen.com";
+import { BASE_URL } from "@/lib/seo";
 
 export interface BreadcrumbItem {
   name: string;
