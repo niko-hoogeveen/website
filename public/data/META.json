@@ -2,18 +2,10 @@
   "metadata": {
     "ticker": "META",
     "companyName": "Meta Platforms, Inc.",
-    "lastUpdated": "2026-09-01",
+    "lastUpdated": "2026-09-02",
     "researchReportUrl": "undefined"
   },
   "priceHistory": [
-    {
-      "date": "2021-09-02",
-      "open": 381.5,
-      "high": 381.75,
-      "low": 374.06,
-      "close": 375.28,
-      "volume": 14838274
-    },
     {
       "date": "2021-09-03",
       "open": 374.75,
@@ -10028,15 +10020,23 @@
       "high": 578.67,
       "low": 569.14,
       "close": 572.34,
-      "volume": 13383754
+      "volume": 13383800
     },
     {
       "date": "2026-09-01",
-      "open": 557.8,
-      "high": 581.16,
-      "low": 556.29,
-      "close": 579.47,
-      "volume": 5674595
+      "open": 558.35,
+      "high": 584.95,
+      "low": 556.1,
+      "close": 578.54,
+      "volume": 15796898
+    },
+    {
+      "date": "2026-09-02",
+      "open": 579.55,
+      "high": 600.38,
+      "low": 577,
+      "close": 596.6824,
+      "volume": 6929080
     }
   ],
   "earnings": [
@@ -10195,14 +10195,14 @@
     ]
   },
   "valuation": {
-    "pe": 21.500929022668156,
-    "forwardPeGrowth": 2.7354410304524315,
-    "evEbitda": 14.670560506350865,
-    "priceToFcf": 38.33478754724717,
-    "peg": -4.407690449646968,
-    "priceToBook": 5.632603695721248,
-    "priceToSales": 6.457669966597736,
-    "evToSales": 6.882015415407802,
+    "pe": 22.118015607580826,
+    "forwardPeGrowth": 2.8139065321305208,
+    "evEbitda": 15.065650282239988,
+    "priceToFcf": 39.36717363871534,
+    "peg": -4.534193199554065,
+    "priceToBook": 5.794262021047312,
+    "priceToSales": 6.6430080746381135,
+    "evToSales": 7.06735352344818,
     "debtToEquity": 0.42997308792172145,
     "currentRatio": 2.225562709519502,
     "quickRatio": 2.225562709519502,
@@ -10210,7 +10210,7 @@
     "returnOnAssets": 0.1513436869382784,
     "operatingMargin": 0.38084451999579405,
     "netProfitMargin": 0.29835091654691387,
-    "asOfDate": "2026-09-01"
+    "asOfDate": "2026-09-02"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 3,
