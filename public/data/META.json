@@ -2,26 +2,10 @@
   "metadata": {
     "ticker": "META",
     "companyName": "Meta Platforms, Inc.",
-    "lastUpdated": "2026-09-11",
+    "lastUpdated": "2026-09-14",
     "researchReportUrl": "undefined"
   },
   "priceHistory": [
-    {
-      "date": "2021-09-13",
-      "open": 381.68,
-      "high": 381.75,
-      "low": 374.35,
-      "close": 376.51,
-      "volume": 13026300
-    },
-    {
-      "date": "2021-09-14",
-      "open": 377.4,
-      "high": 378.59,
-      "low": 375.11,
-      "close": 376.53,
-      "volume": 8711600
-    },
     {
       "date": "2021-09-15",
       "open": 377,
@@ -10036,15 +10020,23 @@
       "high": 663.5,
       "low": 642.14,
       "close": 644.38,
-      "volume": 21487500
+      "volume": 21531900
     },
     {
       "date": "2026-09-11",
-      "open": 653.02,
+      "open": 653.51,
       "high": 664.24,
-      "low": 648.51,
-      "close": 652.28,
-      "volume": 5284118
+      "low": 646.2,
+      "close": 648.03,
+      "volume": 16924953
+    },
+    {
+      "date": "2026-09-14",
+      "open": 657.62,
+      "high": 663.86,
+      "low": 649.25,
+      "close": 663.4469,
+      "volume": 10180510
     }
   ],
   "earnings": [
@@ -10203,14 +10195,14 @@
     ]
   },
   "valuation": {
-    "pe": 24.120029728725385,
-    "forwardPeGrowth": 3.181055331460445,
-    "evEbitda": 16.347440114969366,
-    "priceToFcf": 42.716544025527135,
-    "peg": -4.9446060943887,
-    "priceToBook": 6.318730155691925,
-    "priceToSales": 7.244300532710035,
-    "evToSales": 7.668645981520101,
+    "pe": 24.633203270159793,
+    "forwardPeGrowth": 3.248663544863014,
+    "evEbitda": 16.675999549630156,
+    "priceToFcf": 43.57508355569114,
+    "peg": -5.049806670382753,
+    "priceToBook": 6.4531663553083405,
+    "priceToSales": 7.398429006072343,
+    "evToSales": 7.822774454882409,
     "debtToEquity": 0.42997308792172145,
     "currentRatio": 2.225562709519502,
     "quickRatio": 2.225562709519502,
@@ -10218,7 +10210,7 @@
     "returnOnAssets": 0.1513436869382784,
     "operatingMargin": 0.38084451999579405,
     "netProfitMargin": 0.29835091654691387,
-    "asOfDate": "2026-09-11"
+    "asOfDate": "2026-09-14"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 3,
