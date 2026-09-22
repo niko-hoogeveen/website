@@ -2,18 +2,10 @@
   "metadata": {
     "ticker": "AMZN",
     "companyName": "Amazon.com, Inc.",
-    "lastUpdated": "2026-09-21",
+    "lastUpdated": "2026-09-22",
     "researchReportUrl": "undefined"
   },
   "priceHistory": [
-    {
-      "date": "2021-09-22",
-      "open": 167.55,
-      "high": 169.45,
-      "low": 167.05,
-      "close": 169,
-      "volume": 48228000
-    },
     {
       "date": "2021-09-23",
       "open": 169,
@@ -10028,15 +10020,23 @@
       "high": 255.43,
       "low": 251.88,
       "close": 253.71,
-      "volume": 52148900
+      "volume": 52274714
     },
     {
       "date": "2026-09-21",
-      "open": 256.52,
-      "high": 258.69,
+      "open": 256.4,
+      "high": 259.49,
       "low": 253.6,
-      "close": 257.71,
-      "volume": 19264357
+      "close": 258.45,
+      "volume": 42857800
+    },
+    {
+      "date": "2026-09-22",
+      "open": 255.38,
+      "high": 259,
+      "low": 253.79,
+      "close": 255.42,
+      "volume": 13226800
     }
   ],
   "earnings": [
@@ -10236,14 +10236,14 @@
     ]
   },
   "valuation": {
-    "pe": 20.45674603174603,
-    "forwardPeGrowth": -1.215380114382473,
-    "evEbitda": 11.487203827210559,
-    "priceToFcf": -250.9862632688172,
-    "peg": 0.23156621142534847,
-    "priceToBook": 5.025946811210615,
-    "priceToSales": 3.574536291383045,
-    "evToSales": 3.761493541795586,
+    "pe": 20.26129365079365,
+    "forwardPeGrowth": -1.2037678600801716,
+    "evEbitda": 11.382905311204464,
+    "priceToFcf": -248.70742368430106,
+    "peg": 0.22935373015873017,
+    "priceToBook": 4.977926795257605,
+    "priceToSales": 3.54038366379177,
+    "evToSales": 3.7273409142043112,
     "debtToEquity": 0.4046843841775135,
     "currentRatio": 1.0331158765552857,
     "quickRatio": 0.8748559728773097,
@@ -10251,7 +10251,7 @@
     "returnOnAssets": 0.12346660411850444,
     "operatingMargin": 0.12081270627062707,
     "netProfitMargin": 0.1744031043729373,
-    "asOfDate": "2026-09-21"
+    "asOfDate": "2026-09-22"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 3,
