@@ -2,18 +2,10 @@
   "metadata": {
     "ticker": "META",
     "companyName": "Meta Platforms, Inc.",
-    "lastUpdated": "2026-09-22",
+    "lastUpdated": "2026-09-23",
     "researchReportUrl": "undefined"
   },
   "priceHistory": [
-    {
-      "date": "2021-09-23",
-      "open": 345.36,
-      "high": 349.67,
-      "low": 343,
-      "close": 345.96,
-      "volume": 21806300
-    },
     {
       "date": "2021-09-24",
       "open": 343.24,
@@ -10028,15 +10020,23 @@
       "high": 753,
       "low": 679.6,
       "close": 741.25,
-      "volume": 48572800
+      "volume": 48720500
     },
     {
       "date": "2026-09-22",
-      "open": 731.475,
+      "open": 731.47,
       "high": 757.27,
       "low": 730,
-      "close": 748.7,
-      "volume": 13656283
+      "close": 736.595,
+      "volume": 27915040
+    },
+    {
+      "date": "2026-09-23",
+      "open": 747.95,
+      "high": 763.8,
+      "low": 739.51,
+      "close": 752.835,
+      "volume": 13775101
     }
   ],
   "earnings": [
@@ -10195,14 +10195,14 @@
     ]
   },
   "valuation": {
-    "pe": 27.80453363062059,
-    "forwardPeGrowth": 3.461334013514686,
-    "evEbitda": 18.70644427492715,
-    "priceToFcf": 48.880720455998635,
-    "peg": -5.699929394277216,
-    "priceToBook": 7.283960554473033,
-    "priceToSales": 8.350918305549227,
-    "evToSales": 8.775263754359294,
+    "pe": 28.176700111482724,
+    "forwardPeGrowth": 0.7757754742782548,
+    "evEbitda": 18.944723918522115,
+    "priceToFcf": 49.5033551201679,
+    "peg": -5.776223522853953,
+    "priceToBook": 7.381457099544065,
+    "priceToSales": 8.46269618749781,
+    "evToSales": 8.887041636307876,
     "debtToEquity": 0.42997308792172145,
     "currentRatio": 2.225562709519502,
     "quickRatio": 2.225562709519502,
@@ -10210,7 +10210,7 @@
     "returnOnAssets": 0.1513436869382784,
     "operatingMargin": 0.38084451999579405,
     "netProfitMargin": 0.29835091654691387,
-    "asOfDate": "2026-09-22"
+    "asOfDate": "2026-09-23"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 3,
