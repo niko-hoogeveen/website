@@ -2,26 +2,10 @@
   "metadata": {
     "ticker": "META",
     "companyName": "Meta Platforms, Inc.",
-    "lastUpdated": "2026-10-02",
+    "lastUpdated": "2026-10-05",
     "researchReportUrl": "undefined"
   },
   "priceHistory": [
-    {
-      "date": "2021-10-04",
-      "open": 335.53,
-      "high": 335.94,
-      "low": 322.7,
-      "close": 326.23,
-      "volume": 42885000
-    },
-    {
-      "date": "2021-10-05",
-      "open": 328.58,
-      "high": 335.18,
-      "low": 326.16,
-      "close": 332.96,
-      "volume": 35377947
-    },
     {
       "date": "2021-10-06",
       "open": 329.74,
@@ -10040,11 +10024,19 @@
     },
     {
       "date": "2026-10-02",
-      "open": 733.205,
+      "open": 733.25,
       "high": 741.58,
-      "low": 727.4935,
-      "close": 729,
-      "volume": 5962466
+      "low": 726.2,
+      "close": 728.08,
+      "volume": 12964079
+    },
+    {
+      "date": "2026-10-05",
+      "open": 727.355,
+      "high": 746.7,
+      "low": 727.12,
+      "close": 742.88501,
+      "volume": 10219749
     }
   ],
   "earnings": [
@@ -10203,14 +10195,14 @@
     ]
   },
   "valuation": {
-    "pe": 27.160906726124118,
-    "forwardPeGrowth": 0.7535391011123008,
-    "evEbitda": 18.294362055560743,
-    "priceToFcf": 47.803932399770595,
-    "peg": -5.567985878855439,
-    "priceToBook": 7.1153494550591265,
-    "priceToSales": 8.15760897801076,
-    "evToSales": 8.581954426820827,
+    "pe": 27.608324043106656,
+    "forwardPeGrowth": 0.765951104401122,
+    "evEbitda": 18.58082111602473,
+    "priceToFcf": 48.55246189318137,
+    "peg": -5.659706428836859,
+    "priceToBook": 7.232559480286808,
+    "priceToSales": 8.291988006619993,
+    "evToSales": 8.716333455430059,
     "debtToEquity": 0.42997308792172145,
     "currentRatio": 2.225562709519502,
     "quickRatio": 2.225562709519502,
@@ -10218,7 +10210,7 @@
     "returnOnAssets": 0.1513436869382784,
     "operatingMargin": 0.38084451999579405,
     "netProfitMargin": 0.29835091654691387,
-    "asOfDate": "2026-10-02"
+    "asOfDate": "2026-10-05"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 3,
