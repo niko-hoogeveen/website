@@ -2,18 +2,10 @@
   "metadata": {
     "ticker": "AMZN",
     "companyName": "Amazon.com, Inc.",
-    "lastUpdated": "2026-10-07",
+    "lastUpdated": "2026-10-08",
     "researchReportUrl": "undefined"
   },
   "priceHistory": [
-    {
-      "date": "2021-10-08",
-      "open": 165.85,
-      "high": 166.07,
-      "low": 164.41,
-      "close": 164.43,
-      "volume": 39964000
-    },
     {
       "date": "2021-10-11",
       "open": 163.75,
@@ -10028,15 +10020,23 @@
       "high": 256.68,
       "low": 251.08,
       "close": 256.29,
-      "volume": 34120787
+      "volume": 34120800
     },
     {
       "date": "2026-10-07",
-      "open": 254.07,
-      "high": 259.38,
+      "open": 254.23,
+      "high": 260.14,
       "low": 253.17,
-      "close": 258.752,
-      "volume": 19807402
+      "close": 259.92,
+      "volume": 36225813
+    },
+    {
+      "date": "2026-10-08",
+      "open": 259.72,
+      "high": 259.8599,
+      "low": 254.5,
+      "close": 255.5532,
+      "volume": 16853126
     }
   ],
   "earnings": [
@@ -10236,14 +10236,14 @@
     ]
   },
   "valuation": {
-    "pe": 20.55079365079365,
-    "forwardPeGrowth": 0.2614575249510567,
-    "evEbitda": 11.537390103032713,
-    "priceToFcf": -252.08279346236557,
-    "peg": 0.23263081137700428,
-    "priceToBook": 5.04905304376201,
-    "priceToSales": 3.5909698251856437,
-    "evToSales": 3.777927075598185,
+    "pe": 20.161666666666665,
+    "forwardPeGrowth": 0.2559991442431387,
+    "evEbitda": 11.329741848431281,
+    "priceToFcf": -247.54584432481718,
+    "peg": 0.22822597292724198,
+    "priceToBook": 4.9534497878974655,
+    "priceToSales": 3.5229752478805696,
+    "evToSales": 3.709932498293111,
     "debtToEquity": 0.4046843841775135,
     "currentRatio": 1.0331158765552857,
     "quickRatio": 0.8748559728773097,
@@ -10251,7 +10251,7 @@
     "returnOnAssets": 0.12346660411850444,
     "operatingMargin": 0.12081270627062707,
     "netProfitMargin": 0.1744031043729373,
-    "asOfDate": "2026-10-07"
+    "asOfDate": "2026-10-08"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 3,
