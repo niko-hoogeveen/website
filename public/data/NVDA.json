@@ -2,18 +2,10 @@
   "metadata": {
     "ticker": "NVDA",
     "companyName": "NVIDIA Corporation",
-    "lastUpdated": "2026-10-12",
+    "lastUpdated": "2026-10-13",
     "researchReportUrl": "/data/reports/NVDA.pdf"
   },
   "priceHistory": [
-    {
-      "date": "2021-10-13",
-      "open": 20.92,
-      "high": 20.99,
-      "low": 20.71,
-      "close": 20.94,
-      "volume": 180652000
-    },
     {
       "date": "2021-10-14",
       "open": 21.29,
@@ -10028,15 +10020,23 @@
       "high": 233.92,
       "low": 229.11,
       "close": 229.28,
-      "volume": 84645559
+      "volume": 84645600
     },
     {
       "date": "2026-10-12",
       "open": 228.73,
       "high": 228.86,
-      "low": 224.92,
+      "low": 224.9,
       "close": 226.32,
-      "volume": 66873907
+      "volume": 70690254
+    },
+    {
+      "date": "2026-10-13",
+      "open": 224.27,
+      "high": 227.63,
+      "low": 223.0602,
+      "close": 227.4598,
+      "volume": 49809952
     }
   ],
   "earnings": [
@@ -10195,14 +10195,14 @@
     ]
   },
   "valuation": {
-    "pe": 28.46792452830188,
-    "forwardPeGrowth": 0.2914980139633375,
-    "evEbitda": 23.435257167776857,
-    "priceToFcf": 43.15832354376958,
-    "peg": 0.22851803362854572,
-    "priceToBook": 23.908573524787755,
-    "priceToSales": 18.037980915539215,
-    "evToSales": 18.092167977581866,
+    "pe": 28.61132201257861,
+    "forwardPeGrowth": 0.292966336033408,
+    "evEbitda": 23.50724328885735,
+    "priceToFcf": 43.290893042879866,
+    "peg": 0.22966911547512084,
+    "priceToBook": 24.02900482959508,
+    "priceToSales": 18.09355466006093,
+    "evToSales": 18.147741722103582,
     "debtToEquity": 0.1697061803444782,
     "currentRatio": 4.588949069016016,
     "quickRatio": 3.8549710592993796,
@@ -10210,7 +10210,7 @@
     "returnOnAssets": 0.6022349752710197,
     "operatingMargin": 0.6521426284537362,
     "netProfitMargin": 0.6366294901458565,
-    "asOfDate": "2026-10-12"
+    "asOfDate": "2026-10-13"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 2.5,
