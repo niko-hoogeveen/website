@@ -235,13 +235,13 @@ export default function OpenWater() {
         </div>
       </header>
 
-      {/* Tour shortcuts: destination selection and a one-click next stop. */}
+      {/* Always-available direct navigation; Next island lives in the briefing panel. */}
       <nav aria-label="Fast travel" className="pointer-events-auto absolute left-5 top-20 z-10 flex max-w-[calc(100vw-2.5rem)] flex-wrap items-center gap-2 sm:left-7 sm:top-20">
-        <button type="button" className="ow-button ow-button--primary" onClick={nextIsland}>
-          Next island →
-        </button>
+        <label htmlFor="ow-fast-travel" className="ow-eyebrow">
+          Fast travel
+        </label>
         <select
-          aria-label="Fast travel to destination"
+          id="ow-fast-travel"
           value={dockedId ?? ""}
           onChange={(event) => {
             const id = event.target.value as DestinationId;
@@ -249,7 +249,7 @@ export default function OpenWater() {
           }}
           className="ow-button max-w-[190px] cursor-pointer bg-[#0c2636] text-white"
         >
-          <option value="">Fast travel to…</option>
+          <option value="">Choose island…</option>
           {DESTINATIONS.map((d) => (
             <option key={d.id} value={d.id}>{d.name}</option>
           ))}
@@ -335,6 +335,7 @@ export default function OpenWater() {
             destination={docked}
             onNavigate={() => rememberIsland(docked.id)}
             onClose={() => worldRef.current?.undock()}
+            onNextIsland={nextIsland}
           />
         </div>
       )}
