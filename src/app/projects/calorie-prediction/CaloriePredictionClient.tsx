@@ -51,7 +51,7 @@ const retrospective = [
   },
   {
     title: "Frame-level classification ignores motion",
-    body: "A still frame of someone at the bottom of a squat and someone racking a bar look similar to a 2D CNN. A model with a temporal component — a 3D CNN, an LSTM over frame embeddings, or a pose-estimation front end — would capture the actual movement rather than the pose.",
+    body: "A still frame of someone at the bottom of a squat and someone racking a bar look similar to a 2D CNN. A model with a temporal component - a 3D CNN, an LSTM over frame embeddings, or a pose-estimation front end - would capture the actual movement rather than the pose.",
   },
   {
     title: "The MET table was hardcoded",
@@ -132,7 +132,7 @@ export default function CaloriePredictionClient() {
             </p>
             <p>
               I worked on this as part of a four-person team. My contributions
-              centred on the model — assembling and labelling the dataset,
+              centred on the model - assembling and labelling the dataset,
               setting up the transfer learning pipeline, iterating on training
               runs, and integrating the trained model into the Flask
               application&apos;s inference path.
@@ -228,7 +228,7 @@ export default function CaloriePredictionClient() {
             together for the remainder of the run. Training accuracy climbs
             slightly above validation accuracy, which is the mild overfitting
             you would expect from a dataset this small, but the two never
-            diverge sharply — the frozen backbone and the dropout layer kept it
+            diverge sharply - the frozen backbone and the dropout layer kept it
             in check.
           </p>
 
@@ -255,9 +255,9 @@ export default function CaloriePredictionClient() {
             The CNN only answers &quot;what exercise is this?&quot;. Turning
             that into a calorie figure takes two more pieces. The first is basal
             metabolic rate, calculated from the user&apos;s profile using the
-            Harris-Benedict equation. The second is a MET value — a metabolic
+            Harris-Benedict equation. The second is a MET value - a metabolic
             equivalent that expresses how demanding an activity is relative to
-            sitting still — chosen from a lookup table keyed on the predicted
+            sitting still - chosen from a lookup table keyed on the predicted
             exercise and the intensity the user selected.
           </p>
 
