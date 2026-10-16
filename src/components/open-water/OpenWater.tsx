@@ -11,6 +11,7 @@ import DestinationPanel from "./hud/DestinationPanel";
 import TouchControls from "./hud/TouchControls";
 import { Instruments, type InstrumentHandle } from "./hud/Instruments";
 import { usePortfolioView } from "@/lib/usePortfolioView";
+import { readReturnIsland, clearReturnIsland, rememberIsland } from "@/lib/explorationReturn";
 import LoadingView from "./LoadingView";
 
 function webglAvailable(): boolean {
@@ -38,6 +39,7 @@ export default function OpenWater() {
   const [dockedId, setDockedId] = useState<DestinationId | null>(null);
   const [soundOn, setSoundOn] = useState(false);
   const [engaged, setEngaged] = useState(false);
+  const pendingReturn = useRef<DestinationId | null>(null);
 
   // Honor the visitor's saved preference before creating any WebGL context.
   useEffect(() => {
@@ -84,6 +86,11 @@ export default function OpenWater() {
     }
 
     worldRef.current = world;
+    const returning = pendingReturn.current;
+    if (returning) {
+      pendingReturn.current = null;
+      world.travelTo(returning);
+    }
     return () => {
       worldRef.current = null;
       world?.dispose();
@@ -112,6 +119,31 @@ export default function OpenWater() {
   const handleTouch = useCallback((throttle: number, steer: number) => {
     worldRef.current?.setTouch(throttle, steer);
   }, []);
+
+  useEffect(() => {
+    // A page link records its originating island. Only an explicit return
+    // navigates back to it, keeping normal Home behaviour unchanged.
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("explore") !== "return") return;
+    const id = readReturnIsland();
+    if (!id) return;
+    pendingReturn.current = id;
+    chooseInteractive();
+    clearReturnIsland();
+    // Don't leave a return command in the URL for later refreshes.
+    window.history.replaceState(window.history.state, "", window.location.pathname + window.location.hash);
+  }, [chooseInteractive]);
+
+  const fastTravel = useCallback((id: DestinationId) => {
+    worldRef.current?.travelTo(id);
+  }, []);
+
+  const nextIsland = useCallback(() => {
+    const current = dockedId ?? nearId;
+    const index = DESTINATIONS.findIndex((destination) => destination.id === current);
+    const next = DESTINATIONS[(index + 1) % DESTINATIONS.length];
+    fastTravel(next.id);
+  }, [dockedId, nearId, fastTravel]);
 
   const enterHarbour = useCallback(() => {
     worldRef.current?.setPaused(true);
@@ -203,6 +235,27 @@ export default function OpenWater() {
         </div>
       </header>
 
+      {/* Tour shortcuts: destination selection and a one-click next stop. */}
+      <nav aria-label="Fast travel" className="pointer-events-auto absolute left-5 top-20 z-10 flex max-w-[calc(100vw-2.5rem)] flex-wrap items-center gap-2 sm:left-7 sm:top-20">
+        <button type="button" className="ow-button ow-button--primary" onClick={nextIsland}>
+          Next island →
+        </button>
+        <select
+          aria-label="Fast travel to destination"
+          value={dockedId ?? ""}
+          onChange={(event) => {
+            const id = event.target.value as DestinationId;
+            if (DESTINATIONS.some((item) => item.id === id)) fastTravel(id);
+          }}
+          className="ow-button max-w-[190px] cursor-pointer bg-[#0c2636] text-white"
+        >
+          <option value="">Fast travel to…</option>
+          {DESTINATIONS.map((d) => (
+            <option key={d.id} value={d.id}>{d.name}</option>
+          ))}
+        </select>
+      </nav>
+
       {/* Bottom-left instruments */}
       <div className="absolute bottom-5 left-5 sm:bottom-7 sm:left-7">
         <Instruments ref={instrumentsRef} activeId={nearId} />
@@ -280,6 +333,7 @@ export default function OpenWater() {
         <div className="pointer-events-none absolute inset-0 flex items-end justify-center p-4 sm:items-center sm:justify-end sm:p-8">
           <DestinationPanel
             destination={docked}
+            onNavigate={() => rememberIsland(docked.id)}
             onClose={() => worldRef.current?.undock()}
           />
         </div>
