@@ -7,13 +7,14 @@ import type { Destination } from "../destinations";
 interface DestinationPanelProps {
   destination: Destination;
   onClose: () => void;
+  onNavigate: () => void;
 }
 
 /**
  * The reward for exploring: a full briefing on the destination the visitor has
  * just reached, with a direct route into the matching portfolio page.
  */
-export default function DestinationPanel({ destination, onClose }: DestinationPanelProps) {
+export default function DestinationPanel({ destination, onClose, onNavigate }: DestinationPanelProps) {
   const heading = useRef<HTMLHeadingElement>(null);
   const panel = useRef<HTMLDivElement>(null);
 
@@ -110,6 +111,7 @@ export default function DestinationPanel({ destination, onClose }: DestinationPa
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={onNavigate}
                 className={`ow-button${index === 0 ? " ow-button--primary" : ""}`}
               >
                 {link.label}
