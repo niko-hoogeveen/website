@@ -351,7 +351,7 @@ export default function OpenWater() {
           </h2>
           <p className="mt-5 max-w-md text-[13.5px] leading-relaxed text-[var(--ow-mist)]">
             Software engineering, search and rescue, and a life spent close to the
-            water — each island holds a different part of the story.
+            water - each island holds a different part of the story.
           </p>
           <div className="pointer-events-auto mt-8 flex flex-wrap items-center justify-center gap-3">
             <span className="ow-panel flex items-center gap-2 px-4 py-2.5 text-[12.5px]">
@@ -374,7 +374,7 @@ export default function OpenWater() {
           {DESTINATIONS.map((d) => (
             <li key={d.id}>
               <Link href={d.href}>
-                {d.name} — {d.subtitle}
+                {d.name} - {d.subtitle}
               </Link>
             </li>
           ))}
