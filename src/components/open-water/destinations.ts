@@ -49,8 +49,8 @@ export const DESTINATIONS: Destination[] = [
     name: "The Lighthouse",
     subtitle: "About",
     href: "/about",
-    x: -156,
-    z: -96,
+    x: -106,
+    z: -65,
     landRadius: 26,
     discoverRadius: 86,
     dockRadius: 44,
@@ -75,8 +75,8 @@ export const DESTINATIONS: Destination[] = [
     name: "Innovation Island",
     subtitle: "Projects",
     href: "/projects",
-    x: 168,
-    z: -128,
+    x: 114,
+    z: -87,
     landRadius: 30,
     discoverRadius: 92,
     dockRadius: 48,
@@ -100,8 +100,8 @@ export const DESTINATIONS: Destination[] = [
     name: "Rescue Harbour",
     subtitle: "Experience",
     href: "/resume",
-    x: -178,
-    z: 122,
+    x: -121,
+    z: 83,
     landRadius: 32,
     discoverRadius: 92,
     dockRadius: 50,
@@ -123,8 +123,8 @@ export const DESTINATIONS: Destination[] = [
     name: "The Trading Port",
     subtitle: "Equity research",
     href: "/dashboard",
-    x: 182,
-    z: 136,
+    x: 124,
+    z: 92,
     landRadius: 34,
     discoverRadius: 94,
     dockRadius: 52,
@@ -145,8 +145,8 @@ export const DESTINATIONS: Destination[] = [
     name: "Radio Point",
     subtitle: "Contact",
     href: "/contact",
-    x: 8,
-    z: -246,
+    x: 5,
+    z: -167,
     landRadius: 22,
     discoverRadius: 86,
     dockRadius: 42,
@@ -178,7 +178,7 @@ export const DESTINATIONS: Destination[] = [
 export const DESTINATION_BY_ID = new Map(DESTINATIONS.map((d) => [d.id, d]));
 
 /** Soft edge of the charted area; the boat is nudged back inside past this. */
-export const WORLD_RADIUS = 430;
+export const WORLD_RADIUS = 290;
 
 /** Where the boat starts, and where the reset control returns it to. */
-export const START = { x: 0, z: 74, heading: Math.PI };
+export const START = { x: 0, z: 48, heading: Math.PI };
