@@ -1,6 +1,6 @@
 /**
  * The five explorable destinations. Every fact here is taken from existing
- * pages in this repository — nothing is invented for the 3D experience.
+ * pages in this repository - nothing is invented for the 3D experience.
  */
 
 export type DestinationId =
@@ -56,9 +56,9 @@ export const DESTINATIONS: Destination[] = [
     dockRadius: 44,
     dockAngle: Math.PI * 0.72,
     summary:
-      "The fixed reference point. Computer engineering at Queen's University, now building modern web applications in Toronto — plus a growing interest in financial analysis and equity research.",
+      "My background, computer engineering education, technical skills, and interests.",
     highlights: [
-      "BASc, Computer Engineering — Queen's University",
+      "BASc, Computer Engineering - Queen's University",
       "Based in Toronto, Ontario, Canada",
       "PHP · JavaScript · React · Next.js · Python · PostgreSQL",
       "Off the keyboard: kitesurfing, mountain biking, hockey",
@@ -82,11 +82,11 @@ export const DESTINATIONS: Destination[] = [
     dockRadius: 48,
     dockAngle: Math.PI * 1.22,
     summary:
-      "Where the experiments get built — a machine-learning capstone, a self-taught equity research tool, and a loyalty platform shipped to production.",
+      "Software projects, including a machine-learning capstone, an equity research dashboard, and a loyalty rewards platform.",
     highlights: [
-      "Calorie Prediction Network — ResNet-50 transfer learning capstone",
-      "Equity Research & Market Dashboard — Amazon, Meta, Nvidia",
-      "Cactus Loyalty App — React Native, Laravel, GitHub Actions CI/CD",
+      "Calorie Prediction Network - ResNet-50 transfer learning capstone",
+      "Equity Research & Market Dashboard - Amazon, Meta, Nvidia",
+      "Cactus Loyalty App - React Native, Laravel, GitHub Actions CI/CD",
     ],
     links: [
       { label: "Browse the projects", href: "/projects" }
@@ -106,12 +106,12 @@ export const DESTINATIONS: Destination[] = [
     dockRadius: 50,
     dockAngle: Math.PI * 0.18,
     summary:
-      "Software development at Catalyst IT Canada, a Moodle Certified Partner — and seasonal command of a Canadian Coast Guard Inshore Search and Rescue boat.",
+      "Experience in software development, technical leadership, and Canadian Coast Guard search and rescue.",
     highlights: [
-      "Software Developer, Catalyst IT Canada — custom Moodle for universities and colleges",
-      "Coxswain, Inshore Search and Rescue — Canadian Coast Guard",
-      "Technical Oversight Consultant — MoveBuddy.com",
-      "Tech Lead & Developer — Cactus Loyalty App",
+      "Software Developer, Catalyst IT Canada - custom Moodle for universities and colleges",
+      "Coxswain, Inshore Search and Rescue - Canadian Coast Guard",
+      "Technical Oversight Consultant - MoveBuddy.com",
+      "Tech Lead & Developer - Cactus Loyalty App",
     ],
     links: [{ label: "Open the résumé", href: "/resume" }],
     accent: "#ef8354",
@@ -129,11 +129,11 @@ export const DESTINATIONS: Destination[] = [
     dockRadius: 52,
     dockAngle: Math.PI * 1.72,
     summary:
-      "A working equity research dashboard, built to learn how analysts actually evaluate companies: price history with earnings overlays, margin and net-income trends, and valuation multiples.",
+      "An interactive equity research dashboard with stock performance, earnings, financial metrics, and valuation data.",
     highlights: [
       "Covering AMZN · META · NVDA",
       "Earnings, margin, net income and valuation views",
-      "Scheduled data pipeline — Python and GitHub Actions",
+      "Scheduled data pipeline - Python and GitHub Actions",
     ],
     links: [{ label: "Open the dashboard", href: "/dashboard" }],
     accent: "#9bb8e8",
@@ -151,7 +151,7 @@ export const DESTINATIONS: Destination[] = [
     dockRadius: 42,
     dockAngle: Math.PI * 0.98,
     summary:
-      "The transmitter. Open to full-time opportunities, contract work, and consulting engagements — particularly in software engineering and financial technology.",
+      "Contact information, professional profiles, and ways to connect about software engineering and consulting.",
     highlights: [
       "niko.hoogeveen@gmail.com",
       "Toronto, Ontario, Canada (EST/EDT)",
