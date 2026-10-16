@@ -19,10 +19,6 @@ export default function DestinationPanel({ destination, onClose, onNavigate }: D
   const panel = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    heading.current?.focus();
-  }, [destination.id]);
-
-  useEffect(() => {
     const node = panel.current;
     if (!node) return;
     const onKeyDown = (event: KeyboardEvent) => {
