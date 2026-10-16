@@ -44,7 +44,7 @@ export const POSTS: Post[] = [
       { type: "h2", text: "Start with evidence, not intuition" },
       {
         type: "p",
-        text: "Before changing anything, I want a ranked list of the queries actually consuming database time. On a hosted Moodle that usually means the slow query log plus whatever statement-statistics view the database offers. The goal is a short list, ordered by total time consumed rather than by worst single execution — a query that takes 40 milliseconds but runs 200,000 times a day matters more than a nightly report that takes eight seconds.",
+        text: "Before changing anything, I want a ranked list of the queries actually consuming database time. On a hosted Moodle that usually means the slow query log plus whatever statement-statistics view the database offers. The goal is a short list, ordered by total time consumed rather than by worst single execution - a query that takes 40 milliseconds but runs 200,000 times a day matters more than a nightly report that takes eight seconds.",
       },
       {
         type: "p",
@@ -73,7 +73,7 @@ export const POSTS: Post[] = [
       { type: "h2", text: "What this looks like for a client" },
       {
         type: "p",
-        text: "The deliverable is not a patch. It is a short written finding — here is what was slow, here is why, here is the change, here is the measured difference, and here is what will make it regress. That last part matters most, because performance work that nobody documents gets undone by the next feature request.",
+        text: "The deliverable is not a patch. It is a short written finding - here is what was slow, here is why, here is the change, here is the measured difference, and here is what will make it regress. That last part matters most, because performance work that nobody documents gets undone by the next feature request.",
       },
     ],
   },
@@ -94,7 +94,7 @@ export const POSTS: Post[] = [
     body: [
       {
         type: "p",
-        text: "I am a software engineer, not an analyst. I started building a stock dashboard because reading about equity research was not teaching me much, and building the tool forced me to answer questions I had been skimming past — what exactly is being compared when someone says a company beat expectations, and over what window does that beat show up in the price.",
+        text: "I am a software engineer, not an analyst. I started building a stock dashboard because reading about equity research was not teaching me much, and building the tool forced me to answer questions I had been skimming past - what exactly is being compared when someone says a company beat expectations, and over what window does that beat show up in the price.",
       },
       { type: "h2", text: "Earnings overlays changed what I saw" },
       {
@@ -108,7 +108,7 @@ export const POSTS: Post[] = [
       { type: "h2", text: "Valuation is context, not a signal" },
       {
         type: "p",
-        text: "I added P/E, forward P/E, EV/EBITDA, and free cash flow multiples last, and my mental model of them shifted while doing it. In isolation a multiple says almost nothing. Placed next to the same company's own history and next to the surprise data, it starts to describe what the market is currently willing to pay for a given growth expectation — which is a much more useful frame than trying to read it as cheap or expensive.",
+        text: "I added P/E, forward P/E, EV/EBITDA, and free cash flow multiples last, and my mental model of them shifted while doing it. In isolation a multiple says almost nothing. Placed next to the same company's own history and next to the surprise data, it starts to describe what the market is currently willing to pay for a given growth expectation - which is a much more useful frame than trying to read it as cheap or expensive.",
       },
       { type: "h2", text: "The architecture is deliberately boring" },
       {
@@ -148,7 +148,7 @@ export const POSTS: Post[] = [
     body: [
       {
         type: "p",
-        text: "Most founders who outsource development are not equipped to evaluate what they are receiving. That is not a failure on their part — the work is genuinely opaque from outside. But the gap creates a specific failure mode: problems stay invisible until they surface as missed deadlines, and by then the cost of correcting course is high. Everything below can be checked without being able to read the code.",
+        text: "Most founders who outsource development are not equipped to evaluate what they are receiving. That is not a failure on their part - the work is genuinely opaque from outside. But the gap creates a specific failure mode: problems stay invisible until they surface as missed deadlines, and by then the cost of correcting course is high. Everything below can be checked without being able to read the code.",
       },
       { type: "h2", text: "Check estimates before work starts, not after" },
       {
@@ -182,7 +182,7 @@ export const POSTS: Post[] = [
       { type: "h2", text: "Bring in an independent reviewer" },
       {
         type: "p",
-        text: "A vendor reviewing its own work has an unavoidable conflict of interest, however honest the people involved are. A few hours a month from someone technical whose only obligation is to you changes the dynamic considerably — not adversarially, but because problems get raised while they are still cheap. That is the core of the technical oversight work I do.",
+        text: "A vendor reviewing its own work has an unavoidable conflict of interest, however honest the people involved are. A few hours a month from someone technical whose only obligation is to you changes the dynamic considerably - not adversarially, but because problems get raised while they are still cheap. That is the core of the technical oversight work I do.",
       },
     ],
   },
