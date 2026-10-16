@@ -65,7 +65,7 @@ export default function DashboardClient() {
                 I built this dashboard as a way to learn how equity research
                 actually works by doing it myself. While moving from software
                 engineering into market and stock analysis, I realized that
-                reading reports alone wasn&apos;t enough—I wanted to work
+                reading reports alone wasn&apos;t enough - I wanted to work
                 directly with price data, earnings results, and valuation
                 metrics in a way that felt realistic. This project brings those
                 pieces together in one place and reflects how I personally
