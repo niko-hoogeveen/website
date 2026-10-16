@@ -36,7 +36,7 @@ export const Instruments = forwardRef<
       if (knots.current) knots.current.textContent = telemetry.knots.toFixed(1);
       if (range.current) {
         range.current.textContent =
-          telemetry.range > 999 ? "—" : `${Math.round(telemetry.range)} m`;
+          telemetry.range > 999 ? " - " : `${Math.round(telemetry.range)} m`;
       }
       if (power.current) {
         power.current.style.transform = `scaleX(${Math.min(1, telemetry.power *1.37).toFixed(3)})`;
@@ -81,7 +81,7 @@ export const Instruments = forwardRef<
         <div className="mt-2.5 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.16em] text-[var(--ow-mist)]/65">
           <span>Nearest</span>
           <span ref={range} className="tabular-nums text-[var(--ow-mist)]">
-            — m
+            - m
           </span>
         </div>
         <p
