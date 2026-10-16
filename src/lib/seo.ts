@@ -51,7 +51,7 @@ export const KNOWS_ABOUT = [
   "Machine Learning",
 ];
 
-/** Canonical site navigation. Drives the header nav, footer nav, and sitemap. */
+/** Canonical site navigation. Drives SiteNav, the homepage cards, and the SiteNavigationElement schema. */
 export interface NavItem {
   href: string;
   /** Short anchor text. Google uses concise internal anchor text to pick sitelinks. */
