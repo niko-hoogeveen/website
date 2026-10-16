@@ -95,7 +95,7 @@ export default function AboutClient() {
               <Link href="/dashboard" className="text-blue-400 hover:text-blue-300 underline">
                 Stock Analysis Dashboard
               </Link>
-              —a hands-on way to understand how analysts evaluate companies through
+              -a hands-on way to understand how analysts evaluate companies through
               price data, earnings metrics, and valuation multiples.
             </p>
           </div>
