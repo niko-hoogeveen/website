@@ -85,7 +85,7 @@ const roles: Role[] = [
     ],
   },
   {
-    title: "Coxswain — Inshore Search and Rescue",
+    title: "Coxswain - Inshore Search and Rescue",
     organization: "Canadian Coast Guard",
     period: "Seasonal",
     location: "Canada",
@@ -139,7 +139,7 @@ export default function ResumePage() {
           { name: "Home", href: "/" },
           { name: "Resume", href: "/resume" },
         ]}
-        title="Niko Hoogeveen — Resume"
+        title="Niko Hoogeveen - Resume"
         subtitle="Software Engineer • Toronto, Ontario, Canada"
       >
         <section className="bg-gradient-to-br from-gray-900/80 to-gray-800/50 border border-gray-700/50 rounded-xl p-8 shadow-xl">
