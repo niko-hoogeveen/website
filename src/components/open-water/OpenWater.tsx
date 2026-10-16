@@ -206,9 +206,6 @@ export default function OpenWater() {
       <header className="pointer-events-none absolute inset-x-0 top-0 flex items-start justify-between gap-4 p-5 sm:p-7">
         <div className="ow-fade">
           <p className="ow-eyebrow">Niko Hoogeveen</p>
-          <p className="mt-1.5 text-[19px] font-light leading-none tracking-tight sm:text-[22px]">
-            The Open Water<span className="text-[var(--ow-turquoise)]">.</span>
-          </p>
         </div>
         <div className="flex items-center gap-2">
           <button type="button" className="ow-button pointer-events-auto" onClick={enterHarbour}>

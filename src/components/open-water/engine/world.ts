@@ -89,7 +89,7 @@ export function createWorld(
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, quality.pixelRatio));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.05;
+  renderer.toneMappingExposure = 0.98;
   renderer.shadowMap.enabled = quality.shadows;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
@@ -99,25 +99,33 @@ export function createWorld(
 
   // --- lighting ------------------------------------------------------------
 
-  const sun = new THREE.DirectionalLight(color(PALETTE.sunLight), 2.6);
-  sun.position.copy(SUN_DIRECTION).multiplyScalar(220);
+  // A single warm key light creates readable architectural form. Keep the
+  // hemisphere light subdued so walls, foliage and docks have real contrast.
+  const sun = new THREE.DirectionalLight(color(PALETTE.sunLight), 2.35);
+  sun.position.copy(SUN_DIRECTION).multiplyScalar(240);
   sun.castShadow = quality.shadows;
   if (quality.shadows) {
-    sun.shadow.mapSize.set(1024, 1024);
+    sun.shadow.mapSize.set(2048, 2048);
     const cam = sun.shadow.camera;
     cam.near = 1;
-    cam.far = 520;
-    cam.left = -110;
-    cam.right = 110;
-    cam.top = 110;
-    cam.bottom = -110;
-    sun.shadow.bias = -0.0012;
-    sun.shadow.normalBias = 0.5;
+    cam.far = 560;
+    cam.left = -105;
+    cam.right = 105;
+    cam.top = 105;
+    cam.bottom = -105;
+    // The previous 0.5 normalBias displaced shadows from small geometry.
+    sun.shadow.bias = -0.00022;
+    sun.shadow.normalBias = 0.025;
+    sun.shadow.radius = 2;
   }
   scene.add(sun, sun.target);
 
-  const hemi = new THREE.HemisphereLight(color(PALETTE.horizon), color(PALETTE.deepWater), 1.1);
-  scene.add(hemi);
+  const hemi = new THREE.HemisphereLight("#d9edf5", "#355462", 0.76);
+  const skyFill = new THREE.DirectionalLight("#b2dce8", 0.34);
+  skyFill.position.set(-120, 70, -100);
+  const coastalRim = new THREE.DirectionalLight("#f7dfbd", 0.22);
+  coastalRim.position.set(35, 35, 100);
+  scene.add(hemi, skyFill, coastalRim);
 
   // --- world ---------------------------------------------------------------
 
@@ -129,6 +137,18 @@ export function createWorld(
 
   const islands = createIslands(quality.shadows);
   scene.add(islands.group);
+
+  // Accents are deliberately local: distant islands do not keep five extra
+  // point lights at full power throughout the entire map.
+  // One moving accent lamp gives the closest beacon a local pool of light
+  // without adding five point-light calculations to every surface shader.
+  const beaconAccent = new THREE.PointLight("#9fe5de", 0, 56, 2);
+  beaconAccent.castShadow = false;
+  scene.add(beaconAccent);
+  const beaconAnchors = DESTINATIONS.map((destination) => ({
+    destination,
+    position: islands.beacons.get(destination.id) ?? new THREE.Vector3(destination.x, 16, destination.z),
+  }));
 
   const props = createProps(quality.shadows);
   scene.add(props.group);
@@ -178,7 +198,7 @@ export function createWorld(
   previousVisibility.clear();
   const envTarget = pmrem.fromCubemap(cubeTarget.texture);
   scene.environment = envTarget.texture;
-  scene.environmentIntensity = 0.75;
+  scene.environmentIntensity = 0.85;
   cubeTarget.dispose();
   pmrem.dispose();
 
@@ -517,8 +537,29 @@ export function createWorld(
     }
     boat.setLightIntensity(1.1 + 0.4 * Math.sin(time * 2.4));
 
+    // Fade landmark illumination in as it becomes relevant, rather than
+    // lighting the whole world and paying for five active point lights.
+    let nearestBeacon: (typeof beaconAnchors)[number] | null = null;
+    let nearestBeaconDistance = Infinity;
+    for (const candidate of beaconAnchors) {
+      const distance = camera.position.distanceTo(candidate.position);
+      if (distance < nearestBeaconDistance) {
+        nearestBeacon = candidate;
+        nearestBeaconDistance = distance;
+      }
+    }
+    if (nearestBeacon) {
+      beaconAccent.position.copy(nearestBeacon.position);
+      beaconAccent.color.set(nearestBeacon.destination.accent);
+      beaconAccent.intensity = 11 * (1 - THREE.MathUtils.smoothstep(nearestBeaconDistance, 55, 165));
+    }
+
     if (quality.shadows) {
-      sun.target.position.set(boatState.x, 0, boatState.z);
+      // Centring on the docked landmark avoids cutting off its shadows during
+      // the orbiting presentation camera; otherwise follow the vessel.
+      const shadowX = docked?.x ?? boatState.x;
+      const shadowZ = docked?.z ?? boatState.z;
+      sun.target.position.set(Math.round(shadowX * 2) / 2, 0, Math.round(shadowZ * 2) / 2);
       sun.target.updateMatrixWorld();
       sun.position.copy(SUN_DIRECTION).multiplyScalar(240).add(sun.target.position);
     }
