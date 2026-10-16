@@ -11,6 +11,7 @@ import DestinationPanel from "./hud/DestinationPanel";
 import TouchControls from "./hud/TouchControls";
 import { Instruments, type InstrumentHandle } from "./hud/Instruments";
 import { usePortfolioView } from "@/lib/usePortfolioView";
+import LoadingView from "./LoadingView";
 
 function webglAvailable(): boolean {
   try {
@@ -128,13 +129,7 @@ export default function OpenWater() {
     chooseInteractive();
   }, [chooseInteractive]);
 
-  if (mode === null) {
-    return (
-      <main className="ow-root flex min-h-[100svh] items-center justify-center">
-        <p className="ow-eyebrow animate-pulse">Making way…</p>
-      </main>
-    );
-  }
+  if (mode === null) return <LoadingView />;
 
   if (mode === "classic") {
     return (
