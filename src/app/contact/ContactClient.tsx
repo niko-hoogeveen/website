@@ -100,7 +100,7 @@ export default function ContactClient() {
             I&apos;m always interested in hearing about new opportunities,
             interesting projects, or just connecting with fellow engineers and
             analysts. Whether you want to discuss a potential collaboration,
-            have a question about my work, or just want to say hello—feel free
+            have a question about my work, or just want to say hello - feel free
             to reach out through any of the channels below.
           </p>
         </section>
