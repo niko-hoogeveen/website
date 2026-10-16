@@ -8,13 +8,14 @@ interface DestinationPanelProps {
   destination: Destination;
   onClose: () => void;
   onNavigate: () => void;
+  onNextIsland: () => void;
 }
 
 /**
  * The reward for exploring: a full briefing on the destination the visitor has
  * just reached, with a direct route into the matching portfolio page.
  */
-export default function DestinationPanel({ destination, onClose, onNavigate }: DestinationPanelProps) {
+export default function DestinationPanel({ destination, onClose, onNavigate, onNextIsland }: DestinationPanelProps) {
   const heading = useRef<HTMLHeadingElement>(null);
   const panel = useRef<HTMLDivElement>(null);
 
@@ -118,11 +119,14 @@ export default function DestinationPanel({ destination, onClose, onNavigate }: D
         </div>
       </div>
 
-      <div className="flex shrink-0 items-center justify-between gap-3 border-t border-[var(--ow-line)] px-6 py-3">
+      <div className="flex shrink-0 flex-wrap items-center gap-2 border-t border-[var(--ow-line)] px-6 py-3">
         <button type="button" className="ow-button" onClick={onClose}>
           Return to the water [E]
         </button>
-        <span className="hidden items-center gap-1.5 text-[11px] text-[var(--ow-mist)]/60 sm:flex">
+        <button type="button" className="ow-button ow-button--primary" onClick={onNextIsland}>
+          Next island <span aria-hidden="true">→</span>
+        </button>
+        <span className="ml-auto hidden items-center gap-1.5 text-[11px] text-[var(--ow-mist)]/60 sm:flex">
           <kbd className="ow-key">Esc</kbd>
         </span>
       </div>
