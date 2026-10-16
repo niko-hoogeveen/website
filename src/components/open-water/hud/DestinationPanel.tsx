@@ -120,13 +120,18 @@ export default function DestinationPanel({ destination, onClose, onNavigate, onN
       </div>
 
       <div className="flex shrink-0 flex-wrap items-center gap-2 border-t border-[var(--ow-line)] px-6 py-3">
-        <button type="button" className="ow-button" onClick={onClose}>
-          Return to the water [E]
-        </button>
+        <button
+              type="button"
+              className="ow-button ow-button shrink-0"
+              onClick={onClose}
+            >
+              <kbd className="ow-key hidden sm:inline-flex">E</kbd>
+              Return to the water
+            </button>
         <button type="button" className="ow-button ow-button--primary" onClick={onNextIsland}>
           Next island <span aria-hidden="true">→</span>
         </button>
-        <span className="ml-auto hidden items-center gap-1.5 text-[11px] text-[var(--ow-mist)]/60 sm:flex">
+        <span className="ml-auto hidden items-center gap-1.5 text-[11px] text-[var(--ow-mist)]/60 sm:flex" onClick={onClose}>
           <kbd className="ow-key">Esc</kbd>
         </span>
       </div>

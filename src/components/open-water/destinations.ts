@@ -89,8 +89,7 @@ export const DESTINATIONS: Destination[] = [
       "Cactus Loyalty App — React Native, Laravel, GitHub Actions CI/CD",
     ],
     links: [
-      { label: "Browse the projects", href: "/projects" },
-      { label: "Writing", href: "/writing" },
+      { label: "Browse the projects", href: "/projects" }
     ],
     accent: "#7fd4c1",
   },
