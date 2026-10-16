@@ -43,6 +43,7 @@ export interface WorldHandle {
   setTouch: (throttle: number, steer: number) => void;
   dock: () => void;
   undock: () => void;
+  travelTo: (id: DestinationId) => void;
   reset: () => void;
   setPaused: (paused: boolean) => void;
   /** Normalised engine load, for the ambient audio mix. */
@@ -628,6 +629,42 @@ export function createWorld(
       if (phase !== "docked") return;
       docked = null;
       setPhase("sailing");
+    },
+
+    travelTo(id) {
+      const destination = DESTINATIONS.find((item) => item.id === id);
+      if (!destination) return;
+      // Place the vessel on the inward-facing approach, safely outside land.
+      const bearing = Math.atan2(-destination.x, -destination.z);
+      const range = destination.landRadius + 14;
+      boatState.x = destination.x + Math.sin(bearing) * range;
+      boatState.z = destination.z + Math.cos(bearing) * range;
+      boatState.heading = Math.atan2(
+        destination.x - boatState.x,
+        destination.z - boatState.z,
+      );
+      boatState.surge = 0;
+      boatState.sway = 0;
+      boatState.yawRate = 0;
+      boatState.visualPitch = 0;
+      boatState.visualRoll = 0;
+      wake.reset(boatState.x, boatState.z);
+      near = destination;
+      docked = destination;
+      introTime = 0;
+      callbacks.onNearChange(id);
+      phase = "docked";
+      callbacks.onPhaseChange("docked", id);
+      callbacks.onEngage();
+      // Immediately establish a stable view before cinematic interpolation.
+      const orbit = id === "harbour" ? bearing : destination.dockAngle;
+      const radius = destination.landRadius + 46;
+      camPos.set(
+        destination.x + Math.sin(orbit) * radius,
+        24 + destination.landRadius * 0.45,
+        destination.z + Math.cos(orbit) * radius,
+      );
+      camLook.set(destination.x, 10 + destination.landRadius * 0.3, destination.z);
     },
 
     reset() {
