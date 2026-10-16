@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ReturnToIsland from "@/components/open-water/ReturnToIsland";
 import {
   BASE_URL,
   NAV_ITEMS,
@@ -119,7 +120,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>{children}</body>
+      <body>{children}<ReturnToIsland /></body>
     </html>
   );
 }
