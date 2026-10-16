@@ -10,8 +10,7 @@ import NavMenu from "./hud/NavMenu";
 import DestinationPanel from "./hud/DestinationPanel";
 import TouchControls from "./hud/TouchControls";
 import { Instruments, type InstrumentHandle } from "./hud/Instruments";
-
-type Mode = "water" | "harbour";
+import { usePortfolioView } from "@/lib/usePortfolioView";
 
 function webglAvailable(): boolean {
   try {
@@ -32,28 +31,17 @@ export default function OpenWater() {
   const labelRefs = useRef(new Map<DestinationId, HTMLElement | null>());
   const audioRef = useRef<AmbientAudio | null>(null);
 
-  const [mode, setMode] = useState<Mode | null>(null);
-  const [reason, setReason] = useState<"choice" | "unsupported" | "reduced-motion">("choice");
+  const { mode, reason, chooseClassic, chooseInteractive, markUnsupported } = usePortfolioView();
   const [phase, setPhase] = useState<Phase>("intro");
   const [nearId, setNearId] = useState<DestinationId | null>(null);
   const [dockedId, setDockedId] = useState<DestinationId | null>(null);
   const [soundOn, setSoundOn] = useState(false);
   const [engaged, setEngaged] = useState(false);
 
-  // Decide once, on the client, which experience to show.
+  // Honor the visitor's saved preference before creating any WebGL context.
   useEffect(() => {
-    if (!webglAvailable()) {
-      setReason("unsupported");
-      setMode("harbour");
-      return;
-    }
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setReason("reduced-motion");
-      setMode("harbour");
-      return;
-    }
-    setMode("water");
-  }, []);
+    if (mode === "interactive" && !webglAvailable()) markUnsupported();
+  }, [mode, markUnsupported]);
 
   const getLabel = useCallback(
     (id: DestinationId) => labelRefs.current.get(id) ?? null,
@@ -71,7 +59,7 @@ export default function OpenWater() {
   }, []);
 
   useEffect(() => {
-    if (mode !== "water") return;
+    if (mode !== "interactive") return;
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -90,8 +78,7 @@ export default function OpenWater() {
       );
     } catch (error) {
       console.error("[OpenWater] unable to start the 3D scene", error);
-      setReason("unsupported");
-      setMode("harbour");
+      markUnsupported();
       return;
     }
 
@@ -100,7 +87,7 @@ export default function OpenWater() {
       worldRef.current = null;
       world?.dispose();
     };
-  }, [mode, onTelemetry, onPhaseChange, getLabel]);
+  }, [mode, onTelemetry, onPhaseChange, getLabel, markUnsupported]);
 
   useEffect(() => {
     return () => {
@@ -127,13 +114,19 @@ export default function OpenWater() {
 
   const enterHarbour = useCallback(() => {
     worldRef.current?.setPaused(true);
-    setReason("choice");
-    setMode("harbour");
-  }, []);
+    audioRef.current?.stop();
+    audioRef.current = null;
+    setSoundOn(false);
+    chooseClassic();
+  }, [chooseClassic]);
 
   const enterWater = useCallback(() => {
-    setMode("water");
-  }, []);
+    setEngaged(false);
+    setPhase("intro");
+    setNearId(null);
+    setDockedId(null);
+    chooseInteractive();
+  }, [chooseInteractive]);
 
   if (mode === null) {
     return (
@@ -143,7 +136,7 @@ export default function OpenWater() {
     );
   }
 
-  if (mode === "harbour") {
+  if (mode === "classic") {
     return (
       <HarbourView
         reason={reason}
