@@ -13,6 +13,8 @@ const DESTINATIONS: Destination[] = [
 ];
 
 const vertexShader = `
+// Match fragment-shader float precision for WebGL 1 varying linkage.
+precision mediump float;
 attribute vec3 position;
 attribute vec3 color;
 uniform mat4 viewProjection;
@@ -116,11 +118,11 @@ function coneGeometry(gl:WebGLRenderingContext,rgb:number[],segments=12) {
 }
 function useWorld(canvas: HTMLCanvasElement, onTelemetry:(speed:number,heading:number,nearest:number)=>void) {
   const gl=canvas.getContext("webgl",{antialias:true,alpha:false});
-  if(!gl) return ()=>{};
-  const compile=(type:number,src:string)=>{const sh=gl.createShader(type);if(!sh)throw new Error("Shader unavailable");gl.shaderSource(sh,src);gl.compileShader(sh);if(!gl.getShaderParameter(sh,gl.COMPILE_STATUS))throw new Error(gl.getShaderInfoLog(sh)||"Shader error");return sh;};
+  if(!gl) throw new Error("WebGL is not available in this browser or has been disabled.");
+  const compile=(type:number,src:string)=>{const sh=gl.createShader(type);if(!sh)throw new Error("Shader unavailable");gl.shaderSource(sh,src);gl.compileShader(sh);if(!gl.getShaderParameter(sh,gl.COMPILE_STATUS)){const info=gl.getShaderInfoLog(sh)||"Unknown shader compile error";console.error("[OpenWater] Shader compilation failed:",info);gl.deleteShader(sh);throw new Error(`Shader compilation failed: ${info}`);}return sh;};
   const program=gl.createProgram();if(!program)return ()=>{};
   gl.attachShader(program,compile(gl.VERTEX_SHADER,vertexShader));gl.attachShader(program,compile(gl.FRAGMENT_SHADER,fragmentShader));gl.linkProgram(program);
-  if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw new Error("Unable to link scene shaders");
+  if(!gl.getProgramParameter(program,gl.LINK_STATUS)){const info=gl.getProgramInfoLog(program)||"Unknown shader link error";console.error("[OpenWater] WebGL program link failed:",info);throw new Error(`Unable to link scene shaders: ${info}`);}
   gl.useProgram(program);gl.enable(gl.DEPTH_TEST);
   const aPos=gl.getAttribLocation(program,"position"),aColor=gl.getAttribLocation(program,"color");
   const uVP=gl.getUniformLocation(program,"viewProjection"),uModel=gl.getUniformLocation(program,"model"),uTime=gl.getUniformLocation(program,"time"),uWater=gl.getUniformLocation(program,"isWater");
