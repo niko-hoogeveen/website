@@ -1,117 +1,84 @@
 "use client";
 
-import Link from "next/link";
-import { DESTINATIONS } from "./destinations";
-import { NAV_ITEMS } from "@/lib/seo";
+import Header from "@/components/Header";
+import Experiences from "@/components/Experiences";
+import Projects from "@/components/Projects";
+import Education from "@/components/Education";
+import Footer from "@/components/Footer";
+import SiteNav from "@/components/SiteNav";
+import PageParticles from "@/components/Particles";
 
 interface HarbourViewProps {
-  /** Offered only when the 3D experience can actually run. */
   onEnterWater?: () => void;
   reason?: "choice" | "unsupported" | "reduced-motion";
 }
 
 /**
- * The non-interactive route through the same content. This is the page people
- * get when WebGL is unavailable, when they prefer reduced motion, or when they
- * simply want the portfolio without driving a boat.
+ * Original portfolio homepage from next-js-branch, with an optional entry
+ * point to the interactive boat experience. Selection is owned by OpenWater.
  */
-export default function HarbourView({ onEnterWater, reason = "choice" }: HarbourViewProps) {
+export default function HarbourView({
+  onEnterWater,
+  reason = "choice",
+}: HarbourViewProps) {
   return (
-    <main className="ow-root min-h-[100svh] bg-[radial-gradient(120%_90%_at_50%_-10%,#15384c_0%,#07202e_42%,#04131d_100%)]">
-      <div className="mx-auto w-full max-w-5xl px-6 py-14 sm:px-8 sm:py-20">
-        <header className="ow-fade">
-          <p className="ow-eyebrow">Niko Hoogeveen · Toronto, Ontario</p>
-          <h1 className="mt-4 text-4xl font-light leading-[1.05] tracking-tight sm:text-6xl">
-            The Open Water
-            <span className="text-[var(--ow-turquoise)]">.</span>
-          </h1>
-          <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-[var(--ow-mist)]">
-            Software engineer, Coast Guard search-and-rescue coxswain, and a life
-            spent close to the water.
+    <div className="relative isolate min-h-[100svh] bg-[#0a0a0a] text-[#d3d1d1]">
+      <main className="relative mx-auto mt-5 max-w-4xl p-4">
+        {reason !== "reduced-motion" && (
+          <PageParticles id="classic-home-particles" />
+        )}
+
+        <SiteNav currentPath="/" />
+
+        {onEnterWater && (
+          <section
+            aria-label="Explore the interactive portfolio"
+            className="mb-8 flex flex-col gap-4 rounded-xl border border-cyan-800/60 bg-[#102b34]/80 px-5 py-4 sm:flex-row sm:items-center sm:justify-between"
+          >
+            <div>
+              <p className="text-sm font-semibold text-white">
+                There is another way to explore.
+              </p>
+              <p className="mt-1 text-sm text-gray-300">
+                Take the helm and visit each part of my portfolio by boat.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={onEnterWater}
+              className="shrink-0 rounded-lg border border-cyan-300/40 bg-cyan-500/20 px-5 py-3 text-sm font-semibold text-cyan-50 transition-colors hover:bg-cyan-400/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
+            >
+              Launch 3D experience <span aria-hidden="true">→</span>
+            </button>
+          </section>
+        )}
+
+        {reason === "unsupported" && (
+          <p role="status" className="mb-6 text-sm text-amber-200">
+            Your browser couldn't start the 3D experience. You can still use
+            every portfolio section below.
           </p>
+        )}
+        {reason === "reduced-motion" && (
+          <p role="status" className="mb-6 text-sm text-gray-400">
+            The 3D experience is paused because you prefer reduced motion.
+            You can launch it manually using the button above.
+          </p>
+        )}
 
-          <div className="mt-7 flex flex-wrap items-center gap-3">
-            {onEnterWater && (
-              <button type="button" className="ow-button ow-button--primary" onClick={onEnterWater}>
-                Enter the water
-                <span aria-hidden="true">→</span>
-              </button>
-            )}
-            <Link href="/projects" className="ow-button">
-              Projects
-            </Link>
-            <Link href="/resume" className="ow-button">
-              Résumé
-            </Link>
-          </div>
-
-          {reason === "unsupported" && (
-            <p className="mt-5 max-w-xl text-[12.5px] leading-relaxed text-[var(--ow-sun)]">
-              Your browser could not start WebGL, so the interactive chart is
-              unavailable. Everything below links to the same content.
-            </p>
-          )}
-          {reason === "reduced-motion" && (
-            <p className="mt-5 max-w-xl text-[12.5px] leading-relaxed text-[var(--ow-mist)]/80">
-              You have asked for reduced motion, so the animated chart is off by
-              default. You can still enter the water if you would like to.
-            </p>
-          )}
-        </header>
-
-        <section className="mt-14" aria-labelledby="ow-destinations">
-          <h2 id="ow-destinations" className="ow-eyebrow">
-            Destinations
-          </h2>
-          <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-            {DESTINATIONS.map((d) => (
-              <li key={d.id}>
-                <Link
-                  href={d.href}
-                  className="ow-panel group flex h-full flex-col p-5 transition-colors hover:border-[rgba(116,214,206,0.45)]"
-                >
-                  <div className="flex items-center gap-2">
-                    <span
-                      className="font-mono text-[10px] tracking-[0.2em]"
-                      style={{ color: d.accent }}
-                    >
-                      {d.marker}
-                    </span>
-                    <span className="ow-eyebrow">{d.subtitle}</span>
-                  </div>
-                  <h3 className="mt-2 text-xl font-light tracking-tight">{d.name}</h3>
-                  <p className="mt-2 text-[13px] leading-relaxed text-[var(--ow-mist)]/85">
-                    {d.summary}
-                  </p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-[12px] font-medium text-[var(--ow-turquoise)]">
-                    {d.links[0]?.label ?? "Open"}
-                    <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">
-                      →
-                    </span>
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <nav className="mt-14 border-t border-[var(--ow-line)] pt-6" aria-label="All pages">
-          <h2 className="ow-eyebrow">Everything else</h2>
-          <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2.5">
-            {NAV_ITEMS.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  title={item.description}
-                  className="text-[13px] text-[var(--ow-mist)]/80 underline-offset-4 transition-colors hover:text-[var(--ow-foam)] hover:underline"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-    </main>
+        <div className="animate-slide-in-top">
+          <Header />
+        </div>
+        <div className="animate-slide-in-bottom">
+          <hr className="my-8 border-gray-800" />
+          <Experiences />
+          <hr className="my-8 border-gray-800" />
+          <Education />
+          <hr className="my-8 border-gray-800" />
+          <Projects />
+          <Footer />
+        </div>
+      </main>
+    </div>
   );
 }
