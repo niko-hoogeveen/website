@@ -2,26 +2,10 @@
   "metadata": {
     "ticker": "NVDA",
     "companyName": "NVIDIA Corporation",
-    "lastUpdated": "2026-10-16",
+    "lastUpdated": "2026-10-19",
     "researchReportUrl": "/data/reports/NVDA.pdf"
   },
   "priceHistory": [
-    {
-      "date": "2021-10-18",
-      "open": 21.75,
-      "high": 22.29,
-      "low": 21.64,
-      "close": 22.22,
-      "volume": 189494000
-    },
-    {
-      "date": "2021-10-19",
-      "open": 22.28,
-      "high": 22.38,
-      "low": 22.04,
-      "close": 22.29,
-      "volume": 161473290
-    },
     {
       "date": "2021-10-20",
       "open": 22.3,
@@ -10036,15 +10020,23 @@
       "high": 218.47,
       "low": 212.85,
       "close": 217.23,
-      "volume": 127087854
+      "volume": 127087900
     },
     {
       "date": "2026-10-16",
       "open": 216.56,
-      "high": 218.676,
-      "low": 215.07,
-      "close": 216.3758,
-      "volume": 37691249
+      "high": 218.68,
+      "low": 213.32,
+      "close": 214.13,
+      "volume": 121252522
+    },
+    {
+      "date": "2026-10-19",
+      "open": 218.01,
+      "high": 219.62,
+      "low": 214.7,
+      "close": 217.92,
+      "volume": 58029218
     }
   ],
   "earnings": [
@@ -10203,14 +10195,14 @@
     ]
   },
   "valuation": {
-    "pe": 27.23537106918238,
-    "forwardPeGrowth": 0.2788772524786081,
-    "evEbitda": 22.380129118318557,
-    "priceToFcf": 41.21520180148969,
-    "peg": 0.21862406708595383,
-    "priceToBook": 22.873422719491316,
-    "priceToSales": 17.22341533292185,
-    "evToSales": 17.277602394964504,
+    "pe": 27.405031446540875,
+    "forwardPeGrowth": 0.2803576264009374,
+    "evEbitda": 22.519106442764674,
+    "priceToFcf": 41.47114216906288,
+    "peg": 0.2199859667137295,
+    "priceToBook": 23.01591071865283,
+    "priceToSales": 17.33070671363737,
+    "evToSales": 17.38489377568002,
     "debtToEquity": 0.1697061803444782,
     "currentRatio": 4.588949069016016,
     "quickRatio": 3.8549710592993796,
@@ -10218,7 +10210,7 @@
     "returnOnAssets": 0.6022349752710197,
     "operatingMargin": 0.6521426284537362,
     "netProfitMargin": 0.6366294901458565,
-    "asOfDate": "2026-10-16"
+    "asOfDate": "2026-10-19"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 2.5,
