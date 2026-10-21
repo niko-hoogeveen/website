@@ -2,18 +2,10 @@
   "metadata": {
     "ticker": "META",
     "companyName": "Meta Platforms, Inc.",
-    "lastUpdated": "2026-10-20",
+    "lastUpdated": "2026-10-21",
     "researchReportUrl": "undefined"
   },
   "priceHistory": [
-    {
-      "date": "2021-10-21",
-      "open": 340.28,
-      "high": 342.31,
-      "low": 337.8,
-      "close": 341.88,
-      "volume": 16354423
-    },
     {
       "date": "2021-10-22",
       "open": 326.35,
@@ -10028,15 +10020,23 @@
       "high": 708.83,
       "low": 693.86,
       "close": 705.44,
-      "volume": 16260881
+      "volume": 16260900
     },
     {
       "date": "2026-10-20",
-      "open": 694.3,
-      "high": 696.505,
+      "open": 694.98,
+      "high": 696.51,
       "low": 681.05,
-      "close": 693.17,
-      "volume": 7492863
+      "close": 694.25,
+      "volume": 17049068
+    },
+    {
+      "date": "2026-10-21",
+      "open": 697.745,
+      "high": 712.5999,
+      "low": 692.38,
+      "close": 711.21,
+      "volume": 6913831
     }
   ],
   "earnings": [
@@ -10195,14 +10195,14 @@
     ]
   },
   "valuation": {
-    "pe": 25.765544407283542,
-    "forwardPeGrowth": 0.7746767128618068,
-    "evEbitda": 16.42602748728709,
-    "priceToFcf": 45.46982247725498,
-    "peg": -5.281936603493121,
-    "priceToBook": 6.749806043158858,
-    "priceToSales": 7.738580166433003,
-    "evToSales": 8.16292561524307,
+    "pe": 26.425120772946862,
+    "forwardPeGrowth": 0.8151210271304223,
+    "evEbitda": 16.824660720051487,
+    "priceToFcf": 46.573301838978914,
+    "peg": -5.4171497584541015,
+    "priceToBook": 6.922595426860782,
+    "priceToSales": 7.936681224606569,
+    "evToSales": 8.361026673416635,
     "debtToEquity": 0.42997308792172145,
     "currentRatio": 2.225562709519502,
     "quickRatio": 2.225562709519502,
@@ -10210,7 +10210,7 @@
     "returnOnAssets": 0.1513436869382784,
     "operatingMargin": 0.38084451999579405,
     "netProfitMargin": 0.29835091654691387,
-    "asOfDate": "2026-10-20"
+    "asOfDate": "2026-10-21"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 3,
