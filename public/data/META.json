@@ -2,18 +2,10 @@
   "metadata": {
     "ticker": "META",
     "companyName": "Meta Platforms, Inc.",
-    "lastUpdated": "2026-10-21",
+    "lastUpdated": "2026-10-22",
     "researchReportUrl": "undefined"
   },
   "priceHistory": [
-    {
-      "date": "2021-10-22",
-      "open": 326.35,
-      "high": 329.63,
-      "low": 321.11,
-      "close": 324.61,
-      "volume": 35224543
-    },
     {
       "date": "2021-10-25",
       "open": 320.3,
@@ -10028,15 +10020,23 @@
       "high": 696.51,
       "low": 681.05,
       "close": 694.25,
-      "volume": 17049068
+      "volume": 17049100
     },
     {
       "date": "2026-10-21",
-      "open": 697.745,
-      "high": 712.5999,
-      "low": 692.38,
-      "close": 711.21,
-      "volume": 6913831
+      "open": 697.6,
+      "high": 713.22,
+      "low": 689.68,
+      "close": 697.52,
+      "volume": 29203903
+    },
+    {
+      "date": "2026-10-22",
+      "open": 675.79,
+      "high": 681.07,
+      "low": 648.26,
+      "close": 657.5434,
+      "volume": 20373228
     }
   ],
   "earnings": [
@@ -10195,22 +10195,22 @@
     ]
   },
   "valuation": {
-    "pe": 26.425120772946862,
-    "forwardPeGrowth": 0.8151210271304223,
-    "evEbitda": 16.824660720051487,
-    "priceToFcf": 46.573301838978914,
-    "peg": -5.4171497584541015,
-    "priceToBook": 6.922595426860782,
-    "priceToSales": 7.936681224606569,
-    "evToSales": 8.361026673416635,
-    "debtToEquity": 0.42997308792172145,
-    "currentRatio": 2.225562709519502,
-    "quickRatio": 2.225562709519502,
-    "returnOnEquity": 0.2973026955581193,
-    "returnOnAssets": 0.1513436869382784,
-    "operatingMargin": 0.38084451999579405,
-    "netProfitMargin": 0.29835091654691387,
-    "asOfDate": "2026-10-21"
+    "pe": 22.29033344560458,
+    "forwardPeGrowth": 0.7070472165128823,
+    "evEbitda": 16.741428155017335,
+    "priceToFcf": 62.36693287905759,
+    "peg": 0.7921273403905801,
+    "priceToBook": 6.200442019780752,
+    "priceToSales": 6.978024755015376,
+    "evToSales": 7.395533353690084,
+    "debtToEquity": 0.41152996115806245,
+    "currentRatio": 1.902842360857628,
+    "quickRatio": 1.902842360857628,
+    "returnOnEquity": 0.30265119940957097,
+    "returnOnAssets": 0.15714983835801818,
+    "operatingMargin": 0.3285500833999015,
+    "netProfitMargin": 0.3114520688556209,
+    "asOfDate": "2026-10-22"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 3,
