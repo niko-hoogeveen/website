@@ -1,0 +1,34 @@
+{
+  "season": "2025",
+  "week": 1,
+  "matchups": [
+    {
+      "teamKey": "449.l.51047.t.1",
+      "opponentTeamKey": "449.l.51047.t.2",
+      "score": 128.4,
+      "opponentScore": 110.2,
+      "result": "W"
+    },
+    {
+      "teamKey": "449.l.51047.t.2",
+      "opponentTeamKey": "449.l.51047.t.1",
+      "score": 110.2,
+      "opponentScore": 128.4,
+      "result": "L"
+    },
+    {
+      "teamKey": "449.l.51047.t.3",
+      "opponentTeamKey": "449.l.51047.t.4",
+      "score": 95.6,
+      "opponentScore": 101.8,
+      "result": "L"
+    },
+    {
+      "teamKey": "449.l.51047.t.4",
+      "opponentTeamKey": "449.l.51047.t.3",
+      "score": 101.8,
+      "opponentScore": 95.6,
+      "result": "W"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "leagueKey": "449.l.51047",
+  "leagueName": "Sample Fantasy League",
+  "season": "2025",
+  "teams": [
+    {
+      "teamKey": "449.l.51047.t.1",
+      "teamName": "Gridiron Gladiators",
+      "managerName": "Alex"
+    },
+    {
+      "teamKey": "449.l.51047.t.2",
+      "teamName": "Touchdown Titans",
+      "managerName": "Jordan"
+    },
+    {
+      "teamKey": "449.l.51047.t.3",
+      "teamName": "End Zone Enforcers",
+      "managerName": "Sam"
+    },
+    {
+      "teamKey": "449.l.51047.t.4",
+      "teamName": "Blitz Brigade",
+      "managerName": "Taylor"
+    }
+  ]
+}

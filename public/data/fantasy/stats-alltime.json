@@ -1,0 +1,42 @@
+{
+  "449.l.51047.t.1": {
+    "teamName": "Gridiron Gladiators",
+    "allTimePoints": 2456.7,
+    "wins": 14,
+    "losses": 8,
+    "ties": 0,
+    "highestSingleWeekScore": 168.3,
+    "lowestSingleWeekScore": 62.1,
+    "championships": 1
+  },
+  "449.l.51047.t.2": {
+    "teamName": "Touchdown Titans",
+    "allTimePoints": 2301.5,
+    "wins": 11,
+    "losses": 11,
+    "ties": 0,
+    "highestSingleWeekScore": 155.9,
+    "lowestSingleWeekScore": 58.4,
+    "championships": 0
+  },
+  "449.l.51047.t.3": {
+    "teamName": "End Zone Enforcers",
+    "allTimePoints": 2180.2,
+    "wins": 9,
+    "losses": 13,
+    "ties": 0,
+    "highestSingleWeekScore": 149.2,
+    "lowestSingleWeekScore": 54.7,
+    "championships": 0
+  },
+  "449.l.51047.t.4": {
+    "teamName": "Blitz Brigade",
+    "allTimePoints": 2389.9,
+    "wins": 12,
+    "losses": 10,
+    "ties": 0,
+    "highestSingleWeekScore": 172.6,
+    "lowestSingleWeekScore": 49.3,
+    "championships": 1
+  }
+}
