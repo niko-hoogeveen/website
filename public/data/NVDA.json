@@ -2,18 +2,10 @@
   "metadata": {
     "ticker": "NVDA",
     "companyName": "NVIDIA Corporation",
-    "lastUpdated": "2026-10-26",
+    "lastUpdated": "2026-10-27",
     "researchReportUrl": "/data/reports/NVDA.pdf"
   },
   "priceHistory": [
-    {
-      "date": "2021-10-27",
-      "open": 24.47,
-      "high": 25.09,
-      "low": 24.28,
-      "close": 24.45,
-      "volume": 245990000
-    },
     {
       "date": "2021-10-28",
       "open": 24.88,
@@ -10028,15 +10020,23 @@
       "high": 213.85,
       "low": 210.18,
       "close": 210.96,
-      "volume": 80189765
+      "volume": 80189800
     },
     {
       "date": "2026-10-26",
-      "open": 213.12,
+      "open": 213.11,
       "high": 217.75,
       "low": 212.61,
       "close": 216,
-      "volume": 50307777
+      "volume": 90829293
+    },
+    {
+      "date": "2026-10-27",
+      "open": 218.3,
+      "high": 219.19,
+      "low": 215.53,
+      "close": 218.7,
+      "volume": 41809140
     }
   ],
   "earnings": [
@@ -10195,14 +10195,14 @@
     ]
   },
   "valuation": {
-    "pe": 27.220125786163518,
-    "forwardPeGrowth": 0.2779535149370145,
-    "evEbitda": 22.367640897158545,
-    "priceToFcf": 41.19220351794404,
-    "peg": 0.21850168998416977,
-    "priceToBook": 22.860619082555985,
-    "priceToSales": 17.21377434655031,
-    "evToSales": 17.26796140859296,
+    "pe": 27.415094339622634,
+    "forwardPeGrowth": 0.27994440194326387,
+    "evEbitda": 22.527349996152104,
+    "priceToFcf": 41.486323480780435,
+    "peg": 0.2200667436786035,
+    "priceToBook": 23.024361964154696,
+    "priceToSales": 17.3370707894207,
+    "evToSales": 17.39125785146335,
     "debtToEquity": 0.1697061803444782,
     "currentRatio": 4.588949069016016,
     "quickRatio": 3.8549710592993796,
@@ -10210,7 +10210,7 @@
     "returnOnAssets": 0.6022349752710197,
     "operatingMargin": 0.6521426284537362,
     "netProfitMargin": 0.6366294901458565,
-    "asOfDate": "2026-10-26"
+    "asOfDate": "2026-10-27"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 2.5,
