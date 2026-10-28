@@ -2,18 +2,10 @@
   "metadata": {
     "ticker": "NVDA",
     "companyName": "NVIDIA Corporation",
-    "lastUpdated": "2026-10-27",
+    "lastUpdated": "2026-10-28",
     "researchReportUrl": "/data/reports/NVDA.pdf"
   },
   "priceHistory": [
-    {
-      "date": "2021-10-28",
-      "open": 24.88,
-      "high": 24.95,
-      "low": 24.52,
-      "close": 24.94,
-      "volume": 234204310
-    },
     {
       "date": "2021-10-29",
       "open": 25,
@@ -10028,15 +10020,23 @@
       "high": 217.75,
       "low": 212.61,
       "close": 216,
-      "volume": 90829293
+      "volume": 90829300
     },
     {
       "date": "2026-10-27",
-      "open": 218.3,
+      "open": 218.31,
       "high": 219.19,
       "low": 215.53,
-      "close": 218.7,
-      "volume": 41809140
+      "close": 217.94,
+      "volume": 84799695
+    },
+    {
+      "date": "2026-10-28",
+      "open": 219.88,
+      "high": 219.99,
+      "low": 216.71,
+      "close": 217.57,
+      "volume": 35032014
     }
   ],
   "earnings": [
@@ -10195,14 +10195,14 @@
     ]
   },
   "valuation": {
-    "pe": 27.415094339622634,
-    "forwardPeGrowth": 0.27994440194326387,
-    "evEbitda": 22.527349996152104,
-    "priceToFcf": 41.486323480780435,
-    "peg": 0.2200667436786035,
-    "priceToBook": 23.024361964154696,
-    "priceToSales": 17.3370707894207,
-    "evToSales": 17.39125785146335,
+    "pe": 27.349496855345908,
+    "forwardPeGrowth": 0.2792745647989032,
+    "evEbitda": 22.4736156122004,
+    "priceToFcf": 41.38736634489709,
+    "peg": 0.21954017883883112,
+    "priceToBook": 22.96927040753939,
+    "priceToSales": 17.295587502351726,
+    "evToSales": 17.349774564394377,
     "debtToEquity": 0.1697061803444782,
     "currentRatio": 4.588949069016016,
     "quickRatio": 3.8549710592993796,
@@ -10210,7 +10210,7 @@
     "returnOnAssets": 0.6022349752710197,
     "operatingMargin": 0.6521426284537362,
     "netProfitMargin": 0.6366294901458565,
-    "asOfDate": "2026-10-27"
+    "asOfDate": "2026-10-28"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 2.5,

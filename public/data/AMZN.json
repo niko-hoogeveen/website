@@ -2,18 +2,10 @@
   "metadata": {
     "ticker": "AMZN",
     "companyName": "Amazon.com, Inc.",
-    "lastUpdated": "2026-10-27",
+    "lastUpdated": "2026-10-28",
     "researchReportUrl": "undefined"
   },
   "priceHistory": [
-    {
-      "date": "2021-10-28",
-      "open": 170.1,
-      "high": 173.95,
-      "low": 169.3,
-      "close": 172.33,
-      "volume": 114174000
-    },
     {
       "date": "2021-10-29",
       "open": 165,
@@ -10028,15 +10020,23 @@
       "high": 250.79,
       "low": 247.23,
       "close": 249.09,
-      "volume": 32696380
+      "volume": 32696400
     },
     {
       "date": "2026-10-27",
-      "open": 250.35,
-      "high": 253.78,
-      "low": 248.7101,
-      "close": 253.53,
-      "volume": 12560482
+      "open": 250.43,
+      "high": 254.68,
+      "low": 248.71,
+      "close": 253.1,
+      "volume": 34477821
+    },
+    {
+      "date": "2026-10-28",
+      "open": 252.96,
+      "high": 255.36,
+      "low": 251.98,
+      "close": 252.98,
+      "volume": 12347377
     }
   ],
   "earnings": [
@@ -10236,14 +10236,14 @@
     ]
   },
   "valuation": {
-    "pe": 20.118253968253967,
-    "forwardPeGrowth": 0.2520805623812524,
-    "evEbitda": 11.335717299810629,
-    "priceToFcf": -247.6764031827957,
-    "peg": 0.2277345499959713,
-    "priceToBook": 4.94278387295602,
-    "priceToSales": 3.5249319139335813,
-    "evToSales": 3.7118891643461223,
+    "pe": 20.084126984126982,
+    "forwardPeGrowth": 0.25122825928246595,
+    "evEbitda": 11.317456812482037,
+    "priceToFcf": -247.2774260645161,
+    "peg": 0.22734823946499072,
+    "priceToBook": 4.934399332874079,
+    "priceToSales": 3.518952503609736,
+    "evToSales": 3.7059097540222776,
     "debtToEquity": 0.4046843841775135,
     "currentRatio": 1.0331158765552857,
     "quickRatio": 0.8748559728773097,
@@ -10251,7 +10251,7 @@
     "returnOnAssets": 0.12346660411850444,
     "operatingMargin": 0.12081270627062707,
     "netProfitMargin": 0.1744031043729373,
-    "asOfDate": "2026-10-27"
+    "asOfDate": "2026-10-28"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 3,
