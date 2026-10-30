@@ -2,7 +2,7 @@
   "metadata": {
     "ticker": "AMZN",
     "companyName": "Amazon.com, Inc.",
-    "lastUpdated": "2026-10-29",
+    "lastUpdated": "2026-10-30",
     "researchReportUrl": "undefined"
   },
   "priceHistory": [
@@ -10028,15 +10028,23 @@
       "high": 255.36,
       "low": 251.98,
       "close": 254.6,
-      "volume": 34915856
+      "volume": 34915900
     },
     {
       "date": "2026-10-29",
-      "open": 246.91,
+      "open": 246.95,
       "high": 249.14,
       "low": 241.24,
-      "close": 246.2,
-      "volume": 31948940
+      "close": 243.79,
+      "volume": 85234439
+    },
+    {
+      "date": "2026-10-30",
+      "open": 232.53,
+      "high": 241.55,
+      "low": 229.3632,
+      "close": 238.4,
+      "volume": 62012334
     }
   ],
   "earnings": [
@@ -10236,22 +10244,22 @@
     ]
   },
   "valuation": {
-    "pe": 19.52579365079365,
-    "forwardPeGrowth": 0.24106171062629128,
-    "evEbitda": 11.018706746536377,
-    "priceToFcf": -240.74997483870968,
-    "peg": 0.22102801949883166,
-    "priceToBook": 4.797224357347449,
-    "priceToSales": 3.421126569590553,
-    "evToSales": 3.6080838200030945,
-    "debtToEquity": 0.4046843841775135,
-    "currentRatio": 1.0331158765552857,
-    "quickRatio": 0.8748559728773097,
-    "returnOnEquity": 0.3049908974597431,
-    "returnOnAssets": 0.12346660411850444,
-    "operatingMargin": 0.12081270627062707,
-    "netProfitMargin": 0.1744031043729373,
-    "asOfDate": "2026-10-29"
+    "pe": 19.067783094098882,
+    "forwardPeGrowth": 0.23560809440078498,
+    "evEbitda": 10.834495589113093,
+    "priceToFcf": -59.61098253433421,
+    "peg": 0.25793380132918003,
+    "priceToBook": 4.2074094892283425,
+    "priceToSales": 3.2341789731082007,
+    "evToSales": 3.505248814039664,
+    "debtToEquity": 0.4432016896973766,
+    "currentRatio": 0.9888286779697808,
+    "quickRatio": 0.8235768386941724,
+    "returnOnEquity": 0.2671271429987117,
+    "returnOnAssets": 0.10839640016406758,
+    "operatingMargin": 0.13087384241117053,
+    "netProfitMargin": 0.1690114175721514,
+    "asOfDate": "2026-10-30"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 3,
