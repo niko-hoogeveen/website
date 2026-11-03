@@ -2,18 +2,10 @@
   "metadata": {
     "ticker": "AMZN",
     "companyName": "Amazon.com, Inc.",
-    "lastUpdated": "2026-11-02",
+    "lastUpdated": "2026-11-03",
     "researchReportUrl": "undefined"
   },
   "priceHistory": [
-    {
-      "date": "2021-11-03",
-      "open": 165.45,
-      "high": 169.75,
-      "low": 164.88,
-      "close": 169.2,
-      "volume": 67944000
-    },
     {
       "date": "2021-11-04",
       "open": 168.5,
@@ -10028,15 +10020,23 @@
       "high": 241.55,
       "low": 229.36,
       "close": 240.35,
-      "volume": 104894738
+      "volume": 104894739
     },
     {
       "date": "2026-11-02",
-      "open": 243.08501,
+      "open": 243.01,
       "high": 253.81,
       "low": 242.28,
-      "close": 246.715,
-      "volume": 43645252
+      "close": 245.63,
+      "volume": 58347979
+    },
+    {
+      "date": "2026-11-03",
+      "open": 248.61501,
+      "high": 251.215,
+      "low": 245.89,
+      "close": 250.76,
+      "volume": 17735870
     }
   ],
   "earnings": [
@@ -10236,14 +10236,14 @@
     ]
   },
   "valuation": {
-    "pe": 19.658692185007972,
-    "forwardPeGrowth": 0.24646087017570245,
-    "evEbitda": 11.14429056039194,
-    "priceToFcf": -61.31546268020131,
-    "peg": 0.26592714944447937,
-    "priceToBook": 4.3377967767327625,
-    "priceToSales": 3.334405923845233,
-    "evToSales": 3.605475764776696,
+    "pe": 19.998500797448166,
+    "forwardPeGrowth": 0.2517451917598253,
+    "evEbitda": 11.322441482337071,
+    "priceToFcf": -62.29564227501492,
+    "peg": 0.2705238100367754,
+    "priceToBook": 4.412777385304131,
+    "priceToSales": 3.3920425071759537,
+    "evToSales": 3.663112348107417,
     "debtToEquity": 0.4432016896973766,
     "currentRatio": 0.9888286779697808,
     "quickRatio": 0.8235768386941724,
@@ -10251,7 +10251,7 @@
     "returnOnAssets": 0.10839640016406758,
     "operatingMargin": 0.13087384241117053,
     "netProfitMargin": 0.1690114175721514,
-    "asOfDate": "2026-11-02"
+    "asOfDate": "2026-11-03"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 3,

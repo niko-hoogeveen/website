@@ -2,18 +2,10 @@
   "metadata": {
     "ticker": "META",
     "companyName": "Meta Platforms, Inc.",
-    "lastUpdated": "2026-11-02",
+    "lastUpdated": "2026-11-03",
     "researchReportUrl": "undefined"
   },
   "priceHistory": [
-    {
-      "date": "2021-11-03",
-      "open": 327.49,
-      "high": 332.15,
-      "low": 323.2,
-      "close": 331.62,
-      "volume": 20786502
-    },
     {
       "date": "2021-11-04",
       "open": 334.01,
@@ -10028,15 +10020,23 @@
       "high": 626.37,
       "low": 610.13,
       "close": 614.99,
-      "volume": 25364656
+      "volume": 25364700
     },
     {
       "date": "2026-11-02",
       "open": 614.44,
       "high": 621.69,
-      "low": 608.51501,
-      "close": 608.51501,
-      "volume": 13080331
+      "low": 606.41,
+      "close": 606.73,
+      "volume": 19496498
+    },
+    {
+      "date": "2026-11-03",
+      "open": 610.76,
+      "high": 624.84,
+      "low": 610.1,
+      "close": 624.3985,
+      "volume": 7455041
     }
   ],
   "earnings": [
@@ -10195,14 +10195,14 @@
     ]
   },
   "valuation": {
-    "pe": 20.499494779387,
-    "forwardPeGrowth": 0.7504897952410997,
-    "evEbitda": 13.573183510728006,
-    "priceToFcf": 50.564253965095986,
-    "peg": 0.7284866472981547,
-    "priceToBook": 5.702289251283106,
-    "priceToSales": 5.578451270451601,
-    "evToSales": 5.995959869126309,
+    "pe": 20.991579656449986,
+    "forwardPeGrowth": 0.7685051015987759,
+    "evEbitda": 13.876316713201538,
+    "priceToFcf": 51.69351772425829,
+    "peg": 0.7459737739876476,
+    "priceToBook": 5.839171176198483,
+    "priceToSales": 5.7123604978332585,
+    "evToSales": 6.129869096507965,
     "debtToEquity": 0.41152996115806245,
     "currentRatio": 1.902842360857628,
     "quickRatio": 1.902842360857628,
@@ -10210,7 +10210,7 @@
     "returnOnAssets": 0.15714983835801818,
     "operatingMargin": 0.3285500833999015,
     "netProfitMargin": 0.3114520688556209,
-    "asOfDate": "2026-11-02"
+    "asOfDate": "2026-11-03"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 3,
