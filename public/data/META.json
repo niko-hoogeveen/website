@@ -2,18 +2,10 @@
   "metadata": {
     "ticker": "META",
     "companyName": "Meta Platforms, Inc.",
-    "lastUpdated": "2026-11-04",
+    "lastUpdated": "2026-11-05",
     "researchReportUrl": "undefined"
   },
   "priceHistory": [
-    {
-      "date": "2021-11-05",
-      "open": 340.31,
-      "high": 346.79,
-      "low": 339.64,
-      "close": 341.13,
-      "volume": 26872817
-    },
     {
       "date": "2021-11-08",
       "open": 344.42,
@@ -10028,15 +10020,23 @@
       "high": 624.84,
       "low": 610.1,
       "close": 621.03,
-      "volume": 13731254
+      "volume": 13731300
     },
     {
       "date": "2026-11-04",
-      "open": 641.4,
+      "open": 641.15,
       "high": 643.09,
       "low": 624.5,
-      "close": 634.76,
-      "volume": 22832861
+      "close": 630,
+      "volume": 32441835
+    },
+    {
+      "date": "2026-11-05",
+      "open": 632.35,
+      "high": 634.99,
+      "low": 583.9798,
+      "close": 602.25,
+      "volume": 17799845
     }
   ],
   "earnings": [
@@ -10195,14 +10195,14 @@
     ]
   },
   "valuation": {
-    "pe": 21.32401481980465,
-    "forwardPeGrowth": 0.7806756063044751,
-    "evEbitda": 14.081102798650802,
-    "priceToFcf": 52.45640843630017,
-    "peg": 0.7577874591639169,
-    "priceToBook": 5.931643770237824,
-    "priceToSales": 5.802824842409367,
-    "evToSales": 6.220333441084074,
+    "pe": 20.332098349612664,
+    "forwardPeGrowth": 0.7443613850701448,
+    "evEbitda": 13.470064276211,
+    "priceToFcf": 50.18010332286213,
+    "peg": 0.7225379122093949,
+    "priceToBook": 5.655725037263295,
+    "priceToSales": 5.532898302615404,
+    "evToSales": 5.950406901290112,
     "debtToEquity": 0.41152996115806245,
     "currentRatio": 1.902842360857628,
     "quickRatio": 1.902842360857628,
@@ -10210,7 +10210,7 @@
     "returnOnAssets": 0.15714983835801818,
     "operatingMargin": 0.3285500833999015,
     "netProfitMargin": 0.3114520688556209,
-    "asOfDate": "2026-11-04"
+    "asOfDate": "2026-11-05"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 3,
