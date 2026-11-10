@@ -2,18 +2,10 @@
   "metadata": {
     "ticker": "NVDA",
     "companyName": "NVIDIA Corporation",
-    "lastUpdated": "2026-11-09",
+    "lastUpdated": "2026-11-10",
     "researchReportUrl": "/data/reports/NVDA.pdf"
   },
   "priceHistory": [
-    {
-      "date": "2021-11-10",
-      "open": 29.36,
-      "high": 30.85,
-      "low": 28.78,
-      "close": 29.46,
-      "volume": 636206000
-    },
     {
       "date": "2021-11-11",
       "open": 30.47,
@@ -10028,7 +10020,7 @@
       "high": 194.9,
       "low": 185.22,
       "close": 186.64,
-      "volume": 180212285
+      "volume": 180212300
     },
     {
       "date": "2026-11-09",
@@ -10036,7 +10028,15 @@
       "high": 179.92,
       "low": 170.24,
       "close": 178.67,
-      "volume": 455146828
+      "volume": 462719328
+    },
+    {
+      "date": "2026-11-10",
+      "open": 173.98,
+      "high": 174.65,
+      "low": 166.25999,
+      "close": 167.57,
+      "volume": 284743879
     }
   ],
   "earnings": [
@@ -10195,14 +10195,14 @@
     ]
   },
   "valuation": {
-    "pe": 22.47421383647798,
-    "forwardPeGrowth": 0.22949147187521426,
-    "evEbitda": 18.480012313270116,
-    "priceToFcf": 34.03275435806182,
-    "peg": 0.18040525392546952,
-    "priceToBook": 18.874800422736957,
-    "priceToSales": 14.212500288808426,
-    "evToSales": 14.266687350851077,
+    "pe": 21.197484276729558,
+    "forwardPeGrowth": 0.2164543730923553,
+    "evEbitda": 17.434175310183246,
+    "priceToFcf": 32.106742988520224,
+    "peg": 0.17015667650708083,
+    "priceToBook": 17.802548649687314,
+    "priceToSales": 13.405107453237791,
+    "evToSales": 13.459294515280442,
     "debtToEquity": 0.1697061803444782,
     "currentRatio": 4.588949069016016,
     "quickRatio": 3.8549710592993796,
@@ -10210,7 +10210,7 @@
     "returnOnAssets": 0.6022349752710197,
     "operatingMargin": 0.6521426284537362,
     "netProfitMargin": 0.6366294901458565,
-    "asOfDate": "2026-11-09"
+    "asOfDate": "2026-11-10"
   },
   "dcfDefaults": {
     "terminalGrowthRate": 2.5,
